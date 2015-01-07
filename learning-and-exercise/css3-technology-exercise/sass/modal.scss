@@ -1,0 +1,62 @@
+.overlay{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background-color: rgba(0,0,0,.8);
+  @include flex-center; // flex水平垂直居中
+}
+.overlay.active {
+  z-index: 980;
+}
+
+$modalBarHeight: 40px !default;
+$modalBdPadding: 15px;
+
+.modal{
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 0 10px;
+  overflow: hidden;
+  opacity: 0;
+  @include transform(translate3d(0,0,0) scale(0.815));
+  @extend %all-transition;
+  @include transition-property(transform, opacity);
+
+  &.modal-in{
+    opacity: 1;
+    @include transform(translate3d(0,0,0) scale(1));
+  }
+
+  .modal-hd{
+    text-align: center;
+    line-height: $modalBarHeight;
+    background-color: $primary;
+    color: #fff;
+  }
+  .modal-bd{
+    padding: $modalBdPadding;
+  }
+  .modal-ft{
+    border-top: 1px solid $gray;
+    @extend %display-flex;
+    .btn-modal{
+      @include flex(1);
+      background-color: #fefefe;
+      text-align: center;
+      line-height: $modalBarHeight;
+      color: $primary;
+      &:first-child{
+        border-right: 1px solid $gray;
+      }
+      &:last-child{
+        border-right: none;
+      }
+      &:hover,&:active{
+        background-color: #d9d9d9;
+      }
+    }
+  }
+}

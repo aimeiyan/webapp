@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head lang="zn-CN">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <title>微信关注通报图</title>
+    <link rel="shortcut icon" href="images/tongbaotu.ico" type="image/x-icon">
+    <link href="base.css" rel="stylesheet">
+    <style>
+
+        form.regInfo h1 {
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        form.regInfo ul {
+            background-color: #fff;
+        }
+
+        form.regInfo li {
+            line-height: 3.5;
+            border-bottom: 1px solid #ececec;
+            padding: 0 10px;
+            overflow: hidden;
+        }
+
+        form.regInfo label {
+            display: block;
+            float: left;
+            width: 6em;
+        }
+
+        form.regInfo li div {
+            margin-left: 6em;
+        }
+
+        form.regInfo li input {
+            border: none;
+            font-size: 14px;
+            padding: 15px 0;
+            width: 100%;
+            display: block;
+        }
+
+        form.regInfo li input:focus {
+            outline: none;
+        }
+
+        select.select {
+            width: 100%;
+            padding: 13px 0;
+            border: none;
+            background-color: #fff;
+            color: #999;
+        }
+
+        /*.wrapper {*/
+        /*position: fixed;*/
+        /*top: 0;*/
+        /*left: 0;*/
+        /*width: 100%;*/
+        /*height: 100%;*/
+        /*z-index: 2;*/
+        /*transition: all .1s ease;*/
+        /*background-color: rgba(0, 0, 0, 0.3);*/
+        /*transform: translate3d(100%, 0, 0);*/
+
+        /*}*/
+
+        /*.wrapper.mask {*/
+        /*position: fixed;*/
+        /*top: 0;*/
+        /*left: 0;*/
+        /*width: 100%;*/
+        /*height: 100%;*/
+        /*z-index: 2;*/
+        /*transform: translate3d(40%, 0, 0);*/
+
+        /*}*/
+
+        /*.wrapper.mask .options {*/
+        /*width: 100%;*/
+        /*height: 100%;*/
+        /*transition: all .1s ease;*/
+        /*transform: translate3d(0, 0, 0);*/
+        /*border-left: 1px solid #cecece;*/
+        /*background-color: #eee;*/
+        /*overflow: auto;*/
+        /*}*/
+
+        /*.wrapper ul {*/
+        /*background-color: #eee;*/
+        /*}*/
+
+        /*.wrapper ul li {*/
+        /*border-bottom: 1px solid #fff;*/
+        /*line-height: 3.5;*/
+        /*padding: 0 0 0 10px;*/
+        /*cursor: pointer;*/
+        /*}*/
+
+        /*button.select {*/
+        /*width: 100%;*/
+        /*padding: 15px 0;*/
+        /*cursor: pointer;*/
+        /*background-color: transparent;*/
+        /*text-align: left;*/
+        /*color: #999;*/
+        /*}*/
+
+        /*section.overlay{*/
+        /*position: fixed;*/
+        /*left: 0;*/
+        /*top: 0;*/
+        /*width: 100%;*/
+        /*height: 100%;*/
+        /*background-color: rgba(0, 0, 0, 0.3);*/
+        /*display: none;*/
+        /*}*/
+        p.submit-wrapper {
+            padding: 10px;
+        }
+
+        input[type='submit'] {
+            width: 100%;
+            background-color: #ffa522;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <form class="regInfo" action="" method="post">
+        <h1>公司信息</h1>
+        <ul>
+            <li>
+                <label>当前公司</label>
+
+                <div>
+                    <input placeholder="请输入公司名字">
+                </div>
+            </li>
+            <li>
+                <label>入职年份</label>
+
+                <div>
+                    <select class="select">
+                        <option value="0">请选择</option>
+                        <option>2014</option>
+                        <option>2014</option>
+                        <option>2014</option>
+                        <option>2014</option>
+                        <option>2014</option>
+                        <option>2014</option>
+                        <option>2014</option>
+                        <option>2014</option>
+                        <option>2014</option>
+                        <option>2014</option>
+                    </select>
+                    <!--<button class="select">请选择</button>-->
+                </div>
+            </li>
+        </ul>
+        <p class="t-center submit-wrapper"><input type="submit" value="提交" class="mt10 p10"></p>
+    </form>
+</section>
+<!--<section class="right-list">-->
+<!--<section class="wrapper">-->
+<!--<div class="options">-->
+<!--<ul>-->
+<!--<li data-content-id="2014">2014</li>-->
+<!--<li data-content-id="2013">2013</li>-->
+<!--<li data-content-id="2012">2012</li>-->
+<!--<li data-content-id="2011">2011</li>-->
+<!--<li data-content-id="2010">2010</li>-->
+<!--<li data-content-id="2009">2009</li>-->
+<!--<li data-content-id="2008">2008</li>-->
+<!--<li data-content-id="2007">2007</li>-->
+<!--<li data-content-id="2006">2006</li>-->
+<!--<li data-content-id="2005">2005</li>-->
+<!--<li data-content-id="2004">2004</li>-->
+<!--<li data-content-id="2003">2003</li>-->
+<!--<li data-content-id="2002">2002</li>-->
+<!--<li data-content-id="2001">2001</li>-->
+<!--<li data-content-id="2000">2000</li>-->
+<!--<li data-content-id="1999">1999</li>-->
+<!--<li data-content-id="1998">1998</li>-->
+<!--<li data-content-id="1997">1997</li>-->
+<!--<li data-content-id="1996">1996</li>-->
+<!--<li data-content-id="1995">1995</li>-->
+<!--<li data-content-id="1994">1994</li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</section>-->
+<!--</section>-->
+<!--<section class="overlay">-->
+
+</section>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script>
+    $('input[type=submit]').click(function () {
+        if ($('.select').val() === '0') {
+            alert('请选择');
+        }
+    });
+    //    $(function () {
+    //        $("button.select").click(function () {
+    //            $("section.overlay").show();
+    //            $("section.wrapper").addClass('mask');
+    //            return false;
+    //        });
+    //
+    //        $("html body").click(function () {
+    //            $("section.overlay").hide();
+    //            $("section.wrapper").removeClass('mask');
+    //        })
+    //    });
+
+    //    $(function () {
+    //        $("aside.slide_menu").on("touchstart", "a", function () {
+    //            $(this).addClass("current").siblings("a").removeClass("current")
+    //        });
+    //        $("#container a.menu").on("click", function (a) {
+    //            a.preventDefault(), $(".slide_menu").show(), $("#container").toggleClass("show");
+    //        })
+    //    });
+
+</script>
+</body>
+</html>

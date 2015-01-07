@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<!-- saved from url=(0094)https://trade.ehowbuy.com/wap2/account/login/login.htm?targeturl=%2Faccount%2Fmain%2Findex.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="cm.yu"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="telephone=no" name="format-detection"> 
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://trade.ehowbuy.com/tstatic/images/wap/apple-touch-icon-144-precomposed.png">
+    <title>好买网登录</title>
+        <link rel="stylesheet" type="text/css" href="./登录_files/reset.css">
+        <link rel="stylesheet" type="text/css" href="./登录_files/style.css">
+        <link rel="stylesheet" type="text/css" href="./登录_files/howbuy_logo.css">
+</head>
+<body cz-shortcut-listen="true" style="">
+<div id="howbuyLogo"></div>
+<div class="main">
+    <div class="sw_accounts"><span id="ui-panel-acc" class="slidePanel">切换账户</span></div>
+		<form id="loginForm" name="loginForm" method="post" action="https://trade.ehowbuy.com/wap2/account/login/login.htm" autocomplete="off">
+		    <ul class="acc_box_item">
+		        <li class="ico_1"><input type="text" name="displayIdNo" id="displayIdNo" value="" placeholder="身份证(18位)" class="ui-input-event"><a href="javascript:void(0)" target="_self" class="clear-it-val"></a></li>
+		        <li class="ico_2"><input type="password" id="loginPwd" name="loginPwd" value="" placeholder="登录密码" class="ui-input-event"><a href="javascript:void(0)" target="_self" class="clear-it-val"></a></li>
+		    </ul>
+		    <ul class="acc_login_btn">
+		        <li><a href="https://trade.ehowbuy.com/wap2/account/openaccount/registerone.htm?coopId=H20130301&actId=HD0005" class="free_acc">免费开户</a></li>
+		        <li><input type="button" id="loginButton" value="登　录" class="btn_style_a" onclick="loginSubmit();"></li>
+		    </ul>
+		    <input type="hidden" name="targeturl" id="targeturl" value="/account/main/index.htm">
+		    <input type="hidden" name="idNo" id="idNo" value="">
+		    <input name="idType" id="idType" type="hidden" value="0">
+			<input type="hidden" id="coopId" name="coopId" value="H20130301">
+      		<input type="hidden" id="actId" name="actId" value="HD0005">
+	    </form>
+    <div class="acc_login_problem"><span id="ui-panel-prob" class="slidePanel">登录遇到问题?</span></div>
+    
+    <!--  add by liaojiejie-->
+    <a class="red-packet-activity" href="https://trade.ehowbuy.com/wap2/activity/1225/index.html?coopId=&actId=">
+        <span>领取10元新手红包<img src="./登录_files/red-packet.png" alt="" class="tip"></span>
+    </a>
+    <!-- add by liaojiejie -->
+    
+</div>
+<!-- 切换账户内容 pop -->
+<ul id="ui-panel-acc-box" class="pop_bot_item">
+    <li><a href="https://trade.ehowbuy.com/wap2/account/login/login.htm?targeturl=%2Faccount%2Fmain%2Findex.htm#" onclick="changeType(&#39;1&#39;)" class="btn">护照</a></li>
+    <li><a href="https://trade.ehowbuy.com/wap2/account/login/login.htm?targeturl=%2Faccount%2Fmain%2Findex.htm#" onclick="changeType(&#39;2&#39;)" class="btn">军官证</a></li>
+    <li><a href="https://trade.ehowbuy.com/wap2/account/login/login.htm?targeturl=%2Faccount%2Fmain%2Findex.htm#" onclick="changeType(&#39;3&#39;)" class="btn">士兵证</a></li>
+    <li><a href="https://trade.ehowbuy.com/wap2/account/login/login.htm?targeturl=%2Faccount%2Fmain%2Findex.htm#" onclick="changeType(&#39;0&#39;)" class="btn">身份证</a></li>
+    <li class="btn_style_b">取消</li>
+</ul>
+<!-- 登录遇到问题 pop-->
+<ul id="ui-panel-prob-box" class="pop_bot_item">
+    <li><a href="https://trade.ehowbuy.com/wap2/account/login/retrievepwd.htm" class="btn">找回登录密码</a></li>
+    <li><a href="tel:4007009665" class="btn">联系好买客服</a></li>
+    <li class="btn_style_b">取消</li>
+</ul>
+        <script type="text/javascript" src="./登录_files/zepto.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="./登录_files/loading.css">
+<!--背景-->
+<div class="mask-bg" id="mask-bg-popup"></div>
+<!--闪现提示窗-->
+<div class="error-msg" style="display: none;">请输入证件号</div>
+<!--带确定按钮的弹窗-->
+<div class="default-msg" style="display:none">
+    <h6>提示</h6>
+    <p style="text-align:center"></p>
+    <a href="javascript:void(0)" class="close">确定</a>
+</div>
+<!--loading窗-->
+<div class="loading_pop" style="display:none"><em></em><p></p></div>
+<script>
+	function popupTime(msg){
+        msg = getMessage(msg);
+        $(".error-msg").html(msg).show();
+		setTimeout(function(){$(".error-msg").hide();},2000);
+	}
+	function popupConfirm(msg,link){
+        msg = getMessage(msg);
+		$("#mask-bg-popup").addClass("mask-show");
+		var defaultMsg = $(".default-msg");
+		defaultMsg.find("p").html(msg);
+		if(link!=null){
+			defaultMsg.find("a").click(function(){
+				$("#mask-bg-popup").removeClass("mask-show");
+				defaultMsg.hide();
+				window.location.href=link;
+			});
+		}else{
+			defaultMsg.find("a").click(function(){
+				$("#mask-bg-popup").removeClass("mask-show");
+				defaultMsg.hide();
+			});
+		}
+		defaultMsg.show();
+	}
+	function showLoadingMsg(){
+		$(".loading_pop").show();
+	}
+	function hideLoadingMsg(){
+		$(".loading_pop").hide();
+	}
+
+    function getMessage(data){
+        //判断返回值是 json 格式
+        if (data.code){
+            //通过这种方法可将字符串转换为对象
+            return data.desc+"("+data.code+")";
+        }
+        return data;
+    }
+</script>        <script type="text/javascript" src="./登录_files/zepto.min.js"></script>
+        <script type="text/javascript" src="./登录_files/ui-input-event.js"></script>
+        <script type="text/javascript" src="./登录_files/validateRule.js"></script>
+
+
+<script type="text/javascript">
+    //滑动面板 底部出现
+    var pbox_1 = $(".ui-panel-acc-box");
+    var pbox_2 = $(".ui-panel-prob-box");
+    var $ph_1 = pbox_1.height();
+    var $ph_2 = pbox_2.height();
+    //css中已设置过bottom参数，为防止刷新时候出现隐藏面板，数值设了偏大。这里根据每个滑动层，重新定义下bottom值。
+    pbox_1.css({bottom:-$ph_1});
+    pbox_2.css({bottom:-$ph_2});
+    $(".slidePanel").click(function(){
+        var $s = $(this).attr("id");//获取当前ID
+        $("#"+$s+"-box").css({bottom:"0px"});//相对应的ID层
+        //$("#"+$s+"-box").addClass("pop-showUp");
+        $(".mask-bg").addClass("mask-show");
+        window.ontouchmove=function(){
+            return false;
+        }
+     })
+    $(".pop_bot_item li").click(function(){
+        var $h = $(this).parents().height();//当前滑动面板的父层高度
+        $(this).parents().css({bottom:-$h});//隐藏层，bottom值是这个层的高度
+        //$(this).parents().removeClass("pop-showUp");
+        $(".mask-bg").removeClass("mask-show");
+        window.ontouchmove=function(){
+        }
+     })
+</script>
+<script type="text/javascript">
+	$(function(){
+		var idType="";
+		if(idType!=""){
+			if(idType=="0"){
+				$("#displayIdNo").attr("placeholder","身份证(18位)");
+			}else{
+				$("#displayIdNo").attr("placeholder","开户证件号");
+			}
+		}
+	});
+	function changeType(id){
+		if(id!=$("#idType").val()){
+			$("#idType").val(id);
+			if(id=="0"){
+				$("#displayIdNo").attr("placeholder","身份证(18位)");
+				$("#displayIdNo").val("");	
+			}else{
+				$("#displayIdNo").attr("placeholder","开户证件号");
+				$("#displayIdNo").val("");
+			}
+		}
+	}
+	//登录验证
+	function loginSubmit(){
+		if(isEmpty($('#displayIdNo').val())){
+			popupTime('请输入证件号');
+			$("#displayIdNo").focus();
+			return false;
+		}
+		if (isEmpty($('#loginPwd').val()))
+		{
+			popupTime('请输入登录密码');
+			$('#loginPwd').focus();
+			return false;
+		}
+		if ($('#displayIdNo').val().indexOf('*')>0 &&  $('#displayIdNo').val()!=''){
+			popupTime('请重新输入证件号码');
+			$('#displayIdNo').val('');
+			$('#displayIdNo').focus();
+			return false;
+		}
+		//重新赋值
+		if ($('#displayIdNo').val().indexOf('*')<0){
+			$('#idNo').val($('#displayIdNo').val());
+		}
+		$("#loginButton").attr({"disabled":"disabled"});
+		showLoadingMsg();
+		$.ajax({  
+		    type: 'post',  
+		    url: "/wap2/account/login/login.htm" ,
+		    dataType: 'json',
+		    data:$('#loginForm').serialize(),
+		    success:function(jsObject){
+		    	hideLoadingMsg();
+		    	$("#loginButton").removeAttr("disabled");
+		    	if(jsObject!=null){
+		    		if(jsObject.state=='1'){
+		    			var url="/wap2/account/main/index.htm";
+		    			var targeturl=$("#targeturl").val();
+		        		if(""!=targeturl){
+		        			url="/wap2"+targeturl;
+		        		}
+		        		location.href=url;
+                    }else if(jsObject.state=='1004'){
+                        //激活
+                        window.location.href='/wap2/account/openaccount/active.htm'
+		    		}else{
+                        popupTime(jsObject);
+		    		}
+		    	}
+		    },
+		     error : function() {
+		     	hideLoadingMsg();
+		    	$("#loginButton").removeAttr("disabled");
+		    }
+		 });
+	}
+	
+</script>
+
+<!-- add by liaojiejie -->
+<script type="text/javascript">
+	var coopId = getParam("coopId")||getParam("coopid")||"";//coopId
+	var actId = getParam("actId")||getParam("actid")||"";//actId
+	var activityUrl = "/wap2" + "/activity/1225/index.html?coopId="+coopId+"&actId="+actId;
+	$(function(){
+		$(".red-packet-activity").attr("href",activityUrl);
+	});
+	
+	function getParam(name){
+	    var search = document.location.search;
+	    var pattern = new RegExp("[?&]"+name+"\=([^&]+)", "g");
+	    var matcher = pattern.exec(search);
+	    var items = null;
+	    if(null != matcher){
+	        try{
+	        	items = decodeURIComponent(decodeURIComponent(matcher[1]));
+	        }catch(e){
+	            try{
+	            	items = decodeURIComponent(matcher[1]);
+	            }catch(e){
+	            	items = matcher[1];
+	            }
+	        }
+	    }
+	    return items;
+	}
+</script>
+<!-- add by liaojiejie -->
+
+<style>
+    ..pop_bot_item {margin-bottom: -500px;}
+</style>
+
+<div id="window-resizer-tooltip"><a href="https://trade.ehowbuy.com/wap2/account/login/login.htm?targeturl=%2Faccount%2Fmain%2Findex.htm#" title="Edit settings"></a><span class="tooltipTitle">Window size: </span><span class="tooltipWidth" id="winWidth"></span> x <span class="tooltipHeight" id="winHeight"></span><br><span class="tooltipTitle">Viewport size: </span><span class="tooltipWidth" id="vpWidth"></span> x <span class="tooltipHeight" id="vpHeight"></span></div></body></html>

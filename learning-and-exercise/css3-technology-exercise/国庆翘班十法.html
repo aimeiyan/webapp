@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!-- saved from url=(0076)http://www.chengxufan.com/codes/guoqing/?from=singlemessage&isappinstalled=0 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>国庆翘班十法</title>
+<link rel="stylesheet" href="http://www.chengxufan.com/codes/guoqing/main.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<meta name="MobileOptimized" content="320">
+
+
+</head>
+<body cz-shortcut-listen="true">
+	<div class="arrow arrow-animation"> <img src="./国庆翘班十法_files/arrow.png" width="50" height="50"></div>
+	<div class="frame" style="background-image: url(http://www.chengxufan.com/codes/guoqing/frame/0.jpg);">
+		<div class="title title-animation" style="background: rgb(220, 195, 155);">教您国庆翘班</div>
+		<div class="note note-animation" style="background: rgb(220, 195, 155);">讲述国庆翘班的十大方法</div>
+	</div>
+
+	<script type="text/javascript" src="./国庆翘班十法_files/jquery-2.1.1.min.js"></script>
+	<script>
+	$(function(){
+		var index = 0;
+		var frameData = [
+			{title:"教您国庆翘班", note:"讲述国庆翘班的十大方法", img:"frame/0.jpg", bg:"#dcc39b"},
+{title:"被迫搬家", note:"老板，房东和我闹翻了，今天不搬就没地方住啦。", img:"frame/1.jpg", bg:"#dcc39b"},
+			{title:"身体不爽",  note:"领导好，我今天有点不舒服，我去趟医院...估计要排一天队。",  img:"frame/5.jpg", bg:"#fff"},
+			{title:"出车祸了", note:"老大，我车被人撞了，那傻X，#TMD!，躺医院里了我得去啊。",  img:"frame/2.jpg", bg:"white"},
+			{title:"宝宝发烧",  note:"哎，没辙，小孩一年四季的病啊，做父母的看着心疼啊。",  img:"frame/3.jpg", bg:"white"},
+			{title:"悲痛欲绝",  note:"三姑姑的姨奶奶...，从小对我特别好，地方有点远，我刚买好火车票，领导您节哀，我走了。",  img:"frame/4.jpg", bg:"#cbcac8"},
+			
+			{title:"家有急事",  note:"家有事，今天不去公司了，您有事打我电话吧。呼呼~~",  img:"frame/6.jpg", bg:"#fff"},
+			{title:"参加婚礼",  note:"亲戚多真麻烦，您说份子钱给多少合适？我得去啊。",  img:"frame/7.jpg", bg:"#fff"},
+			{title:"我是被告",  note:"遇上点麻烦事，必须去趟法院，不去就算输。",  img:"frame/8.jpg", bg:"#c2c1f2"},
+			{title:"我去开会",  note:"有个会，要去参加，我多带点名片去。",  img:"frame/9.jpg", bg:"#c2c1f2"},
+			{title:"补办身份证",  note:"身份证丢了，后天出差买机票，我今天要去趟警察局，我要回不来您就安排“王思聪”去吧。",  img:"frame/10.jpg", bg:"#c2c1f2"},			
+			{title:"chengxufan.com", note:"程序范儿出品", img:"frame/0.png", bg:"#fff"},
+		];
+
+
+
+		showFrame(index);
+		
+		function showFrame(id) {
+			$('.frame').css('backgroundImage', "url("+frameData[id].img+")");
+			$('.title').html(frameData[id].title);
+			$('.title').css('background', frameData[id].bg);
+			//$('.title').toggleClass('');
+
+			var elm = $('.title');
+			var newone = elm.clone(true);
+        	elm.before(newone);
+        	$(".title:last").remove();
+
+			$('.note').html(frameData[id].note);
+			//$('.note').toggleClass('');
+			$('.note').css('background', frameData[id].bg);
+
+			elm = $('.note');
+			newone = elm.clone(true);
+			elm.before(newone);
+        	$(".note:last").remove();
+
+			
+        	if(id == frameData.length - 1) {
+        		$('.arrow').remove();	
+        	} else {
+        		elm = $('.arrow');
+				newone = elm.clone(true);
+				elm.before(newone);
+	        	$(".arrow:last").remove();	        		
+        	}
+		}
+
+		$('.arrow').click(function(){
+			console.debug(index);
+			index = (index + 1) % frameData.length;
+			showFrame(index);
+		});  
+
+
+	});
+	</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2c060e19e0bc9bf110dbacde6e6f6a77' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./国庆翘班十法_files/h.js" type="text/javascript"></script>
+
+
+<div id="window-resizer-tooltip"><a href="http://www.chengxufan.com/codes/guoqing/?from=singlemessage&isappinstalled=0#" title="Edit settings"></a><span class="tooltipTitle">Window size: </span><span class="tooltipWidth" id="winWidth"></span> x <span class="tooltipHeight" id="winHeight"></span><br><span class="tooltipTitle">Viewport size: </span><span class="tooltipWidth" id="vpWidth"></span> x <span class="tooltipHeight" id="vpHeight"></span></div></body></html>

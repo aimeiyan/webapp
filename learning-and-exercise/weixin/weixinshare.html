@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            line-height: 1.5;
+        }
+
+        .pageOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1999;
+            width: 100%;
+            height: 120%;
+            background: #000;
+            opacity: 0.8;
+            display: none;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .pageOverlay img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .share-btn {
+            text-align: center;
+        }
+
+        .share-btn a {
+            display: block;
+            margin: 10px 0;
+            padding: 10px 0;
+            background: green;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        .text {
+            padding: 10px 20px;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+<div class="text">
+    <p>
+        Xcode前身是继承自NeXT的Project Builder。
+        The Xcode suite 包含有GNU Compiler Collection自由软件 （GCC、 apple-darwin9-gcc-4.0.1 以及 apple-darwin9-gcc-4.2.1,
+        默认的是第一个），并支持
+        C语言、C++、Fortran、Objective-C、Objective-C++、Java、AppleScript、Python以及Ruby，还提供Cocoa、Carbon以及Java等编程模式。协力厂商更提供了 GNU
+        Pascal，Free Pascal, Ada, C#, Perl, Haskell 和 D语言。Xcode套件使用 GDB作为其后台调试工具。
+        从Xcode 3.1开始，Xcode也可被用为iPhone OS的开发环境。
+        Xcode 4.0于2011年3月9日正式发行。该版本非Apple开发者注册会员亦能从Mac App Store中付费下载, 收取US$4.99的费用。
+        从Xcode 4.1开始，针对OS X 10.6及OS X 10.7用户从Mac App Store免费下载
+        Xcode主要版本是Xcode 5，支持iOS7，可以在Mac App Store免费下载，亦可在iOS开发者计划网站下载。
+        Xcode最新版本是Xcode 6[1] ，整合了苹果在WWDC大会上发布的新语言Swift。
+        不管你用C、C++、 Objective-C 或Java编写程序，在 AppleScript 里编写脚本，还是试图从另一个奇妙的工具中转移编码，你会发现 Xcode 编译速度极快。每次操作都很快速和轻松。
+    </p>
+
+    <p>
+        Xcode前身是继承自NeXT的Project Builder。
+        The Xcode suite 包含有GNU Compiler Collection自由软件 （GCC、 apple-darwin9-gcc-4.0.1 以及 apple-darwin9-gcc-4.2.1,
+        默认的是第一个），并支持
+        C语言、C++、Fortran、Objective-C、Objective-C++、Java、AppleScript、Python以及Ruby，还提供Cocoa、Carbon以及Java等编程模式。协力厂商更提供了 GNU
+        Pascal，Free Pascal, Ada, C#, Perl, Haskell 和 D语言。Xcode套件使用 GDB作为其后台调试工具。
+        从Xcode 3.1开始，Xcode也可被用为iPhone OS的开发环境。
+        Xcode 4.0于2011年3月9日正式发行。该版本非Apple开发者注册会员亦能从Mac App Store中付费下载, 收取US$4.99的费用。
+        从Xcode 4.1开始，针对OS X 10.6及OS X 10.7用户从Mac App Store免费下载
+        Xcode主要版本是Xcode 5，支持iOS7，可以在Mac App Store免费下载，亦可在iOS开发者计划网站下载。
+        Xcode最新版本是Xcode 6[1] ，整合了苹果在WWDC大会上发布的新语言Swift。
+        不管你用C、C++、 Objective-C 或Java编写程序，在 AppleScript 里编写脚本，还是试图从另一个奇妙的工具中转移编码，你会发现 Xcode 编译速度极快。每次操作都很快速和轻松。
+    </p>
+
+    <p class="share-btn"><a>分享朋友圈</a></p>
+</div>
+<div class="pageOverlay">
+    <img src="images/share-pic.png">
+</div>
+
+<script src="js/zepto-master/src/zepto.js"></script>
+<script src="js/zepto-master/src/event.js"></script>
+<script src="js/zepto-master/src/touch.js"></script>
+<script>
+    $(".share-btn a").on('tap', function () {
+        $(".pageOverlay").toggleClass('show');
+    });
+
+    $(".pageOverlay").tap(function () {
+        $(this).toggleClass('show');
+    });
+</script>
+</body>
+</html>

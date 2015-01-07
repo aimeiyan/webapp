@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            padding:20px 10px;
+        }
+
+        form {
+            border: 1px solid #8d9394;
+            display: -webkit-box;
+        }
+
+        form input {
+            display: inline-block;
+            -webkit-box-flex: 1;
+        }
+
+        button {
+            width: 80px;
+            border-radius: 0;
+        }
+
+        /*display:box 和 box-flex*/
+        .grid {
+            display: box;
+            display: -webkit-box;
+            display: -ms-box;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+        }
+
+        .column {
+            padding: 20px;
+        }
+
+        .fluid { -webkit-box-flex: 1;
+            -moz-box-flex:  1;
+            -webkit-flex:  1;
+            -ms-flex:  1;
+            flex:  1;
+            box-flex: 1;
+            -webkit-box-flex: 1;
+            -ms-box-flex: 1;
+            background: #ccc;
+        }
+
+        .fixed {
+            box-flex: 1;
+            -webkit-box-flex: 1;
+            -webkit-box-flex: 1;
+            -moz-box-flex:  1;
+            -webkit-flex:  1;
+            -ms-flex:  1;
+            flex:  1;
+            background: red;
+        }
+
+    </style>
+</head>
+<body>
+<form method="post" action="/abc/sd" autocomplete="off">
+    <input>
+    <button>百度一下</button>
+</form>
+<br>
+<br>
+<br>
+
+<div class="grid">
+    <section class="column fluid">
+        <h2>Fluid</h2>
+
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum
+            tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas
+            semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+    </section>
+
+    <section class="column fixed">
+        <h2>Fixed</h2>
+
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum
+            tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas
+            semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+    </section>
+
+    <section class="column fluid">
+        <h2>Fluid</h2>
+
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum
+            tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas
+            semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+    </section>
+</div>
+</body>
+</html>

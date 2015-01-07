@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)http://m.ayibang.com/ani/?f=app -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>了解阿姨帮</title>
+<meta name="description" content="最好用的小时工APP，专业、便捷、安全">
+<meta name="r-wx-img" content="http://m.ayibang.com/ani/images/logo.png">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!--
+<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-store, must-revalidate">
+<META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+<META HTTP-EQUIV="expires" CONTENT="0">
+-->
+<link rel="stylesheet" type="text/css" href="./了解阿姨帮_files/style.css">
+
+</head>
+<body cz-shortcut-listen="true" style="">
+<!-- 微信分享信息 --><input id="r-wx-title" type="hidden" value="阿姨帮—家庭生活必备APP">
+<!-- 微信分享信息 --><input id="r-wx-img" type="hidden" value="http://m.ayibang.com/ani/images/logo.png">
+<!-- 微信分享信息 --><input id="r-wx-con" type="hidden" value="最好用的小时工APP，专业、便捷、安全">
+
+<div class="wrap" id="wrap" style="height: 768px;">
+	<ul style="margin-top: -768px;" class="ani">
+    	<li class="s1"></li>
+        <li class="s2 ani">
+            <span class="yigui" style="visibility: visible;"></span>
+            <span class="ligter" style="visibility: visible;"></span>
+            <span class="safa" style="visibility: visible;">
+                <span class="yellow-zt icon"></span>
+                <span class="blue-zt icon"></span>
+            </span>
+            <span class="flower" style="visibility: visible;"></span>
+            <span class="cloth" style="visibility: visible;"></span>
+            <span class="wash" style="visibility: visible;"></span>
+            <span class="kongtiao" style="visibility: visible;"></span>
+            <span class="bing" style="visibility: visible;"></span>
+            <span class="star st1" style="visibility: visible;"></span>
+            <span class="star st2" style="visibility: visible;"></span>
+            <span class="star st3" style="visibility: visible;"></span>
+            <span class="star st4" style="visibility: visible;"></span>
+            <div class="bottom" style="visibility: visible;">
+                <div><span class="tit icon"></span></div>
+                <div>保洁服务 洗护服务 家居保养 家电清洗</div>
+                <div><span class="tipup icon"></span></div>
+            </div>
+        </li>
+        <li class="s3"></li>
+        <li class="s4"></li>
+        <li class="s5"></li>
+    </ul>
+</div>
+<div class="shareCover">
+	<img src="images/share-guideddd-weixin.png" id="shareImg">
+</div>
+<a class="ipdwon downurl" href="http://www.ayibang.com/client/?f=wap" style="display: none;"></a>
+<!--<a class="sharebtn1 sharebtn" href="javascript:;"></a>-->
+
+
+<script src="./了解阿姨帮_files/zepto.js"></script>
+<script src="./了解阿姨帮_files/weixin.js"></script>
+<script>
+$(function(){
+
+	var ua = navigator.userAgent,
+		isWx = ua.indexOf("MicroMessenger")>=0,
+		isAyb = location.href.split("?")[1] == "f=app",
+		isAdr = ua.indexOf("Android")>=0,
+		isIph = ua.indexOf("iPhone")>=0;
+
+
+
+	var alw = 70,
+		cuurmtop = 0,
+		tStart = 0,
+		tEnd = 0,
+		start2end = 0,
+		currScreen = 1,
+		currHeight = $(window).height();
+
+	var downurl = "http://www.ayibang.com/client/?f=wap",
+		downbtn = "<div><a href=\""+downurl+"\" class=\"downbig downurl\"><i class=\"icon\"></i><span>立即下载</span></a></div>";
+
+	if(isWx){
+		isAyb = false;
+		downurl = "http://a.app.qq.com/o/simple.jsp?pkgname=com.ayibang.ayb";
+		$(".downurl").attr("href","http://a.app.qq.com/o/simple.jsp?pkgname=com.ayibang.ayb");
+	}else{
+		$("#shareImg").attr("src","images/share-guideddd-toutiao.png");
+	}
+
+	if(isAyb){
+		$("#shareImg").attr("src","images/share-guideddd-weixin.png");
+		document.title = "了解阿姨帮";
+		downbtn = "";
+		$(".topbar").remove();
+	}
+
+
+	var sections = new Array();
+	sections[0] = "<span class=\"logo\"></span><span class=\"mobi\"></span><span class=\"pad\"></span><span class=\"light\"></span><div class=\"bottom\"><div>家庭生活必备手机APP<br>让家干净整洁，从这里开始</div>"+downbtn+"<div><span class=\"tipup icon\"></span></div></div>"
+	sections[1] = "<span class=\"yigui\"></span><span class=\"ligter\"></span><span class=\"safa\"><span class=\"yellow-zt icon\"></span><span class=\"blue-zt icon\"></span></span><span class=\"flower\"></span><span class=\"cloth\"></span><span class=\"wash\"></span><span class=\"kongtiao\"></span><span class=\"bing\"></span><span class=\"star st1\"></span><span class=\"star st2\"></span><span class=\"star st3\"></span><span class=\"star st4\"></span><div class=\"bottom\"><div><span class=\"tit icon\"></span></div><div>保洁服务 洗护服务 家居保养 家电清洗</div><div><span class=\"tipup icon\"></span></div></div>"
+	sections[2] = "<span class=\"cloud1\"></span><span class=\"cloud2\"></span><span class=\"cloud3\"></span><span class=\"sc\"></span><span class=\"appui\"></span><span class=\"sbmbtn\"></span><span class=\"xuxian\"></span><span class=\"rocket\"></span><div class=\"bottom\"><div><span class=\"tit icon\"></span></div><div>App一键预约 智能匹配 在线支付</div><div><span class=\"tipup icon\"></span></div></div>"
+	sections[3] = "<div class=\"lbgw\"><div class=\"lbg\"></div></div><span class=\"ayi\"></span><span class=\"renzheng\"></span><span class=\"kaohe\"></span><span class=\"luqu\"></span><span class=\"beijing\"></span><div class=\"bottom\"><div><span class=\"tit icon\"></span></div><div><span class=\"tipup icon\"></span></div></div>"
+	sections[4] = "<span class=\"circle c1\"></span><span class=\"circle c2\"></span><span class=\"circle c3\"></span><span class=\"ping\"></span><div class=\"ayi\"><span class=\"shawdow\"></span><span class=\"lleg icon\"></span><span class=\"rleg icon\"></span><span class=\"body icon\"></span></div><div class=\"bottom\"><div><span class=\"tit icon\"></span></div><div>统一的价格 、服务内容、制服和装备</div></div>"//<div><a href=\"javascript:;\" class=\"sharebtn\"><i class=\"icon\"></i>立即分享</a></div>
+
+
+	var playAni = function(){
+		if(currScreen==1){
+			$(".topbar").addClass("hide");
+			$(".ipdwon").css("display","block");
+		}else{
+			$(".topbar").removeClass("hide");
+			$(".ipdwon").css("display","none");
+		}
+        /*
+		if(currScreen==5){
+			$(".sharebtn1").css("display","block");
+		}else{
+			$(".sharebtn1").css("display","none");
+		}
+		*/
+		$("#wrap ul li").removeClass("ani").children().css("visibility","hidden").remove();
+		var currli = $("#wrap ul li").eq(currScreen-1);
+		var addAni = setTimeout(function(){
+			currli.addClass("ani");
+			clearTimeout(addAni);
+			var addNode = setTimeout(function(){
+				if(currli.html()==""){
+					$(sections[currScreen-1]).appendTo(currli).css("visibility","visible");
+				}
+				clearTimeout(addNode);
+			},100);
+		},200);
+	};
+
+	var slide = function(){
+		$("#wrap ul").css({"margin-top":-currHeight*(currScreen-1)});
+		var callback = arguments[0];
+		if($.isFunction(callback)) setTimeout(callback,500);
+	};
+
+	$("#wrap").on("touchstart",function(e){
+		e.preventDefault();
+		tStart = e.targetTouches[0].clientY;
+	}).on("touchmove",function(e){
+		tEnd = e.targetTouches[0].clientY;
+		start2end = tEnd - tStart;
+		if((currScreen==1 && start2end>=0) || (currScreen==5 && start2end<=0)) return;
+		$("#wrap ul").removeClass("ani").css({"margin-top":Number(cuurmtop)+start2end});
+	}).on("touchend",function(e){
+		if(start2end){
+			$("#wrap ul").addClass("ani");
+			var isChange = true;
+			if(start2end+alw<0){
+				isChange = currScreen++>=5;
+				currScreen = isChange ? currScreen-1:currScreen;
+			}
+			if(start2end-alw>0){
+				isChange = currScreen--<=1;
+				currScreen = isChange ? currScreen+1:currScreen;
+			}
+			slide(!isChange?playAni:undefined);
+			cuurmtop = -currHeight*(currScreen-1);
+			tStart = tEnd =	start2end = 0;
+		}
+	});
+
+	var init = function(){
+		$("#wrap ul li").each(function(index) {
+            if(!$(this).hasClass("s"+(index+1))){
+				$(this).addClass("s"+(index+1))
+			}
+        });
+		currHeight = $(window).height();
+		$("#wrap").height(currHeight);
+		slide(playAni);
+	};
+
+
+	var docSt = setInterval(function(){
+		if(document.readyState=="complete"){
+			clearInterval(docSt);
+			$(window).resize(init).triggerHandler("resize");
+		}
+	},10);
+
+
+
+	$(".shareCover").live("click",function(){
+		$(".shareCover").css("display","none");
+	});
+	$(".sharebtn").live("click",function(ev){
+		ev.stopPropagation();
+		$(".shareCover").css("display","block");
+	});
+
+	// 微信分享
+	if(isWx){
+		var option_wx = {};
+
+		if($('#r-wx-title').val()!='') option_wx.title = $('#r-wx-title').val();
+		if($('#r-wx-img').val()!='') option_wx.img = $('#r-wx-img').val();
+		if($('#r-wx-con').val()!='') option_wx.con = $('#r-wx-con').val();
+
+		$(document.body).wx(option_wx);
+	}
+
+	if(isIph){
+		setTimeout(function(){
+			$(".wrap ul").height("500%");
+		},200);
+	}
+})
+</script>

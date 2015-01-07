@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    .imgoverlay{
+        position: fixed;
+        width: 100%;
+        height: 120%;
+        left: 0;
+        top: 0;
+        opacity: 0.8;
+        display: none;
+    }
+
+    .imgoverlay img{
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .share a{
+        padding: 10px 20px;
+        background-color: green;
+    }
+
+    .show{
+      display: block;
+    }
+</style>
+</head>
+<body>
+<section>
+    <p>通过执行css选择器,包装dom节点,或者通过一个html字符串创建多个元素 来创建一个Zepto集合对象。 Zepto集合是一个类似数组的对象,它具有链式方法来操作它指向的DOM...</p>
+    <p>通过执行css选择器,包装dom节点,或者通过一个html字符串创建多个元素 来创建一个Zepto集合对象。 Zepto集合是一个类似数组的对象,它具有链式方法来操作它指向的DOM...</p>
+    <p>通过执行css选择器,包装dom节点,或者通过一个html字符串创建多个元素 来创建一个Zepto集合对象。 Zepto集合是一个类似数组的对象,它具有链式方法来操作它指向的DOM...</p>
+    <p>通过执行css选择器,包装dom节点,或者通过一个html字符串创建多个元素 来创建一个Zepto集合对象。 Zepto集合是一个类似数组的对象,它具有链式方法来操作它指向的DOM...</p>
+    <p>通过执行css选择器,包装dom节点,或者通过一个html字符串创建多个元素 来创建一个Zepto集合对象。 Zepto集合是一个类似数组的对象,它具有链式方法来操作它指向的DOM...</p>
+
+    <p>通过执行css选择器,包装dom节点,或者通过一个html字符串创建多个元素 来创建一个Zepto集合对象。 Zepto集合是一个类似数组的对象,它具有链式方法来操作它指向的DOM...</p>
+
+    <p>通过执行css选择器,包装dom节点,或者通过一个html字符串创建多个元素 来创建一个Zepto集合对象。 Zepto集合是一个类似数组的对象,它具有链式方法来操作它指向的DOM...</p>
+</section>
+<section class="share">
+    <a>分享朋友圈</a>
+</section>
+<div class="imgoverlay">
+    <img src="images/640.jpeg">
+</div>
+<script src="js/zepto.min.js"></script>
+<script>
+        $(".share a").tap(function(){
+            $('.imgoverlay').toggleClass('show');
+        });
+//        $('.tap').tap(function() {
+//            $(this).text('Tap ' + (++taps));
+//        });
+        $('.imgoverlay').tap(function(){
+            $(this).toggleClass('show');
+        })
+</script>
+</body>
+</html>

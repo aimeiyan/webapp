@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <style type="text/css">
+        .baiduapp-icon {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #999;
+            position: relative;
+        }
+
+        .baiduapp-icon:before {
+            content: '';
+            position: absolute;
+            border: 5px solid transparent;
+            border-top-color: #0000ff;
+            right: 10px;
+            top: 20px;
+        }
+
+        .baiduapp-icon:after {
+            content: '';
+            height: 20px;
+            width: 15px;
+            display: inline-block;
+            margin-top: 10px;
+            background: url("images/callicon.png") no-repeat top left;
+            background-size: 38px;
+        }
+
+        a.content:after {
+            content: attr(href);
+        }
+
+        a.content:before {
+            content: '\003E';
+            float: right;
+            position: relative;
+            top: 9px;
+            font: 15px/1 icons !important;
+            color: #bd2722;
+            font-size: 50px;
+        }
+
+        a.content {
+            text-decoration: none;
+        }
+
+        a[href$='.pdf']:after {
+            content: url("images/icon_pdf.png");
+        }
+
+        a[rel='external']:after {
+            content: url("images/icon_link.png");
+        }
+
+        p.ellipsis {
+            width: 400px;
+            height: 50px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            border: 1px solid #555;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+<p>&#10097;</p>
+
+<div class="baiduapp-icon"></div>
+<p><a class="content" href="http://www.zhangxinxu.com/">此标签的href值是：</a></p>
+
+<p>您可以查看此PDF文件：<a href="/sample.pdf">web站点的性能优化.pdf</a>，或是在线查看，<a href="http://www.zhangxinxu.com/wordpress/"
+                                                                  rel="external">点击这里</a>。</p>
+
+<p class="ellipsis">
+    您可以查看此PDF文件您可以查看此PDF文件,您可以查看此PDF文件您可以查看此,您可以查看此PDF文件您可以查看此,您可以查看此PDF文件您可以查看此PDF文件您可以查看此PDF文件,您可以查看此PDF文件您可以查看此PDF文件您可以查看此PDF文件,您可以查看此PDF文件您可以查看此PDF文件 </p>
+</body>
+</html>

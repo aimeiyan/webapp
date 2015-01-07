@@ -1,0 +1,236 @@
+html, body, p, ul, h1, h2, h3, hr {
+    padding: 0;
+    margin: 0
+}
+
+ul, li {
+    list-style: none
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden
+}
+
+body {
+    position: relative;
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+    background: #f8f8f8
+}
+
+.clearfix {
+    zoom: 1
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden
+}
+
+.none {
+    display: none
+}
+
+.isHidden {
+    display: none
+}
+
+.wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-family: "黑体";
+    font-size: 12px;
+    overflow: hidden
+}
+
+a {
+    text-decoration: none
+}
+
+img {
+    width: 100%;
+    display: block
+}
+
+.box-search {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 99999;
+    padding: 8px 0;
+    background: #fff url(http://gtms04.alicdn.com/tps/i4/T1zrskFSlcXXbReZ6r-1-2.png) repeat-x 0 bottom;
+    background-size: 1px 1px;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d
+}
+
+.box-search .search-form {
+    position: relative;
+    width: 95%;
+    margin: 0 auto
+}
+
+.box-search .search-form input {
+    display: block;
+    width: 100%;
+    padding: 7px 0;
+    font-family: "黑体";
+    font-size: 16px;
+    text-align: center;
+    color: #999;
+    background: #eee;
+    border: 0;
+    border-radius: 6px;
+    outline: 0
+}
+
+.box-search .search-form .search-tip {
+    display: n;
+    position: absolute;
+    left: 50%;
+    top: 7px;
+    padding-left: 18px;
+    margin-left: -98px;
+    font-weight: 400;
+    font-family: "黑体";
+    font-size: 16px;
+    color: #999;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkJFRkQ3QTZGRDhEQTExRTM5QjA3RkM5RDJBRUNGMDAxIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkJFRkQ3QTcwRDhEQTExRTM5QjA3RkM5RDJBRUNGMDAxIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QkVGRDdBNkREOERBMTFFMzlCMDdGQzlEMkFFQ0YwMDEiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QkVGRDdBNkVEOERBMTFFMzlCMDdGQzlEMkFFQ0YwMDEiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7BkO3UAAACZUlEQVR42ryWv2tTURTHX4OD1q1O/QM0tVUKOohSDS6KWFDq4KCDEIx2EHRVO1ldtTi0SRGFrrZWKgUd6o8WwcHaYqup7t0EHRQdJH4OfC9c4nsvL8lLDnzg5SX3fO855+bc01EsFoMatgtOwzHohR16/w0+wQuYLRQKX4I6rCNGOAe34HBCX4swwgZeNyq8Fe5Bwb6Hr3I6C+8VaaDI9ysbtrmdUIESXGUDv+OEM1Wfu2ABLkl0ArKQhznYhD/CnucQyOs3E1pjaxdKpVJXUuFOmIeDsAJ7YFhRxBriFRjWmhX5mEe8M4nwGByAZTgJ60Gdhvi61i7L11gt4ZzSaXZOaWzIEN+UD7M8UefihEe9mpaDJg3xslfz0SjhfhiAj6ppKqaam88Bou4PEx7S85sgfXM+h8KEXYOYaYGw83kkTLhHz+UWCDuf2TBhv/embX6Xi+1cbbNM3K5SsMhsZrw69LRA2NV2I0x4MerIp2BnvCvzP+HII5+COZ/TYcKrsAR7YTwtRbrVuHwu0cVWo071TV1/lzXeNCvaK1/mcyTukrBxZVLPU9DdhGi3fJhNEu2rWvfxNXgH++AZ9DUg2qe15uMnPEgyCPzSJe7E1+qpuWq6prXfYTs85/3RpMPeNrjrDXsb+js8jRj2TumiyXrDntX1oQKx+ew8KX9cz3h7Bw4lDPot3HA1JdItOjcX4K+Vku/uJxEOvI5mUR2H3VVt8LOl07KhqaM6/W4Cua5XtzV7V5II15o0ktT/imZ1O1OP4GJbbiel+Kzqbal/0rZrUYfrBPyAwbbex4i/VP/+8E+AAQBKzLpmQmuptAAAAABJRU5ErkJggg==) 0 50% no-repeat;
+    background-size: 15px 15px
+}
+
+.box-category {
+    display: -webkit-box;
+    box-sizing: border-box;
+    padding-top: 49px;
+    width: 100%;
+    height: 100%;
+    background: #f8f8f8
+}
+
+.category-left {
+    width: 24.6%;
+    box-sizing: border-box
+}
+
+.category-right {
+    width: 75.4%;
+    box-sizing: border-box;
+    padding: 0 2% 0 2.44%;
+    border-left: 1px solid #ddd;
+    background: #fff
+}
+
+.cate-list li {
+    position: relative;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    border-bottom: 1px solid #ddd
+}
+
+.cate-list li a {
+    position: absolute;
+    width: 100%;
+    display: block;
+    color: #333;
+    font-size: 14px;
+    border-left: 3px solid rgba(0, 0, 0, 0)
+}
+
+.cate-list li a.cur {
+    border-left: 3px solid #ff5000;
+    color: #ff5000;
+    background: #fff;
+    padding-right: 1px
+}
+
+.cate-conts .title {
+    color: #999;
+    font-size: 12px
+}
+
+.cate-conts img {
+    background: #f8f8f8
+}
+
+.cate-conts .cate-item {
+    width: 100%
+}
+
+.cate-conts .cate-item .title {
+    font-size: 10px;
+    color: #999;
+    padding-top: 10px
+}
+
+.cate-conts .cate-item .cate-item-banner .banner-ul {
+    display: -webkit-box;
+    -webkit-box-pack: justify
+}
+
+.cate-conts .cate-item .cate-item-banner .banner-ul li {
+    width: 100%;
+    height: 100%;
+    min-height: 70px;
+    margin-top: 9px;
+    overflow: hidden;
+    background: url(http://gtms04.alicdn.com/tps/i4/TB1SjzQFFXXXXclXpXXpRgFJXXX-84-76.png) center no-repeat
+}
+
+.cate-conts .cate-item .cate-item-banner .banner-ul li a {
+    display: block
+}
+
+.cate-conts .cate-item .cate-item-sec {
+    padding-top: 1px
+}
+
+.cate-conts .cate-item .item-list-ul {
+    display: -webkit-box;
+    -webkit-box-align: center;
+    margin-top: 8px
+}
+
+.cate-conts .cate-item .item-list-ul li {
+    width: 31%;
+    margin-right: 8px;
+    overflow: hidden;
+    background: #f8f8f8
+}
+
+.cate-conts .cate-item .item-list-ul li:nth-child(3n) {
+    margin-right: 0
+}
+
+.cate-conts .cate-item .item-list-ul li a {
+    display: block
+}
+
+.cate-conts .cate-item .item-list-ul .name {
+    text-align: center;
+    font-size: 11px;
+    color: #666;
+    padding: 5px 0
+}
+
+.cate-conts .cate-item .cate-item-sec-brand li {
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center
+}
+
+.cate-conts .cate-item .cate-item-sec-brand a {
+    width: 80%
+}
+
+.cate-conts .cate-item .cate-recommended li .pic {
+    min-height: 70px
+}

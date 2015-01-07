@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>zepto example</title>
+    <script src="//cdn.jsdelivr.net/zepto/1.0rc1/zepto.min.js"></script>
+</head>
+<body>
+<div id="results"></div>
+<button id="btn">Get Names</button>
+<script>
+//    $(function () {
+        $(document).on('click', '#btn',function (event) {
+            $('#results').empty();
+            $.getJSON('http://www.filltext.com/?rows=5&fname={firstName}&callback=?',
+                    function (data) {
+                        $.each(data, function (index,item) {
+                            $('#results').append(item.fname + '<hr />')
+                        });
+                    });
+
+        });
+//    });
+</script>
+</body>
+</html>
