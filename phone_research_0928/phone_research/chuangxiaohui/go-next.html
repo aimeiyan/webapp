@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="format-detection" content="address=no;">
+    <meta name="MobileOptimized" content="320">
+    <style>
+        body {
+            position: relative;
+        }
+
+        .goNext {
+            position: absolute;
+            width: 15px;
+            height: 25px;
+            background: url("images/goNext.png") no-repeat;
+            background-size: 100%;
+            /*bottom: 10px;*/
+            z-index: 100005;
+            left: 0;
+            right: 0;
+            margin: auto;
+            /*display: none;*/
+        }
+    </style>
+</head>
+<body>
+<div class="goNext"></div>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/idangerous.swiper-2.6.1.min.js"></script>
+<script src="js/jquery.transit.js"></script>
+<script src="js/swiper.js"></script>
+<script>
+    function goNext() {
+        $(".goNext").css({x: -15, opacity: 0}).transition({x: 0, opacity: 1, complete: function () {
+            $(".goNext").transition({x: 15, opacity: 0, complete: function () {
+                setTimeout(goNext, 500)
+            }}, 600);
+        }}, 600)
+    }
+    showNext();
+    goNext();
+
+    function showNext() {
+        $(".goNext").show();
+    }
+    function hideNext() {
+        $(".goNext").hide();
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>撮合经济新玩法</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="format-detection" content="address=no;">
+    <meta name="MobileOptimized" content="320">
+    <style>
+        /*-----------------------------全局样式-------------------------------------*/
+        div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, span, a, input, textarea, p, blockquote, th, td, header, nav, footer, article, section, aside, time, figure {
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-size: 14px;
+            font-weight: normal
+        }
+
+        ul {
+            list-style: none
+        }
+
+        legend {
+            display: none
+        }
+
+        fieldset, img {
+            border: none;
+            vertical-align: middle
+        }
+
+        em, cite, i {
+            font-style: normal
+        }
+
+        input, button, textarea {
+            outline: none;
+            border: 0;
+            vertical-align: middle;
+            border: 0;
+            font-family: Microsoft YaHei
+        }
+
+        input[type="submit"], input[type="reset"], input[type="button"], button {
+            -webkit-appearance: none;
+            border-radius: 0
+        }
+
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none
+        }
+
+        textarea {
+            resize: none
+        }
+
+        html {
+            height: 100%;
+            -webkit-text-size-adjust: none;
+            overflow: hidden
+        }
+
+        body {
+            font: 12px/18px Microsoft YaHei;
+            position: relative;
+            margin: 0 auto;
+            color: #000;
+            min-width: 320px;
+            word-break: break-all;
+            height: 100%;
+            overflow: hidden;
+            max-width: 640px;
+            /*background: #ffff00;*/
+        }
+
+        body a {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer
+        }
+
+        body a:hover, body a:active, body a:focus {
+            text-decoration: none;
+            outline: none
+        }
+
+        /*-----------------------------动画-------------------------------------*/
+        .swiper-container {
+            position: absolute;
+            /*background: dodgerblue;*/
+            width: 100%;
+            height: 100%;
+            max-width: 640px;
+            left: 0;
+            right: 0;
+        }
+
+        .swiper-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .swiper-slide {
+            position: relative;
+            float: left;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /*-----------------------------第一屏-------------------------------------*/
+        .page1 {
+            background: #ce30ff;
+        }
+
+        /*-----------------------------第二屏-------------------------------------*/
+        .page2 {
+            background: #c4553c
+        }
+
+        /*-----------------------------第三屏-------------------------------------*/
+        .page3 {
+            background: #4b348c
+        }
+
+        /*-----------------------------第四屏-------------------------------------*/
+        .page4 {
+            background: #65828c
+        }
+
+        /*-----------------------------第五屏-------------------------------------*/
+        .page5 {
+            background: #806f66
+        }
+
+        /*-----------------------------第六屏-------------------------------------*/
+        .page6 {
+            background: #a6d6ca
+        }
+
+        /*-----------------------------第七屏-------------------------------------*/
+        .page7 {
+            background: #e2a469
+        }
+    </style>
+</head>
+<body>
+<!--分屏动画start -->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide page1" id="page1">
+        </div>
+        <div class="swiper-slide page2" id="page2">
+        </div>
+        <div class="swiper-slide page3" id="page3">
+        </div>
+        <div class="swiper-slide page4" id="page4">
+        </div>
+        <div class="swiper-slide page5" id="page5">
+        </div>
+        <div class="swiper-slide page6" id="page6">
+        </div>
+        <div class="swiper-slide page7" id="page7">
+        </div>
+    </div>
+</div>
+<!--分屏动画end -->
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/idangerous.swiper-2.6.1.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var mySwiper = new Swiper(".swiper-container", {
+            speed: 500
+//            autoplay:2000,
+//            loop:true,
+//            resistance:true,
+//            freeMode : true,
+//            freeModeFluid : true //开启'fluid'自由模式
+        })
+    })
+</script>
+
+</body>
+</html>

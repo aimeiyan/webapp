@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="http://static.udache.com/gulfstream/webapp/pages/activity/christmas/css/base.css?v=1.22">
+    <title>滴滴专车送圣诞红包啦，速抢！</title>
+</head>
+
+<body>
+
+<!--loading浮层-->
+<div class="loading-box hide">
+    <div class="loading-bg">
+        <div class="loading-bg-img">
+            <img src="" class="loading-bg hide" >
+            <img src="" class="loading" >
+            <img src="" class="text hide" >
+            <span class="text">一大波红包正在袭来…</span>
+        </div>
+
+        <div class="progress active ">
+            <div class="progress-bar"></div>
+        </div>
+
+    </div>
+</div>
+
+
+<!--分享引导浮层-->
+<div class="didi-cover hide" id="dv-cover">
+    <p class="p-arrow"><img src="http://static.udache.com/gulfstream/webapp/pages/activity/thanksgiving/image/share-arrow.png" alt="">
+    </p>
+    <p class="share-tip">点[发送给朋友]<br />分享「圣诞」红包</p>
+    <p></p>
+    <img src="http://static.udache.com/gulfstream/webapp/pages/activity/thanksgiving/image/share-btn.png" id="btn-hide-cover">
+</div>
+
+<div class="container">
+    <div class="container-content">
+
+
+        <div class="voucher-box main clearfix">
+            <div class="head-img-box">
+                <img class="head-img top-img" src="" alt="">
+            </div>
+            <div class="tips">
+                <div class="tips-content"></div>
+            </div>
+        </div>
+
+        <div class="voucher-content-bg">
+            <!--输入手机号码-->
+            <div class="voucher-content input-phone hide">
+                <form action="/share/shareCoupon" method="get" id="fetche-voucher-form">
+                    <div class="amount hide red-font msg_1"><!--42元--></div>
+                    <div class="text">输入手机号,专车券放入滴滴账户</div>
+                    <input type="tel" maxlength="11" id="user-phone" name="phone" autocomplete="off" placeholder="请输入您的手机号" >
+                    <button type="submit" id="submit" disabled >打开红包</button>
+                    <div class="text msg_2 hide"><!--红包可用于支付嘀嘀打车车费--></div>
+                </form>
+            </div>
+
+            <!--成功领取.已领过.使用-->
+            <div class="voucher-content download hide">
+                <div class="last-use-title clearfix">
+                    <div class="voucher-name"></div>
+                    <div class="last-use-count msg_1"><span class="amount"></span><span class="unit">元</span></div>
+                </div>
+
+                <div class="last-use-desc msg_2"></div>
+
+                <div class="btn-box clearfix">
+                    <button type="button" class="download-app">下载客户端</button>
+                    <button type="button" class="share-to-friend"> 分享红包</button>
+                </div>
+            </div>
+
+            <!--过期了-->
+            <div class="voucher-content voucher-content-game-over expired hide">
+                <div class="text"></div>
+            </div>
+
+            <!--抢过了-->
+            <div class="voucher-content voucher-content-game-over fetched hide">
+                <div class="text"></div>
+            </div>
+
+            <!--抢完了-->
+            <div class="voucher-content voucher-content-game-over gameover  hide">
+                <div class="text"></div>
+            </div>
+
+            <!--错误了-->
+            <div class="voucher-content voucher-content-game-over errmsg hide">
+                <div class="text"></div>
+            </div>
+
+        </div>
+        <div class="activity-desc ">
+            <p>每个微信帐号限用1张</p>
+        </div>
+
+
+    </div>
+</div>
+<script>
+    didiActivityData  = {"promo_ip":"http:\/\/static.udache.com\/gulfstream\/webapp\/pages\/activity\/christmas\/","promo_host":"http:\/\/gsactivity.diditaxi.com.cn\/gulfstream\/activity\/v2\/season\/christmas\/","channel":"ynorwrdtnoml1vfkgiwr4wikbsf5ug","errno":3,"share_link":"http:\/\/gsactivity.diditaxi.com.cn\/gulfstream\/activity\/v2\/season\/christmas\/index?channel=ynorwrdtnoml1vfkgiwr4wikbsf5ug","appid":"wx69b6673576ec5a65","brand":{"sponsor":"","share_logo_url":"share_img.jpg","index_logo_url":"share_img.jpg","share_title":"\u6ef4\u6ef4\u4e13\u8f66\u9001\u5723\u8bde\u7ea2\u5305\u5566\uff0c\u901f\u62a2\uff01","share_msg":"\u8ddf\u6211\u4e00\u8d77\u6765\u62a2\u7ea2\u5305\uff0c\u5750\u4e13\u8f66\u5427\u3002","index_msg":"\u6ef4\u6ef4\u4e13\u8f66\u9001\u5723\u8bde\u7ea2\u5305\u5566\uff0c\u901f\u62a2\uff01","result_success_msg":"\u606d\u559c\u4f60\u62a2\u5230\u5723\u8bde\u7ea2\u5305\uff0c\u9a6c\u4e0a\u4f53\u9a8c\u6ef4\u6ef4\u4e13\u8f66\u5427\uff01","over_msg":"\u6765\u7684\u592a\u665a\u4e86\uff0c\u6d3b\u52a8\u5df2\u7ecf\u7ed3\u675f\u5566~","gameover":"\u6765\u7684\u592a\u665a\u4e86\uff0c\u7ea2\u5305\u5df2\u7ecf\u62a2\u5b8c\u5566~","robbed_msg":"\u5df2\u7ecf\u9886\u8fc7\u5723\u8bde\u7ea2\u5305\u5566\uff0c\u9a6c\u4e0a\u4f53\u9a8c\u6ef4\u6ef4\u4e13\u8f66\u5427\uff01","is_show_title":1,"show_toobar":0,"bg_img":"","special_treated":"default"},"message":"\u6765\u7684\u592a\u665a\u4e86\uff0c\u6d3b\u52a8\u5df2\u7ecf\u7ed3\u675f\u5566~"}</script>
+<script src="http://static.udache.com/gulfstream/webapp/pages/activity/christmas/js/config.js?v=1.20"></script>
+<script src="http://static.udache.com/gulfstream/webapp/pages/activity/christmas/js/base.js?v=1.20"></script>
+
+</body>
+</html>

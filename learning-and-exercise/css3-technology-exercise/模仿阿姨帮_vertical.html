@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="author" content="www.tongbaotu.com">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="./了解阿姨帮_files/style.css">
+</head>
+<body>
+<div class="wrap" id="wrap">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<!--<a class="sharebtn1 sharebtn" href="javascript:;">分享朋友圈</a>-->
+<!--<div class="shareCover">-->
+<!--<img src="images/share-guideddd-weixin.png" id="shareImg">-->
+<!--</div>-->
+<script src="./了解阿姨帮_files/zepto.js"></script>
+<!--<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>-->
+<script>
+    $(function () {
+
+        var alw = 70,
+                cuurmtop = 0,
+                tStart = 0,
+                tEnd = 0,
+                start2end = 0,
+                currScreen = 1,
+                currHeight = $(window).height();
+
+        var downurl = "http://www.ayibang.com/client/?f=wap",
+                downbtn = "<div><a href=\"" + downurl + "\" class=\"downbig downurl\"><i class=\"icon\"></i><span>立即下载</span></a></div>";
+
+        var sections = new Array();
+        sections[0] = "<span class=\"logo\"></span><span class=\"mobi\"></span><span class=\"pad\"></span><span class=\"light\"></span><div class=\"bottom\"><div>家庭生活必备手机APP<br>让家干净整洁，从这里开始</div>" + downbtn + "<div><span class=\"tipup icon\"></span></div></div>";
+        sections[1] = "<span class=\"yigui\"></span><span class=\"ligter\"></span><span class=\"safa\"><span class=\"yellow-zt icon\"></span><span class=\"blue-zt icon\"></span></span><span class=\"flower\"></span><span class=\"cloth\"></span><span class=\"wash\"></span><span class=\"kongtiao\"></span><span class=\"bing\"></span><span class=\"star st1\"></span><span class=\"star st2\"></span><span class=\"star st3\"></span><span class=\"star st4\"></span><div class=\"bottom\"><div><span class=\"tit icon\"></span></div><div>保洁服务 洗护服务 家居保养 家电清洗</div><div><span class=\"tipup icon\"></span></div></div>";
+        sections[2] = "<span class=\"cloud1\"></span><span class=\"cloud2\"></span><span class=\"cloud3\"></span><span class=\"sc\"></span><span class=\"appui\"></span><span class=\"sbmbtn\"></span><span class=\"xuxian\"></span><span class=\"rocket\"></span><div class=\"bottom\"><div><span class=\"tit icon\"></span></div><div>App一键预约 智能匹配 在线支付</div><div><span class=\"tipup icon\"></span></div></div>";
+        sections[3] = "<div class=\"lbgw\"><div class=\"lbg\"></div></div><span class=\"ayi\"></span><span class=\"renzheng\"></span><span class=\"kaohe\"></span><span class=\"luqu\"></span><span class=\"beijing\"></span><div class=\"bottom\"><div><span class=\"tit icon\"></span></div><div><span class=\"tipup icon\"></span></div></div>";
+        sections[4] = "<span class=\"circle c1\"></span><span class=\"circle c2\"></span><span class=\"circle c3\"></span><span class=\"ping\"></span><div class=\"ayi\"><span class=\"shawdow\"></span><span class=\"lleg icon\"></span><span class=\"rleg icon\"></span><span class=\"body icon\"></span></div><div class=\"bottom\"><div><span class=\"tit icon\"></span></div><div>统一的价格 、服务内容、制服和装备</div></div>"//<div><a href=\"javascript:;\" class=\"sharebtn\"><i class=\"icon\"></i>立即分享</a></div>
+
+        $("#wrap").on("touchstart", function (e) {
+            console.log('第3次，touchstart');
+            e.preventDefault();
+            tStart = e.targetTouches[0].clientY;
+            console.log(tStart,'tStart======');
+        }).on("touchmove", function (e) {
+            console.log('第4次，touchmove');
+            tEnd = e.targetTouches[0].clientY;
+            console.log(tEnd,'tEnd======');
+            start2end = tEnd - tStart;
+            if ((currScreen == 1 && start2end >= 0) || (currScreen == 5 && start2end <= 0)) return;
+            $("#wrap ul").removeClass("ani").css({"margin-top": Number(cuurmtop) + start2end});
+        }).on("touchend", function (e) {
+            console.log('第5次，touchend');
+
+            if (start2end) {
+                $("#wrap ul").addClass("ani");
+                var isChange = true;
+                if (start2end + alw < 0) {
+                    isChange = currScreen++ >= 5;
+                    currScreen = isChange ? currScreen - 1 : currScreen;
+                }
+                if (start2end - alw > 0) {
+                    isChange = currScreen-- <= 1;
+                    currScreen = isChange ? currScreen + 1 : currScreen;
+                }
+                slide(!isChange ? playAni : undefined);
+                cuurmtop = -currHeight * (currScreen - 1);
+                tStart = tEnd = start2end = 0;
+            }
+        });
+
+        var slide = function () {
+            $("#wrap ul").css({"margin-top": -currHeight * (currScreen - 1)});
+            var callback = arguments[0];
+            console.log(arguments,'---');
+//            console.log(arguments[0],'&&&&&');
+//            console.log($.isFunction(callback),'+++++')
+            if ($.isFunction(callback)) setTimeout(callback, 500);
+        };
+
+        var playAni = function () {
+            console.log('加载和移动页面纸偶执行');
+
+            $("#wrap ul li").removeClass("ani").children().css("visibility", "hidden").remove();
+            var currli = $("#wrap ul li").eq(currScreen - 1);
+            var addAni = setTimeout(function () {
+                currli.addClass("ani");
+//                clearTimeout(addAni);
+                var addNode = setTimeout(function () {
+                    if (currli.html() == "") {
+                        $(sections[currScreen - 1]).appendTo(currli).css("visibility", "visible");
+                    }
+//                    clearTimeout(addNode);
+                }, 100);
+            }, 200);
+        };
+
+        var init = function () {
+
+            console.log('第2次，init');
+
+//            给ul下面的li添加class（s＋index）
+            $("#wrap ul li").each(function (index) {
+                if (!$(this).hasClass("s" + (index + 1))) {
+                    $(this).addClass("s" + (index + 1))
+                }
+            });
+
+            currHeight = $(window).height();
+            $("#wrap").height(currHeight);
+            slide(playAni);
+
+        };
+
+        init();
+
+//        var docSt = setInterval(function () {
+//            console.log('第1次，docSt');
+
+//            if (document.readyState == "complete") {
+//                clearInterval(docSt);
+//                $(window).resize(init).triggerHandler("resize");
+//            }
+//        }, 10);
+
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>撮合经济新玩法</title>
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="email=no">
+<meta name="format-detection" content="address=no;">
+<meta name="MobileOptimized" content="320">
+<style>
+/*-----------------------------全局样式-------------------------------------*/
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, span, a, input, textarea, p, blockquote, th, td, header, nav, footer, article, section, aside, time, figure {
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 14px;
+    font-weight: normal
+}
+
+ul {
+    list-style: none
+}
+
+legend {
+    display: none
+}
+
+fieldset, img {
+    border: none;
+    vertical-align: middle
+}
+
+em, cite, i {
+    font-style: normal
+}
+
+input, button, textarea {
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    border: 0;
+    font-family: Microsoft YaHei
+}
+
+input[type="submit"], input[type="reset"], input[type="button"], button {
+    -webkit-appearance: none;
+    border-radius: 0
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none
+}
+
+textarea {
+    resize: none
+}
+
+html {
+    height: 100%;
+    -webkit-text-size-adjust: none;
+    overflow: hidden
+}
+
+body {
+    font: 12px/18px Microsoft YaHei;
+    position: relative;
+    margin: 0 auto;
+    color: #000;
+    min-width: 320px;
+    word-break: break-all;
+    height: 100%;
+    overflow: hidden;
+    max-width: 640px;
+    /*background: #ffff00;*/
+}
+
+body a {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer
+}
+
+body a:hover, body a:active, body a:focus {
+    text-decoration: none;
+    outline: none
+}
+
+/*-----------------------------动画-------------------------------------*/
+.swiper-container {
+    position: absolute;
+    /*background: dodgerblue;*/
+    width: 100%;
+    height: 100%;
+    max-width: 640px;
+    left: 0;
+    right: 0;
+}
+
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.swiper-slide {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.swiper-slide > div {
+    position: absolute;
+    margin: auto;
+    opacity: 1;
+}
+
+.swiper-slide > div > div {
+    position: absolute;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+
+/*-----------------------------第一屏-------------------------------------*/
+.page1 {
+    background: #ffffff;
+}
+
+.page1 .animate1 {
+    width: 199px;
+    height: 169px;
+    /*margin: 0 auto;*/
+    z-index: 1000;
+    top: 57px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.page1 .animate1 > div {
+    background: url("images/1-1.png") no-repeat;
+    background-size: 199px;
+    margin: auto;
+}
+
+.page1 .animate1 .animate1-1-1 {
+    left: 0;
+    top: 0;
+    background-position: left bottom;
+    width: 199px;
+    height: 169px;
+}
+
+.page1 .animate1 .animate1-1-1 {
+    left: 0;
+    top: 0;
+    background-position: left bottom;
+    width: 199px;
+    height: 169px;
+}
+
+.page1 .animate1 .animate1-1-2 {
+    left: 0;
+    right: 0;
+    top: 13px;
+    background-position: center -13px;
+    width: 62px;
+    height: 44px;
+}
+
+.page1 .animate1 .animate1-1-3 {
+    left: 0;
+    right: 0;
+    top: 75px;
+    width: 168px;
+    height: 55px;
+    background-position: center -75px;
+}
+
+.page1 .animate2 {
+    /*background: url("images/1-2.png");*/
+    background-size: auto 100%;
+    width: 248px;
+    height: 30px;
+    top: 280px;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.page1 .animate2 > div {
+    background: url("images/1-2.png") no-repeat;
+    background-size: auto 100%;
+    width: 31px;
+    height: 30px;
+    top: 0;
+}
+
+.page1 .animate2 .animate1-2-1 {
+    background-position: 0 0;
+    left: 0;
+}
+
+.page1 .animate2 .animate1-2-2 {
+    background-position: -31px 0;
+    left: 31px;
+}
+
+.page1 .animate2 .animate1-2-3 {
+    background-position: -62px 0;
+    left: 62px;
+}
+
+.page1 .animate2 .animate1-2-4 {
+    background-position: -93px 0;
+    left: 93px;
+}
+
+.page1 .animate2 .animate1-2-5 {
+    background-position: -124px 0;
+    left: 124px;
+}
+
+.page1 .animate2 .animate1-2-6 {
+    background-position: -155px 0;
+    left: 155px;
+}
+
+.page1 .animate2 .animate1-2-7 {
+    background-position: -186px 0;
+    left: 186px;
+}
+
+.page1 .animate2 .animate1-2-8 {
+    background-position: -217px 0;
+    left: 217px;
+}
+
+.page1 .tip {
+    background: url("images/tip.png") no-repeat;
+    width: 103px;
+    height: 133px;
+    background-size: 100%;
+    top: 176px;
+    right: 0;
+    left: 0;
+    z-index: 10000;
+    display: none;
+}
+
+.page1 .tip .hand {
+    background: url("images/hand.png") no-repeat;
+    width: 44px;
+    height: 62px;
+    background-size: 100%;
+    position: absolute;
+    top: 17px;
+    left: -40px;
+    z-index: 10000;
+}
+
+/*-----------------------------第二屏-------------------------------------*/
+.page2 {
+    background: #c4553c
+}
+
+/*-----------------------------第三屏-------------------------------------*/
+.page3 {
+    background: #4b348c
+}
+
+/*-----------------------------第四屏-------------------------------------*/
+.page4 {
+    background: #65828c
+}
+
+/*-----------------------------第五屏-------------------------------------*/
+.page5 {
+    background: #806f66
+}
+
+/*-----------------------------第六屏-------------------------------------*/
+.page6 {
+    background: #a6d6ca
+}
+
+/*-----------------------------第七屏-------------------------------------*/
+.page7 {
+    background: #e2a469
+}
+</style>
+</head>
+<body>
+<!--分屏动画start -->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide page1" id="page1">
+            <div class="animate1">
+                <div class="animate1-1-1"></div>
+                <div class="animate1-1-2"></div>
+                <div class="animate1-1-3"></div>
+            </div>
+            <div class="animate2">
+                <div class="animate1-2-1"></div>
+                <div class="animate1-2-2"></div>
+                <div class="animate1-2-3"></div>
+                <div class="animate1-2-4"></div>
+                <div class="animate1-2-5"></div>
+                <div class="animate1-2-6"></div>
+                <div class="animate1-2-7"></div>
+                <div class="animate1-2-8"></div>
+            </div>
+            <div class="tip">
+                <div class="hand"></div>
+            </div>
+        </div>
+        <div class="swiper-slide page2" id="page2">
+        </div>
+        <div class="swiper-slide page3" id="page3">
+        </div>
+        <div class="swiper-slide page4" id="page4">
+        </div>
+        <div class="swiper-slide page5" id="page5">
+        </div>
+        <div class="swiper-slide page6" id="page6">
+        </div>
+        <div class="swiper-slide page7" id="page7">
+        </div>
+    </div>
+</div>
+<!--分屏动画end -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/idangerous.swiper-2.6.1.min.js"></script>
+<script src="js/jquery.transit.js"></script>
+<script type="text/javascript">
+$(function () {
+    var mySwiper = new Swiper(".swiper-container", {
+        speed: 500
+//            autoplay:2000,
+//            loop:true,
+//            resistance:true,
+//            freeMode : true,
+//            freeModeFluid : true //开启'fluid'自由模式
+    });
+    var $p = $(".swiper-container #page1");
+    var $i = $p.children();
+    $i.filter(":first").css({x: 0, y: -30}).transition({y: 0, opacity: 1}, 1000);
+    $i.filter(":eq(1)").css({x: 0, y: 30}).transition({y: 0, opacity: 1, complete: function () {
+        showTech();
+        autotech();
+//            touchstart();
+//            touchmove();
+    }}, 500);
+
+    $p.find(".animate1").on("touchstart", touchstart);
+
+    $p.find(".animate1").on("touchmove", touchmove);
+
+
+//        操作教程
+    var handX, handY;
+
+    function tech() {
+        handX = 70;
+        handY = 90;
+        $(".hand").transition({x: 0, y: 0}, 200).transition({x: handX, y: handY}, 1200);
+    }
+
+    var showtechs, techAuto;
+
+    function autotech() {
+        setTimeout(tech, 2000);
+        techAuto = setInterval(function () {
+            tech();
+        }, 5000);
+    }
+
+    function showTech() {
+        showTechs = setTimeout(function () {
+            $i.filter(":eq(2)").show().css({scale: 0}).transition({scale: 1, opacity: 1}, 1200)
+        }, 1000)
+    }
+
+//        撮合
+    var x, y, x1, y1, x2, y2, x3, y3, w, h, sw, sh;
+
+    function touchstart(e) {
+        e.preventDefault();
+//            x = $(this).offset().left;
+//            y = $(this).offset().top;
+//            $(this).css({left:x,top:y,x:0,y:0,"margin":0});
+        console.log("x=" + x, "y=" + y);
+        x1 = e.originalEvent.targetTouches[0].pageX;
+        y1 = e.originalEvent.targetTouches[0].pageY;
+        w = $(this).width();
+        h = $(this).height();
+        clearTimeout(showtechs);
+//            clearInterval(techAuto);
+        console.log('w=' + w, "h=" + h);
+
+        $p.find(".tip").fadeOut(300);
+    }
+
+    function touchmove(e) {
+        e.preventDefault();
+        x2 = e.originalEvent.changedTouches[0].pageX;
+        y2 = e.originalEvent.changedTouches[0].pageY;
+        //最新的位置
+        x3 = x2 - x1;
+        y3 = y2 - y1;
+        //拖动处理方式
+//            if ( mySwiper.activeIndex == 0 )
+//            {
+        $(this).css({x: x3, y: y3});
+        console.log($(this).offset().left, $(this).offset().top)
+        //判断是否摄合成功
+        if (( ( $(this).offset().left + w ) < $(this).next().offset().left ) || ( ( $(this).offset().top + h ) < $(this).next().offset().top ) || ( $(this).offset().top > ( $(this).next().offset().top + $(this).next().height() ) ) || ( $(this).offset().left > ( $(this).next().offset().left + $(this).next().width() ) )) {
+        }
+        else {
+//                    document.getElementById("music").play();
+            sucess();
+        }
+//            }
+//            else if ( mySwiper.activeIndex == 1 )
+//            {
+//                //最新的位置
+//                $(this).css({x:x3,y:y3});
+//                //判断是否摄合成功
+//                if ( ( ( $(this).offset().left + w ) < ( $(this).next().offset().left ) + 50 ) || ( ( $(this).offset().top + h ) < $(this).next().offset().top +50 ) || ( $(this).offset().top + 50 > ( $(this).next().offset().top + $(this).next().height() ) ) || ( $(this).offset().left + 50 > ( $(this).next().offset().left + $(this).next().width() ) ) )
+//                {
+//                }
+//                else
+//                {
+//
+//                    sucess();
+//                }
+//            }
+//            else if ( mySwiper.activeIndex == 2 )
+//            {
+//                //最新的位置
+//                $(this).css({x:x3,y:y3});
+//                //判断是否摄合成功
+//                if ( ( ( $(this).offset().left + w ) < ( $(this).next().offset().left ) + 10 ) || ( ( $(this).offset().top + h ) < $(this).next().offset().top +10 ) || ( $(this).offset().top + 10 > ( $(this).next().offset().top + $(this).next().height() ) ) || ( $(this).offset().left + 10 > ( $(this).next().offset().left + $(this).next().width() ) ) )
+//                {
+//                }
+//                else
+//                {
+//
+//                    sucess();
+//                }
+//            }
+//            else if ( mySwiper.activeIndex == 3 )
+//            {
+//                //最新的位置
+//                $(this).css({x:x3,y:y3});
+//                //判断是否摄合成功
+//                if ( ( ( $(this).offset().left + w ) < ( $(this).next().offset().left ) + 40 ) || ( ( $(this).offset().top + h ) < $(this).next().offset().top +40 ) || ( $(this).offset().top + 40 > ( $(this).next().offset().top + $(this).next().height() ) ) || ( $(this).offset().left + 40 > ( $(this).next().offset().left + $(this).next().width() ) ) )
+//                {
+//                }
+//                else
+//                {
+//
+//                    sucess();
+//                }
+//            }
+//            else if ( mySwiper.activeIndex == 4 )
+//            {
+//                //最新的位置
+//                $(this).css({y:y3});
+//                //判断是否摄合成功
+//                if ( $(this).offset().top >= $(this).next().offset().top - 20 )
+//                {
+//                    changeSlide.children().filter(":first").off("touchstart touchmove").next().off("touchstart touchmove");
+//
+//                    $(this).transition({x:($(this).next().offset().left-$(this).offset().left-w),y:($(this).next().offset().top-y),complete:function(){
+//                        setTimeout(function(){mySwiper.swipeTo(mySwiper.activeIndex+1,1);},300);
+//                    }},100)
+//                }
+//            }
+//            else if ( mySwiper.activeIndex == 5 )
+//            {
+//                //最新的位置
+//                $(this).css({x:x3});
+//                //判断是否摄合成功
+//                if ( $(this).offset().left >= $(this).next().offset().left - w + 20 )
+//                {
+//
+//                    clearInterval(bolang);
+//                    changeSlide.children().filter(":first").off("touchstart touchmove").next().off("touchstart touchmove");
+//                    setTimeout(function(){mySwiper.swipeTo(mySwiper.activeIndex+1,1);},300);
+//                }
+//            }
+    }
+
+    function sucess() {
+        $p.children().filter(":first").off("touchstart touchmove").next().off("touchstart touchmove");
+//            if ( mySwiper.activeIndex == 0 )
+//            {
+        $(".tip").hide();
+//            }
+        $p.children().filter(":lt(2)").children().each(function () {
+            $(this).css({"left": $(this).offset().left, "top": $(this).offset().top, "margin": 0, "position": "absolute"});
+            sui($(this));
+        });
+        $p.children().filter(":lt(2)").removeAttr("style").css({"position": "static", "opacity": 1});
+//            setTimeout(function(){mySwiper.swipeTo(mySwiper.activeIndex+1,1);},300);
+    }
+
+    //打散元素
+    function sui(suipian) {
+        suipian.transition({x: suipianLeft(), y: suipianTop(), scale: suipianSize(), rotate: suipianRotate()}, suipianSpeed());
+    }
+
+    //打散位置
+    function suipianLeft(a, b) {
+        return (Math.random() * ( 200 ) - 100)
+    }
+
+    function suipianTop(a, b) {
+        return (Math.random() * ( 600 ) - 300)
+    }
+
+    //打散速度
+    function suipianSpeed() {
+        return ((Math.random() * 4 + 4) * 200 )
+    }
+
+    //打散大小
+    function suipianSize() {
+        return (Math.random() * 5 + 5) / 10
+    }
+
+    //打散旋转
+    function suipianRotate() {
+        return (Math.random() * 360 - 180)
+    }
+
+})
+</script>
+
+</body>
+</html>
