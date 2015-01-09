@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+    var ua = navigator.userAgent.toLowerCase(); //获取浏览器
+//    var isWeixin = ua.indexOf('micromessenger') != -1;//判断是否是微信
+    var isAndroid = ua.indexOf('android') != -1;//判断是否是安卓
+    var isIos = (ua.indexOf('iphone') != -1) || (ua.indexOf('ipad') != -1);//判断是否是苹果
+
+    if(isAndroid){
+        window.location="http://a.app.qq.com/o/simple.jsp?pkgname=com.tongbaotu";
+    }else if(isIos){
+        window.location="https://itunes.apple.com/us/app/tong-bao-tu/id901336204?l=zh&ls=1&mt=8";
+    }
+</script>
+</body>
+</html>
