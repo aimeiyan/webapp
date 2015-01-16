@@ -17,6 +17,8 @@
         transform: perspective(400px) rotateX(0deg);
         opacity: 1
     }
+
+
 }
 
 @keyframes flipInX {
@@ -72,7 +74,7 @@ section.l_con {
 section.r_con {
     width: 264px;
     padding: 20px;
-    float: right
+    float: right  ;
 }
 
 section.banner {
