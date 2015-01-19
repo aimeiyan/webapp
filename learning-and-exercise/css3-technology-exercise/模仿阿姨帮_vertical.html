@@ -12,11 +12,6 @@
     <meta name="author" content="www.tongbaotu.com">
     <link rel="stylesheet" type="text/css" href="css/base.css">
     <link rel="stylesheet" type="text/css" href="./了解阿姨帮_files/style.css">
-     <style type="text/css">
-         .wrap ul li{
-
-         }
-     </style>
 </head>
 <body>
 <div class="wrap" id="wrap">
@@ -41,7 +36,7 @@
                 cuurmtop = 0,
                 tStart = 0,
                 tEnd = 0,
-                start2end = 0,
+                end2start = 0,
                 currScreen = 1,
                 currHeight = $(window).height();
 
@@ -56,48 +51,75 @@
         sections[4] = "<span class=\"circle c1\"></span><span class=\"circle c2\"></span><span class=\"circle c3\"></span><span class=\"ping\"></span><div class=\"ayi\"><span class=\"shawdow\"></span><span class=\"lleg icon\"></span><span class=\"rleg icon\"></span><span class=\"body icon\"></span></div><div class=\"bottom\"><div><span class=\"tit icon\"></span></div><div>统一的价格 、服务内容、制服和装备</div></div>"//<div><a href=\"javascript:;\" class=\"sharebtn\"><i class=\"icon\"></i>立即分享</a></div>
 
         $("#wrap").on("touchstart", function (e) {
-            console.log('第3次，touchstart');
             e.preventDefault();
             tStart = e.targetTouches[0].clientY;
-            console.log(tStart,'tStart======');
-        }).on("touchmove", function (e) {
-            console.log('第4次，touchmove');
-            tEnd = e.targetTouches[0].clientY;
-            console.log(tEnd,'tEnd======');
-            start2end = tEnd - tStart;
-            if ((currScreen == 1 && start2end >= 0) || (currScreen == 5 && start2end <= 0)) return;
-            $("#wrap ul").removeClass("ani").css({"margin-top": Number(cuurmtop) + start2end});
-        }).on("touchend", function (e) {
-            console.log('第5次，touchend');
 
-            if (start2end) {
+            console.log(tStart, 'output tStart value ----------');
+
+        }).on("touchmove", function (e) {
+            tEnd = e.targetTouches[0].clientY;
+
+            end2start = tEnd - tStart;
+
+            console.log(tEnd, 'output tEND value --------');
+            console.log(end2start, 'end2start ----------');
+
+//            当在第一屏（向上滑）和最后一屏（向下滑）时，什么都不做
+            if ((currScreen == 1 && end2start >= 0) || (currScreen == 5 && end2start <= 0)) return;
+
+            $("#wrap ul").removeClass("ani").css({"margin-top": Number(cuurmtop) + end2start});
+        }).on("touchend", function (e) {
+
+            if (end2start) {
                 $("#wrap ul").addClass("ani");
                 var isChange = true;
-                if (start2end + alw < 0) {
+                if (end2start + alw < 0) {
+
+                    console.log(currScreen,'向下滑动前第几屏 ********');
+
                     isChange = currScreen++ >= 5;
+
+                    console.log(currScreen,'向下滑动后第几屏 @@@@@@@@');
                     currScreen = isChange ? currScreen - 1 : currScreen;
+
+                    console.log(currScreen,'向下修正后第几屏 @@@@@@@@');
+
                 }
-                if (start2end - alw > 0) {
+                if (end2start - alw > 0) {
+
+                    console.log(currScreen,'向上滑动前第几屏 ********');
+
                     isChange = currScreen-- <= 1;
+
+                    console.log(currScreen,'向上滑动前第几屏 ********');
+
                     currScreen = isChange ? currScreen + 1 : currScreen;
+
+                    console.log(currScreen,'向上滑动前第几屏 ********');
                 }
                 slide(!isChange ? playAni : undefined);
                 cuurmtop = -currHeight * (currScreen - 1);
-                tStart = tEnd = start2end = 0;
+                tStart = tEnd = end2start = 0;
             }
         });
 
+//        500ms后执行playAni函数
         var slide = function () {
             $("#wrap ul").css({"margin-top": -currHeight * (currScreen - 1)});
             var callback = arguments[0];
-            console.log(arguments,'---');
-//            console.log(arguments[0],'&&&&&');
-//            console.log($.isFunction(callback),'+++++')
+
+            console.log(arguments, 'output arguments');
+            console.log(arguments[0], 'output arguments[0]');
+            console.log($.isFunction(callback), 'output $.isFunction(callback)');
+
             if ($.isFunction(callback)) setTimeout(callback, 500);
         };
 
+
+//        先清除所有 li 中的子内容和 class，然后为当前的 li 添加动作class（ani）和子内容；
         var playAni = function () {
-            console.log('加载和移动页面纸偶执行');
+
+            console.log('加载和移动页面时执行');
 
             $("#wrap ul li").removeClass("ani").children().css("visibility", "hidden").remove();
             var currli = $("#wrap ul li").eq(currScreen - 1);
@@ -113,23 +135,32 @@
             }, 200);
         };
 
+
+//        页面加载的时候，首次加载这个函数
         var init = function () {
 
             console.log('第2次，init');
 
 //            给ul下面的li添加class（s＋index）
             $("#wrap ul li").each(function (index) {
+
+                console.log(index, 'output index value');
+
                 if (!$(this).hasClass("s" + (index + 1))) {
-                    $(this).addClass("s" + (index + 1))
+                    $(this).addClass("s" + (index + 1));
                 }
             });
 
             currHeight = $(window).height();
+
+            console.log(currHeight, '手机高度，即每一屏的高度');
+
             $("#wrap").height(currHeight);
             slide(playAni);
 
         };
 
+        //        页面加载的时候，首次加载这个函数
         init();
 
 //        var docSt = setInterval(function () {
