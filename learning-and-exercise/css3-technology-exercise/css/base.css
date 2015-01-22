@@ -416,8 +416,7 @@ input:-ms-input-placeholder {
 }
 
 body {
-    /*font: 400 14px/1.5 Arial, Helvetica, "Microsoft YaHei", STHeiti, "Droid Sans Fallback", sans-serif;*/
-    font: 400 14px/1.5 "Helvetica Neue", Helvetica, STHeiTi,"Droid Sans Fallback",sans-serif;
+    font: 400 14px/1.5 "Helvetica Neue", Helvetica,"Microsoft YaHei", STHeiTi,"Droid Sans Fallback",sans-serif;
     color: #343434;
     overflow-x: hidden;
     background-color: #F4F2F2;
