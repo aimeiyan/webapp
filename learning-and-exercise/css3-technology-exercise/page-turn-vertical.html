@@ -271,6 +271,7 @@ table {
 
 .wrap ul.ani {
     transition: margin 0.5s;
+
 }
 
 .wrap ul li {
@@ -369,25 +370,23 @@ li > span {
 }
 
 li.s1.ani .txt {
-    background-position: -3.4rem -0.86rem;
-    width: 3.12rem;
-    height: 3.1rem;
-    left: 2.05rem;
-    top: 2.96rem;
+    font-weight: bold;
+    left: 1rem;
+    top: 0.96rem;
     color: #fff;
     -webkit-animation: s1-txt 0.5s linear;
 }
+
 
 li.s1.ani .bottom {
     -webkit-animation: bottom 1s;
 }
 
+
+
 li.s2.ani .txt {
-    background-position: -7.52rem 0;
-    width: 1.53rem;
-    height: 1.54rem;
-    left: 3.92rem;
-    top: 4.45rem;
+    left: 1.92rem;
+    top: 1.45rem;
     color: #fff;
     -webkit-animation: s2-txt 0.6s ease;
 }
@@ -401,11 +400,8 @@ li.s2.ani .bottom .tipup {
 }
 
 li.s3.ani .txt {
-    width: 4.75rem;
-    height: 2.84rem;
-    background-position: -5.7rem -7.61rem;
     left: 0.56rem;
-    top: 3.52rem;
+    top: 1.52rem;
     -webkit-animation: s3-txt 0.3s linear;
     color: #fff;
 }
@@ -420,10 +416,7 @@ li.s3.ani .bottom .tipup {
 }
 
 li.s4.ani .txt {
-    width: 3.18rem;
-    height: 3.19rem;
-    background-position: -2.17rem -10.45rem;
-    top: 2.88rem;
+    top: 0.88rem;
     left: 1.8rem;
     color: #fff;
     -webkit-animation: s4-txt 0.5s linear;
@@ -435,14 +428,175 @@ li.s4.ani .bottom {
 
 li.s5.ani .txt {
     position: absolute;
-    width: 3.52rem;
-    height: 4.74rem;
     top: 1.16rem;
     left: 1.63rem;
     color: #fff;
-    -webkit-animation: s5-txt 5s linear;
+    -webkit-animation: s5-txt 1s linear;
 }
 
+.dog_01 img {
+    position: absolute;
+    display: block;
+    width: 70%;
+    left: 1rem;
+    top: 4.96rem;
+}
+
+li.s1.ani .dog_01{
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: bounceIn;
+    animation-name: bounceIn;
+}
+
+@-webkit-keyframes bounceIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(.3);
+    }
+
+    50% {
+        opacity: 1;
+        -webkit-transform: scale(1.05);
+    }
+
+    70% {
+        -webkit-transform: scale(.9);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+    }
+}
+.dog_02 img {
+    position: absolute;
+    display: block;
+    width: 70%;
+    left: 1rem;
+    top: 2.96rem;
+}
+
+li.s2.ani .dog_02{
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInUpBig;
+    animation-name: fadeInUpBig;
+}
+
+@-webkit-keyframes fadeInUpBig {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(2000px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+    }
+}
+.dog_03 img {
+    position: absolute;
+    display: block;
+    width: 70%;
+    left: 1rem;
+    top: 3.96rem;
+}
+
+li.s3.ani .dog_03{
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: rotateIn;
+    animation-name: rotateIn;
+}
+
+@-webkit-keyframes rotateIn {
+    0% {
+        -webkit-transform-origin: center center;
+        -webkit-transform: rotate(-200deg);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform-origin: center center;
+        -webkit-transform: rotate(0);
+        opacity: 1;
+    }
+}
+.dog_04 img {
+    position: absolute;
+    display: block;
+    width: 70%;
+    left: 1rem;
+    top: 3.96rem;
+}
+
+li.s4.ani .dog_04{
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: animationFrames;
+    animation-name: animationFrames;
+}
+
+@-webkit-keyframes animationFrames {
+    0% {
+        opacity:0;
+        -webkit-transform:  translate(-1500px,0px)  ;
+    }
+    60% {
+        opacity:1;
+        -webkit-transform:  translate(30px,0px)  ;
+    }
+    80% {
+        -webkit-transform:  translate(-10px,0px)  ;
+    }
+    100% {
+        opacity:1;
+        -webkit-transform:  translate(0px,0px)  ;
+    }
+}
+
+.dog_05 img {
+    position: absolute;
+    display: block;
+    width: 70%;
+    left: 1rem;
+    top: 4.96rem;
+}
+
+li.s5.ani .dog_05{
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: bounceIn;
+    animation-name: bounceIn;
+}
+
+@-webkit-keyframes bounceIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(.3);
+    }
+
+    50% {
+        opacity: 1;
+        -webkit-transform: scale(1.05);
+    }
+
+    70% {
+        -webkit-transform: scale(.9);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+    }
+}
 </style>
 </head>
 <body>
@@ -455,7 +609,7 @@ li.s5.ani .txt {
         <li></li>
     </ul>
 </div>
-<script src="./了解阿姨帮_files/zepto.js"></script>
+<script src="js/zepto.js"></script>
 <script>
     $(function () {
 
@@ -467,29 +621,22 @@ li.s5.ani .txt {
                 currScreen = 1,
                 currHeight = $(window).height();
 
-//        每个页面要加载的内容
+        //  每个页面要加载的内容
         var sections = new Array();
-        sections[0] = '<span class="txt">第一屏</span><div class="bottom"><div><span class="tipup icon"></span></div></div>';
-        sections[1] = '<span class="txt">第二屏</span><div class="bottom"><div><span class="tipup icon"></span></div></div>';
-        sections[2] = '<span class="txt">第三屏</span><div class="bottom"><div><div><span class="tipup icon"></span></div></div>';
-        sections[3] = '<span class="txt">第四屏</span><div class="bottom"><div><div><span class="tipup icon"></span></div></div>';
-        sections[4] = '<div class="txt">第五屏</div>';
+        sections[0] = '<span class="txt">第一屏</span><div class="dog_01"><img src="images/dog_01.jpg"></div><div class="bottom"><div><span class="tipup icon"></span></div></div>';
+        sections[1] = '<span class="txt">第二屏</span><div class="dog_02"><img src="images/dog_02.jpg"></div><div class="bottom"><div><span class="tipup icon"></span></div></div>';
+        sections[2] = '<span class="txt">第三屏</span><div class="dog_03"><img src="images/dog_03.jpg"></div><div class="bottom"><div><div><span class="tipup icon"></span></div></div>';
+        sections[3] = '<span class="txt">第四屏</span><div class="dog_04"><img src="images/dog_04.jpg"></div><div class="bottom"><div><div><span class="tipup icon"></span></div></div>';
+        sections[4] = '<div class="txt">第五屏</div><div class="dog_05"><img src="images/dog_05.jpg"></div>';
 
         $("#wrap").on("touchstart", function (e) {
             e.preventDefault();
             tStart = e.targetTouches[0].clientY;
-
-            console.log(tStart, 'output tStart value ----------');
-
         }).on("touchmove", function (e) {
             tEnd = e.targetTouches[0].clientY;
-
             end2start = tEnd - tStart;
 
-            console.log(tEnd, 'output tEND value --------');
-            console.log(end2start, 'end2start ----------');
-
-//            当在第一屏（向上滑）和最后一屏（向下滑）时，什么都不做
+            //  当在第一屏（向上滑）和最后一屏（向下滑）时，什么都不做
             if ((currScreen == 1 && end2start >= 0) || (currScreen == 5 && end2start <= 0)) return;
 
             $("#wrap ul").removeClass("ani").css({"margin-top": Number(cuurmtop) + end2start});
@@ -499,28 +646,12 @@ li.s5.ani .txt {
                 $("#wrap ul").addClass("ani");
                 var isChange = true;
                 if (end2start + alw < 0) {
-
-                    console.log(currScreen, '向下滑动前第几屏 ********');
-
                     isChange = currScreen++ >= 5;
-
-                    console.log(currScreen, '向下滑动后第几屏 @@@@@@@@');
                     currScreen = isChange ? currScreen - 1 : currScreen;
-
-                    console.log(currScreen, '向下修正后第几屏 @@@@@@@@');
-
                 }
                 if (end2start - alw > 0) {
-
-                    console.log(currScreen, '向上滑动前第几屏 ********');
-
                     isChange = currScreen-- <= 1;
-
-                    console.log(currScreen, '向上滑动前第几屏 ********');
-
                     currScreen = isChange ? currScreen + 1 : currScreen;
-
-                    console.log(currScreen, '向上滑动前第几屏 ********');
                 }
                 slide(!isChange ? playAni : undefined);
                 cuurmtop = -currHeight * (currScreen - 1);
@@ -528,64 +659,45 @@ li.s5.ani .txt {
             }
         });
 
-//        500ms后执行playAni函数
+        //  500ms后执行playAni函数
         var slide = function () {
             $("#wrap ul").css({"margin-top": -currHeight * (currScreen - 1)});
             var callback = arguments[0];
-
-            console.log(arguments, 'output arguments');
-            console.log(arguments[0], 'output arguments[0]');
-            console.log($.isFunction(callback), 'output $.isFunction(callback)');
-
             if ($.isFunction(callback)) setTimeout(callback, 500);
         };
 
-
-//        先清除所有 li 中的子内容和 class，然后为当前的 li 添加动作class（ani）和子内容；
+        //  先清除所有 li 中的子内容和 class，然后为当前的 li 添加动作class（ani）和子内容；
         var playAni = function () {
-
-            console.log('加载和移动页面时执行');
 
             $("#wrap ul li").removeClass("ani").children().css("visibility", "hidden").remove();
             var currli = $("#wrap ul li").eq(currScreen - 1);
             var addAni = setTimeout(function () {
                 currli.addClass("ani");
-//                clearTimeout(addAni);
                 var addNode = setTimeout(function () {
                     if (currli.html() == "") {
                         $(sections[currScreen - 1]).appendTo(currli).css("visibility", "visible");
                     }
-//                    clearTimeout(addNode);
                 }, 100);
             }, 200);
         };
 
-
-//        页面加载的时候，首次加载这个函数
+        //  页面加载的时候，首次加载这个函数
         var init = function () {
 
-            console.log('第2次，init');
-
-//            给ul下面的li添加class（s＋index）
+            //  给ul下面的li添加class（s＋index）
             $("#wrap ul li").each(function (index) {
-
-                console.log(index, 'output index value');
-
                 if (!$(this).hasClass("s" + (index + 1))) {
                     $(this).addClass("s" + (index + 1));
                 }
             });
 
             currHeight = $(window).height();
-
-            console.log(currHeight, '手机高度，即每一屏的高度');
-
             $("#wrap").height(currHeight);
             slide(playAni);
 
         };
 
-        //        页面加载的时候，首次加载这个函数
+        // 页面加载的时候，首次加载这个函数
         init();
 
         $(window).resize(init).triggerHandler("resize");
