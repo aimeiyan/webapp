@@ -70,10 +70,18 @@
 </div>
 <script src="js/jquery-1.10.1.min.js"></script>
 <script src="../dist/idangerous.swiper.min.js"></script>
+<script src="../Swiper-3D-Flow-master/demos/css/idangerous.swiper.3dflow.css"></script>
 <script>
     var mySwiper = new Swiper('.swiper-container',{
 //        将下面的代码删掉即默认值时左右滑动
-//        mode: 'vertical'
+        mode: 'vertical',
+        tdFlow: {
+            rotate : 50,
+            stretch :0,
+            depth: 100,
+            modifier : 1,
+            shadows : true
+        }
     })
 </script>
 </body>

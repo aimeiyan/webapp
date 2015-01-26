@@ -12,8 +12,8 @@
     <meta name="author" content="www.tongbaotu.com">
     <title>模仿好买网登录</title>
     <style type="text/css">
-        .noneweixin{
-            /*display: none;*/
+        .noneweixin,.weixin{
+            display: none;
         }
     </style>
 </head>
@@ -30,8 +30,11 @@
 
     if(!isWx){
         $('.weixin').hide();
+        $('.noneweixin').show();
+
     }
     if(isWx){
+        $('.weixin').show();
         $('.noneweixin').hide();
     }
 
