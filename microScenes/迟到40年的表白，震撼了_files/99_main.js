@@ -69,13 +69,13 @@ var car2 = {
  *  = gobal通用函数
  ***********************/
  	// 判断函数是否是null空值
-	_isOwnEmpty		: function (obj) { 
-						for(var name in obj) { 
-							if(obj.hasOwnProperty(name)) { 
-								return false; 
-							} 
-						} 
-						return true; 
+	_isOwnEmpty		: function (obj) {
+						for(var name in obj) {
+							if(obj.hasOwnProperty(name)) {
+								return false;
+							}
+						}
+						return true;
 					},
 	// 微信初始化函数
 	_WXinit			: function(callback){
@@ -93,7 +93,7 @@ var car2 = {
 							transform,
 							i = 0,
 							l = vendors.length;
-				
+
 						for ( ; i < l; i++ ) {
 							transform = vendors[i] + 'ransform';
 							if ( transform in this._elementStyle ) return vendors[i].substr(0, vendors[i].length-1);
@@ -176,7 +176,7 @@ var car2 = {
 						}
 
 						for ( ; i < l; i++ ) {
-							this._events[type][i].apply(this, [].slice.call(arguments, 1));	
+							this._events[type][i].apply(this, [].slice.call(arguments, 1));
 						}
 					},
 	// 给自定义事件绑定函数
@@ -194,7 +194,7 @@ var car2 = {
 						$(window).on('scroll.scroll',this._scrollControl);
 					},
 	//启动滚动条
-	_scrollStart 	: function(){		
+	_scrollStart 	: function(){
 						//开启屏幕禁止
 						$(window).off('touchmove.scroll');
 						$(window).off('scroll.scroll');
@@ -278,10 +278,10 @@ var car2 = {
         // move事件
         car2._handleEvent('move');
 		
-		
-		
-		
-		
+
+
+
+
  	},
 
  	// page触摸移动判断方向
@@ -421,7 +421,7 @@ var car2 = {
 			  
 		   }
 		 }
-		 
+
 
 
 
@@ -544,7 +544,7 @@ var car2 = {
 				setTimeout(function(){
 					if(car2._page.eq(car2._pageNow).hasClass('z-animate')) return;
 					car2._page.eq(car2._pageNow).addClass('z-animate');
-				},20)
+				},20);
 
 				// 隐藏图文组件的文本
 				$('.j-detail').removeClass('z-show');
@@ -553,7 +553,7 @@ var car2 = {
 				// 切换停止视频的播放
 				$('video').each(function(){
 					if(!this.paused) this.pause();
-				})
+				});
 
 				// 设置富文本的高度
 				car2.Txt_init(car2._page.eq(car2._pageNow));
@@ -568,11 +568,11 @@ var car2 = {
 	 				car2.lightapp_intro_hide(false);
 	 				$(".market-notice").hide();
 	 			}
-	 		},300)
+	 		},300);
 
 			// 切换成功后，发送统计
 			var laytouType = car2._page.eq(car2._pageNow).attr('data-statics');
-			
+
 			car2.ajaxTongji(laytouType);
 		})
  	},
@@ -616,7 +616,7 @@ var car2 = {
 		car2._scrollStop();
 		car2._map.addClass('show');
 		$(document.body).animate({scrollTop: 0}, 0);
-		
+
 		//判断开启地图的位置是否是当前的
 		if($(this).attr('data-mapIndex')!=car2._mapIndex){
 			car2._map.html($('<div class="bk"><span class="css_sprite01 s-bg-map-logo"></span></div>'));
@@ -624,8 +624,8 @@ var car2 = {
 			car2._mapIndex = $(this).attr('data-mapIndex');
 
 		}else{
-			car2._mapValue = true;	
-		} 
+			car2._mapValue = true;
+		}
 
 		setTimeout(function(){
 			//将地图显示出来
@@ -643,8 +643,8 @@ var car2 = {
 				},500)
 			}else return;
 		},100)
-	},	
-	
+	},
+
 	//地图关闭，将里面的内容清空（优化DON结构）
 	mapSave	: function(){
 		$(window).on('webkitTransitionEnd transitionend',mapClose);
@@ -679,7 +679,7 @@ var car2 = {
 		car2._isOwnEmpty(detal)	? detal=a:detal=detal;
 		!latitude? latitude=39.915:latitude=latitude;
 		!longitude? longitude=116.404:longitude=longitude;
-		
+
 		//创建地图
 		car2._map.ylmap({
 			/*参数传递，默认为天安门坐标*/
@@ -689,7 +689,7 @@ var car2 = {
 			longitude	: longitude,	//经度
 			fnOpen		: fnOpen,		//回调函数，地图开启前
 			fnClose		: fnClose		//回调函数，地图关闭后
-		});	
+		});
 	},
 
 	//绑定地图出现函数
@@ -722,8 +722,8 @@ var car2 = {
 			loop: true,
             preload: "none"
 		}
-		
-        car2._audio = new Audio(); 
+
+        car2._audio = new Audio();
         for(var key in options_audio){
             if(options_audio.hasOwnProperty(key) && (key in car2._audio)){
                 car2._audio[key] = options_audio[key];
@@ -736,16 +736,16 @@ var car2 = {
 				$("#song_img").hide();
 			},3000)
 		}
-		
-        
+
+
  	},
-	
+
  	// 声音事件绑定
  	audio_addEvent : function(){
  		if(car2._audioNode.length<=0) return;
 		// 声音按钮点击事件
 		car2._audioNode.find('.btn_audio').on('click',car2.audio_contorl);
- 		
+
 
  	},
 
@@ -758,8 +758,8 @@ var car2 = {
 			car2._audio_val = true ;
 			var txt = car2._audioNode.find('.txt_audio'),
  			time_txt = null;
- 		
- 	
+
+
 
  		// 声音打开事件
  		$(car2._audio).on('play',function(){
@@ -773,9 +773,9 @@ var car2 = {
 
  		// 声音关闭事件
  		$(car2._audio).on('pause',function(){
-			
-			
-			
+
+
+
  			audio_txt(txt,false,time_txt)
 
  			// 关闭音符冒泡
@@ -790,8 +790,8 @@ var car2 = {
 			}else{
 				//txt.text('关闭');
 				$('#song_img').show().html("点击logo打开背景音乐");
-				
-			} 
+
+			}
 
  			if(time_txt) clearTimeout(time_txt);
  			//txt.removeClass('z-move z-hide');
@@ -801,13 +801,13 @@ var car2 = {
  			},2000)
  		}
 		}
-	
+
  		if(!car2._audio_val){
  			car2.audio_stop();
  		}else{
  			car2.audio_play();
  		}
- 	},	
+ 	},
 
  	// 声音播放
  	audio_play : function(){
@@ -818,7 +818,7 @@ var car2 = {
  	// 声音停止
  	audio_stop	: function(){
  		car2._audio_val = true;
- 		if(car2._audio) car2._audio.pause(); 
+ 		if(car2._audio) car2._audio.pause();
  	},
 
  	// 视频初始化
@@ -877,12 +877,12 @@ var car2 = {
 				if(!this.paused){
 					this.pause();
 				}
-			});	
+			});
 		});
 
 		$('video').on('play', function(){
 			if(!car2._audio_val){
-				car2.audio_contorl();			
+				car2.audio_contorl();
 			}
 		});
 	},
@@ -964,7 +964,7 @@ var car2 = {
 			}
 		},200)
 	},
-	
+
 	// 加载当前后面第三个
 	lazy_bigP : function(){
 		for(var i=3;i<=5;i++){
@@ -1040,7 +1040,7 @@ var car2 = {
 			}else{
 				if(self.attr('data-auto')=='yes') self.css('background','none');
 			}
-		})	
+		})
 	},
 /**
  * 表单验证函数控制
@@ -1064,7 +1064,7 @@ var car2 = {
 	 	})
  	},
 
- 
+
  	// 我要报名表单验证函数
  	signUpCheck_input	: function (form, type){
 		var valid = true;
@@ -1075,11 +1075,11 @@ var car2 = {
 				//函数验证
 				var name = this.name;
 				var backData	= car2.regFunction(name);
-					
+
 				var empty_tip = backData.empty_tip,
 					reg       = backData.reg,
 					reg_tip   = backData.reg_tip;
-						
+
 				//根据结果处理
 				if ($.trim($(this).val()) == '') {
 					car2.showCheckMessage(empty_tip, true);
@@ -1094,11 +1094,11 @@ var car2 = {
 						$(this).addClass('z-error');
 						car2.showCheckMessage(reg_tip, true);
 						valid = false;
-						return false;		
+						return false;
 					}
 				}
 				$(this).removeClass('z-error');
-				$('.u-note-error').html('');	
+				$('.u-note-error').html('');
 			}
 		});
 		if (valid == false) {
@@ -1107,7 +1107,7 @@ var car2 = {
 			return true;
 		}
 	},
-	
+
 	// 正则函数验证
 	regFunction	: function(inputName){
 		var empty_tip = '',
@@ -1180,9 +1180,9 @@ var car2 = {
 		 	type:'POST',
 		 	data: form.serialize(),
 		 	success: function(msg){
-			
+
 		 		car2.loadingPageHide();
-			
+
 		 		 if(msg.code==200){
 						// 提示成功
 		 		car2.showCheckMessage('提交成功！',true)
@@ -1195,7 +1195,7 @@ var car2 = {
 		 				$(document.body).css('height','100%');
 		 				car2.page_start();
 		 				car2._scrollStop();
-						
+
 						$('.book-bg').addClass('f-hide');
 		 				$('.book-form').addClass('f-hide');
 		 			},500)
@@ -1204,12 +1204,12 @@ var car2 = {
 		 		// 按钮变色
 		 		$('.book-bd .bd-form .btn').addClass("z-stop");
 		 		$('.book-bd .bd-form .btn').attr("data-submit",'true');
-				
+
 				}else if(msg.code=='400'){
 					car2.showCheckMessage('提交失败',false);
 		 		 }
-				
-				
+
+
 		 	},
 		 	error : function (XMLHttpRequest, textStatus, errorThrown) {
 		 		car2.showCheckMessage(errorThrown,true);
@@ -1422,7 +1422,7 @@ var car2 = {
 					car2._scrollStop();
 					// 设置层级关系-z-index
 					car2._page.eq(car2._pageNow).css('z-index',9);
-					
+
 					$('.book-bg').addClass('f-hide');
 					$('.book-form').addClass('f-hide');
 				},500)
@@ -1458,7 +1458,7 @@ var car2 = {
 		if(val){
 			$('.market-notice').addClass('f-hide').removeClass('show');
 			return;
-		} 
+		}
 
 		$('.market-notice').removeClass('show');
 		setTimeout(function(){
@@ -1508,7 +1508,7 @@ var car2 = {
 	//统计函数处理
  	ajaxTongji	: function(laytouType){
 		var channel_id = location.search.substr(location.search.indexOf("channel=") + 8);
-		channel_id= channel_id.match(/^\d+/) ; 
+		channel_id= channel_id.match(/^\d+/) ;
 		if (!channel_id || isNaN(channel_id) || channel_id<0) {
 		channel_id = 1;
 	}
@@ -1522,7 +1522,7 @@ var car2 = {
  	wxShare : function(){
  		$('body').on('click','.bigTxt-btn-wx',function(){
  			var img_wx = $(this).parent().find('.bigTxt-weixin');
- 			
+
  			img_wx.addClass('z-show');
  			car2.page_stop();
 
@@ -1539,10 +1539,10 @@ var car2 = {
 	loadingPageShow : function(){
 		$('.u-pageLoading').show();
 	},
-	
+
 	// loading隐藏
 	loadingPageHide : function (){
-		$('.u-pageLoading').hide();	
+		$('.u-pageLoading').hide();
 	},
 
 	// 对象私有变量刷新
@@ -1597,7 +1597,7 @@ var car2 = {
  	cover_draw : function(node,url,canvas_url,type,w,h,callback){
         console.log(node,'node value ---------');
 		if(node.style.display.indexOf('none')>-1) return;
-		
+
 		var lottery = new Lottery(node, canvas_url, type, w, h, callback);
 		lottery.init();
 	},
@@ -1638,8 +1638,8 @@ var car2 = {
 		$(document).one("touchstart", function(){
             car2._audio.play();
         });
-		
-		
+
+
 		// 蒙板插件
 //		var node = $('#j-mengban')[0],
 //			url = 'img/page_01_bg@2x.jpg',
@@ -1650,7 +1650,7 @@ var car2 = {
 //			callback = car2.menban_callback;
 //
 //		car2.cover_draw(node,url,canvas_url,type,w,h,callback);
-		
+
 	},
 
 /**
@@ -1685,7 +1685,7 @@ var car2 = {
 
 		// 设置富文本的高度
 		car2.Txt_init(car2._page.eq(car2._pageNow));
-		
+
 		// 模版提示文字显示
 		setTimeout(function(){
 			$('.m-alert').find('strong').addClass('z-show');
@@ -1706,8 +1706,8 @@ var car2 = {
 		this.styleInit();
 		this.haddle_envent_fn();
 
-		
-		
+
+
 		// 禁止滑动
 		// this._scrollStop();
 
@@ -1715,16 +1715,16 @@ var car2 = {
 		// $(window).on('resize',function(){
 		// 	car2.refresh();
 		// })
-		
+
 		$('input[type="hidden"]').appendTo($('body'));
-		
+
 		// 图片预先加载
 		$('<img />').attr('src',$('#r-cover').val());
 		$('<img />').attr('src',$('.m-fengye').find('.page-con').attr('data-src'));
-        
+
 		// loading执行一次
 		var loading_time = new Date().getTime();
-		
+
 		$(window).on('load',function(){
 			var now = new Date().getTime();
 			var loading_end = false;
@@ -1771,12 +1771,12 @@ var car2 = {
 
 				// 报名提交执行
 				car2.signUp_submit();
-				
+
 				// 插件加载
 		        car2.plugin();
-				
+
 				var channel_id = location.search.substr(location.search.indexOf("channel=") + 8);
-				channel_id= channel_id.match(/^\d+/) ; 
+				channel_id= channel_id.match(/^\d+/) ;
 				if (!channel_id || isNaN(channel_id) || channel_id<0) {
 				channel_id = 1;
 				}

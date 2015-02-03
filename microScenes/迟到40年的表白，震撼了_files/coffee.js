@@ -25,20 +25,20 @@
     transform,
     transitionProperty, transitionDuration, transitionTiming, transitionDelay,
     animationName, animationDuration, animationTiming, animationDelay,
-    cssReset = {}
+    cssReset = {};
 
   function dasherize(str) { return str.replace(/([a-z])([A-Z])/, '$1-$2').toLowerCase() }
   function normalizeEvent(name) { return eventPrefix ? eventPrefix + name : name.toLowerCase() }
 
   $.each(vendors, function(vendor, event){
     if (testEl.style[vendor + 'TransitionProperty'] !== undefined) {
-      prefix = '-' + vendor.toLowerCase() + '-'
-      eventPrefix = event
+      prefix = '-' + vendor.toLowerCase() + '-';
+      eventPrefix = event;
       return false
     }
-  })
+  });
 
-  transform = prefix + 'transform'
+  transform = prefix + 'transform';
   cssReset[transitionProperty = prefix + 'transition-property'] =
   cssReset[transitionDuration = prefix + 'transition-duration'] =
   cssReset[transitionDelay    = prefix + 'transition-delay'] =
