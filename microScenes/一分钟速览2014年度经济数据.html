@@ -1,118 +1,29 @@
 <!DOCTYPE html>
 <!-- saved from url=(0049)http://file.caixin.com/datanews/ec2014/index.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script async="" src="./一分钟速览2014年度经济数据_files/analytics.js"></script>
-		
-		 <meta name="HandheldFriendly" content="true">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<meta content="yes" name="apple-mobile-web-app-capable">
-		<meta content="telephone=no" name="format-detection">
-		<meta content="email=no" name="format-detection">
-		<meta content="black" name="apple-mobile-web-app-status-bar-style">
-		 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>一分钟速览2014年度经济数据</title>
-		<meta name="keywords" content="一分钟速览2014年度经济数据">
-		<meta name="description" content="一分钟速览2014年度经济数据">
-		<script src="./一分钟速览2014年度经济数据_files/d3.v3.js" language="javascript"></script>
-		<script src="./一分钟速览2014年度经济数据_files/jquery-1.7.2.min.js" language="javascript"></script>
-		<script src="./一分钟速览2014年度经济数据_files/core.js" language="javascript"></script>
-		<script src="./一分钟速览2014年度经济数据_files/echarts-all.js"></script>
-		<!--<base target="_blank">--><base href="." target="_blank">
-	</head>
-	<body style="margin: 0px; padding: 0px; overflow: hidden;" cz-shortcut-listen="true">
-		<div style="display:none;"><img src="./一分钟速览2014年度经济数据_files/shareLogo.jpg"></div><div id="mainCon" style="width: 414px; height: 736px; position: absolute; z-index: 9000; background-color: rgb(196, 145, 133);"><svg width="100%" height="100%"><image id="b1" width="100%" height="100%" href="./images/2_1.png" opacity="1" x="0" y="0"></image><image id="b2" width="100%" height="100%" href="./images/2_2.png" opacity="1" x="0" y="0"></image><image id="b3" width="100%" height="100%" href="./images/2_3.png" opacity="1" x="0" y="0"></image><image id="bMoveUp" width="100%" height="100%" href="./images/move_up_button.png" opacity="1" x="0" y="0"></image></svg></div><div id="chartsCon" style="width: 414px; height: 220px; position: absolute; z-index: 9998; top: 328px; cursor: default; background-color: rgba(0, 0, 0, 0);" _echarts_instance_="1422260183600"><div style="position: relative; overflow: hidden; width: 414px; height: 220px;"><div width="1242" height="660" data-zr-dom-id="bg" style="position: absolute; left: 0px; top: 0px; width: 414px; height: 220px; -webkit-user-select: none;"></div><canvas width="1242" height="660" data-zr-dom-id="0" style="position: absolute; left: 0px; top: 0px; width: 414px; height: 220px; -webkit-user-select: none;"></canvas><canvas width="1242" height="660" data-zr-dom-id="1" style="position: absolute; left: 0px; top: 0px; width: 414px; height: 220px; -webkit-user-select: none;"></canvas><canvas width="1242" height="660" data-zr-dom-id="2" style="position: absolute; left: 0px; top: 0px; width: 414px; height: 220px; -webkit-user-select: none;"></canvas><canvas width="1242" height="660" data-zr-dom-id="3" style="position: absolute; left: 0px; top: 0px; width: 414px; height: 220px; -webkit-user-select: none;"></canvas><canvas width="1242" height="660" data-zr-dom-id="8" style="position: absolute; left: 0px; top: 0px; width: 414px; height: 220px; -webkit-user-select: none;"></canvas><canvas width="1242" height="660" data-zr-dom-id="_zrender_hover_" style="position: absolute; left: 0px; top: 0px; width: 414px; height: 220px; -webkit-user-select: none;"></canvas></div></div>
-		<script src="./一分钟速览2014年度经济数据_files/jweixin-1.0.0.js"></script>
-		<script>
-		  function getWXConfig(){
-		    $.getJSON("http://api.caixin.com/wxsdk/wxconfig.php?url=" + window.location.href + "&callback=?",function(data){
-		      wx.config({
-		        debug: false,
-		        appId: data.appId, 
-		        timestamp: data.timestamp,
-		        nonceStr: data.nonceStr,
-		        signature: data.signature,
-		        jsApiList: ["onMenuShareTimeline","onMenuShareAppMessage","onMenuShareQQ","onMenuShareWeibo","startRecord","stopRecord","onVoiceRecordEnd","playVoice","pauseVoice","stopVoice","translateVoice"]
-		      });
-		    });
-		  }
-		  getWXConfig();
-
-		  var imgUrl = "http://file.caixin.com/datanews/ec2014/images/shareLogo.jpg";
-		  var lineLink = "http://file.caixin.com/datanews/ec2014/index.html";
-		  var descContent = 'GDP增速、投资增速、出口增速、居民收入增速均创下不同阶段新低，2015年中国经济须面对挑战。';
-		  var shareTitle = '一分钟速览2014年度经济数据';
-		  var appid = '';
-
-		  wx.ready(function(){
-		    wx.onMenuShareTimeline({
-		        title: shareTitle, // 分享标题
-		        link: lineLink, // 分享链接
-		        imgUrl: imgUrl, // 分享图标
-		        success: function () { 
-		            // 用户确认分享后执行的回调函数
-		        },
-		        cancel: function () { 
-		            // 用户取消分享后执行的回调函数
-		        }
-		    });
-		    wx.onMenuShareAppMessage({
-		        title: shareTitle, // 分享标题
-		        desc: descContent, // 分享描述
-		        link: lineLink, // 分享链接
-		        imgUrl: imgUrl, // 分享图标
-		        type: '', // 分享类型,music、video或link，不填默认为link
-		        dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-		        success: function () { 
-		            // 用户确认分享后执行的回调函数
-		        },
-		        cancel: function () { 
-		            // 用户取消分享后执行的回调函数
-		        }
-		    });
-		    wx.onMenuShareQQ({
-		        title: shareTitle, // 分享标题
-		        desc: descContent, // 分享描述
-		        link: lineLink, // 分享链接
-		        imgUrl: imgUrl, // 分享图标
-		        success: function () { 
-		           // 用户确认分享后执行的回调函数
-		        },
-		        cancel: function () { 
-		           // 用户取消分享后执行的回调函数
-		        }
-		    });
-		    wx.onMenuShareWeibo({
-		        title: shareTitle, // 分享标题
-		        desc: descContent, // 分享描述
-		        link: lineLink, // 分享链接
-		        imgUrl: imgUrl, // 分享图标
-		        success: function () { 
-		           // 用户确认分享后执行的回调函数
-		        },
-		        cancel: function () { 
-		            // 用户取消分享后执行的回调函数
-		        }
-		    });
-		  });
-		</script>  
-		  <!--caixin analytics start-->
-<script type="text/javascript" src="./一分钟速览2014年度经济数据_files/caixinlog.js"></script><img src="./一分钟速览2014年度经济数据_files/count.gif" style="display:none">
-<!--caixin analytics end-->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-ga('create','UA-27956240-1','caixin.com');
-ga('require','displayfeatures');
-
-var dimensionObject = document.getElementById("author_baidu");
-if(typeof(dimensionObject)=="object"&&dimensionObject!=null){
-var dimensionValue = dimensionObject.innerHTML;
-ga('set','dimension1',dimensionValue);
-ga('send','pageview',{'dimension1':dimensionValue});
-}else{
-ga('send','pageview');
-}
-</script>
-	
-<div id="window-resizer-tooltip"><a href="http://file.caixin.com/datanews/ec2014/index.html#" title="Edit settings"></a><span class="tooltipTitle">Window size: </span><span class="tooltipWidth" id="winWidth"></span> x <span class="tooltipHeight" id="winHeight"></span><br><span class="tooltipTitle">Viewport size: </span><span class="tooltipWidth" id="vpWidth"></span> x <span class="tooltipHeight" id="vpHeight"></span></div></body></html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>一分钟速览2014年度经济数据</title>
+    <meta name="keywords" content="一分钟速览2014年度经济数据">
+    <meta name="description" content="一分钟速览2014年度经济数据">
+    <script src="./一分钟速览2014年度经济数据_files/d3.v3.js" language="javascript"></script>
+    <script src="./一分钟速览2014年度经济数据_files/jquery-1.7.2.min.js" language="javascript"></script>
+    <script src="./一分钟速览2014年度经济数据_files/core.js" language="javascript"></script>
+    <script src="./一分钟速览2014年度经济数据_files/echarts-all.js"></script>
+    <!--<base target="_blank">-->
+    <base href="." target="_blank">
+</head>
+<body style="margin: 0; padding: 0;">
+<div style="display:none;"><img src="http://file.caixin.com/datanews/ec2014/images/shareLogo.jpg" /></div>
+<div id="mainCon"></div>
+<div id="chartsCon"></div>
+</body>
+</html>
