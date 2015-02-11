@@ -107,6 +107,7 @@
         }, 600);
     }
 })();
+
 //ping
 var pop_up_note_mode = true;
 var note_id = 1;
@@ -114,6 +115,7 @@ var note_id = 1;
 function $$(name) {
     return document.getElementById(name);
 }
+
 function switchsound() {
     au = $$('bgsound');
     ai = $$('sound_image');
@@ -192,7 +194,7 @@ function playbksound() {
         bg_htm = "<img id='sound_image' width='30px' src='img/music_note_big.png'>";
         box_htm = "<div id='note_box' style='height:100px;width:44px;position:absolute;left:-5px;top:-80px'></div>";
     }
-    txt_htm = "<div id='music_txt' style='color:white;position:absolute;left:-40px;top:30px;width:60px'></div>"
+    txt_htm = "<div id='music_txt' style='color:white;position:absolute;left:-40px;top:30px;width:60px'></div>";
     sound_div.innerHTML = bg_htm + box_htm + txt_htm;
     document.body.appendChild(sound_div);
     setTimeout("popup_note()", 100);

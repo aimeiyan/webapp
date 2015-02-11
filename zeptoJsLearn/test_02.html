@@ -21,12 +21,6 @@
 </head>
 <body>
 
-<script type="text/javascript" src="js/zepto.min.js"></script>
-<script type="text/javascript" src="js/event.js"></script>
-<script type="text/javascript" src="js/touch.js"></script>
-<script type="text/javascript" src="js/fx.js"></script>
-
-
 <ul id=items>
     <li>List item 1 <span class=delete>DELETE</span></li>
     <li>List item 2 <span class=delete>DELETE</span></li>
@@ -37,8 +31,28 @@
     <a class="tap">点击</a>
 </div>
 
-<script>
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript" src="js/event.js"></script>
+<script type="text/javascript" src="js/touch.js"></script>
+<script type="text/javascript" src="js/fx.js"></script>
+
+<script type="text/javascript">
     $(function () {
+
+        // 判断函数是否是null空值
+        function isOwnEmpty (obj) {
+            for (var name in obj) {
+                if (obj.hasOwnProperty(name)) {
+                    return false;
+                }
+            }
+            return true;
+        };
+
+        var obj=[1,1,1,2,3];
+        console.log(isOwnEmpty(obj),'[[]]');
+
+
         // show delete buttons on swipe
         $('#items li').swipe(function () {
             $('.delete').hide()

@@ -1,65 +1,27 @@
-/**
- *  全局函数处理
- *  -----------------------------
- *  作者：叼怎么写！- -||
- *  时间：2014-03-26
- *  准则：Zpote、字面量对象
- *  联系：wechat--shoe11414255
- *  一张网页，要经历怎样的过程，才能抵达用户面前
- *  一个特效，要经历这样的修改，才能让用户点个赞
- *  一个产品，创意源于生活，源于内心，需要慢慢品味
- *********************************************************************************************/
 var slider = {
-    /****************************************************************************************************/
-    /*  对象私有变量/函数返回值/通用处理函数
-     *****************************************************************************************************/
-    /*************************
-     *  = 对象变量，判断函数
-     *************************/
+
     _events: {},									// 自定义事件---this._execEvent('scrollStart');
     _windowHeight: $(window).height(),					// 设备屏幕高度
     _windowWidth: $(window).width(),
-
     _rotateNode: $('.p-ct'),							// 旋转体
-
     _page: $('.m-page'),							// 模版页面切换的页面集合
     _pageNum: $('.m-page').size(),					// 模版页面的个数
     _pageNow: 0,									// 页面当前的index数
     _pageNext: null,									// 页面下一个的index数
-
     _touchStartValY: 0,									// 触摸开始获取的第一个值
     _touchDeltaY: 0,									// 滑动的距离
-
     _moveStart: true,									// 触摸移动是否开始
     _movePosition: null,									// 触摸移动的方向（上、下）
     _movePosition_c: null,									// 触摸移动的方向的控制
     _mouseDown: false,								// 判断鼠标是否按下
     _moveFirst: true,
     _moveInit: false,
-
     _firstChange: false,
-
-    _audioNode: $('.u-audio'),						// 声音模块
-    _audio: null,									// 声音对象
-    _audio_val: true,									// 声音是否开启控制
-
     _elementStyle: document.createElement('div').style,	// css属性保存对象
-
-    _isload: false,//是否加载音乐
-    _audio_src: "", //音乐url
 
     /***********************
      *  = gobal通用函数
      ***********************/
-    // 判断函数是否是null空值
-    _isOwnEmpty: function (obj) {
-        for (var name in obj) {
-            if (obj.hasOwnProperty(name)) {
-                return false;
-            }
-        }
-        return true;
-    },
 
     // 判断浏览器内核类型
     _vendor: function () {
@@ -74,12 +36,14 @@ var slider = {
         }
         return false;
     },
+
     // 判断浏览器来适配css属性值
     _prefixStyle: function (style) {
         if (this._vendor() === false) return false;
         if (this._vendor() === '') return style;
         return this._vendor() + style.charAt(0).toUpperCase() + style.substr(1);
     },
+
     // 判断是否支持css transform-3d（需要测试下面属性支持）
     _hasPerspective: function () {
         var ret = this._prefixStyle('perspective') in this._elementStyle;
@@ -90,6 +54,7 @@ var slider = {
         }
         return !!ret;
     },
+
     _translateZ: function () {
         if (slider._hasPerspective) {
             return ' translateZ(0)';
@@ -158,7 +123,6 @@ var slider = {
         if (!this._events[type]) {
             this._events[type] = [];
         }
-
         this._events[type].push(fn);
     },
     //禁止滚动条
@@ -230,7 +194,7 @@ var slider = {
         var $self = slider._page.eq(slider._pageNow),
             h = parseInt($self.height()),
             moveP,
-//            scrollTop,
+            scrollTop,
             node = null,
             move = false;
 
@@ -462,13 +426,12 @@ var slider = {
         // 切换成功事件
         slider._on('success', function () {
             // 判断最后一页让，开启循环切换
-            console.log(slider._pageNext,slider._pageNow,slider._pageNum);
-//            if (slider._pageNext == 0 && slider._pageNow == slider._pageNum - 1) {
-//                slider._firstChange = false;
+            console.log(slider._pageNext, slider._pageNow, slider._pageNum);
+            if (slider._pageNext == 0 && slider._pageNow == slider._pageNum - 1) {
+                slider._firstChange = true;
 //                return
-//                slider.page_stop();
 //                window.location.href="http://www.5.cn/magazine/822/1883/index.html";
-//            }
+            }
 
             // 判断是否是最后一页，让轻APP关联页面隐藏
 //			if(slider._page.eq(slider._pageNext).next('.m-page').length != 0){
@@ -567,24 +530,17 @@ var slider = {
     /**************************************************************************************************************/
     /*  函数初始化
      ***************************************************************************************************************/
-    /**
-     * app初始化
-     */
-    // 样式适配
-    styleInit: function () {
+
+    // 对象初始化
+    init: function () {
+        // 样式，标签的渲染
+        // 对象操作事件处理
         $('.u-arrow').on('touchmove', function (e) {
             e.preventDefault()
         });
         $('.p-ct').height($(window).height());
         $('.m-page').height($(window).height());
         $('.translate-back').height($(window).height());
-    },
-
-    // 对象初始化
-    init: function () {
-        // 样式，标签的渲染
-        // 对象操作事件处理
-        this.styleInit();
         this.haddle_envent_fn();
 
         // 禁止滑动
