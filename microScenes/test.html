@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+
+    var url = "get_data.json?start=20150126&end=20150129&interval=day";
+    var url = "get_data.json?start=20150128&end=20150129&interval=hour";
+
+    var url = "get_data.json";
+    var data = [
+        {d: 2015012610, t: 100},
+        {d: 2015012611, t: 100},
+        {d: 2015012612, t: 100},
+        {d: 2015012613, t: 104},
+        {d: 2015012614, t: 100},
+
+        {d: 2015012714, t: 100},
+        {d: 2015012814, t: 101}
+    ];
+
+    function get_key(hour, interval) {
+        if (interval === 'hour') {
+            return hour;
+        } else if (interval === 'day') {
+            // 小时 数，模100就是 天。 比如 2015012610（1月26日上午10点），对应的天是 1月26日。
+            // toFixed：保留0位小数
+            return (hour / 100).toFixed(0);
+        } else if (interval === 'month') {
+            // 2015012610 => 201501
+            return (hour / 10000).toFixed(0);
+        } else if (interval === 'year') {
+            // 2015012610 => 2015
+            return (hour / 1000000).toFixed(0);
+        } else if (interval == 'week') {
+
+        }
+    }
+
+    // filter & show
+
+    function get_data(start, end, interval, data) {
+        // 按照日期筛选
+        var filter = [];
+        for (var i = 0; i < data.length; i++) {
+            if (data[i].d <= end && data[i].d >= start) {
+                filter.push(data[i]);
+            }
+        }
+
+        // 归堆
+        var result = {};
+        for (var i = 0; i < filter.length; i++) {
+            var key = get_key(filter[i].d, interval);
+            // 相同日期的加一起,  得到  {20150126: 100, 20150127: 123} 这样的数据
+            if (key in result) {
+                result[key] += filter[i].t;
+            } else {
+                result[key] = filter[i].t;
+            }
+        }
+
+        // result是个map（object），还原为数组
+        var arr = [];
+        for (var day in result) {
+            if (result.hasOwnProperty(day)) {
+                arr.push({d: day, t: result[day]});
+            }
+        }
+
+        // 对arr 按照时间进行排序
+        arr.sort(function (a, b) {
+            return a.d - b.d;
+        });
+
+        return arr
+    }
+
+    console.log(get_data(2015012601, 2015012900, 'day', data));
+    console.log(get_data(2015012601, 2015012900, 'month', data));
+    console.log(get_data(2015012601, 2015012900, 'year', data));
+    console.log(get_data(2015012601, 2015012900, 'hour', data));
+
+    var date = new Date();
+    var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+
+    //        var last = date.getUTCDate();
+    var first = firstDay.getUTCDate();
+</script>
+
+</body>
+</html>
