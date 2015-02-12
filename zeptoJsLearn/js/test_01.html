@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://192.168.1.75:8009/test_01.html -->
+<html><head lang="en"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div class="parent" style="background-color: rgb(255, 192, 203);">
+    <p class="node" style="background-color: rgb(255, 192, 203);">$.contains</p>
+</div>
+<ul class="target">
+    <li style="background-color: rgb(255, 192, 203);">list item 1</li>
+    <li style="color: red; background-color: rgb(255, 192, 203);">list item 2</li>
+    <li style="background-color: rgb(255, 192, 203);">list item 3</li>
+<li>new list item</li></ul>
+<p style="background-color: rgb(255, 192, 203);">a paragraph</p>
+<div style="background-color: rgb(255, 192, 203);">
+    <form style="color: yellow;">
+        <ul>
+            <li class="closest" style="background-color: rgb(255, 192, 203);"></li>
+        <li>new list item</li></ul>
+    </form>
+</div>
+<hr>
+
+<div style="background-color: rgb(255, 192, 203);">This div should be white</div>
+<div class="red" style="background-color: rgb(255, 192, 203);">This div will be green because it now has the "green" and "red" classes.
+    It would be red if the addClass function failed.
+</div><p>a note below the label</p><p style="background-color: rgb(255, 192, 203);">a note below oooo the label</p>
+<div style="background-color: rgb(255, 192, 203);">This div should be white</div>
+<p style="background-color: rgb(255, 192, 203);">There are zero green divs</p>
+<script type="text/javascript" src="./test_01_files/zepto.min.js"></script>
+<script>
+    $(function () {
+        $("<p>Hello</p>").appendTo("body");
+        $("<p />", { text: "Hello", id: "greeting", css: {color: 'darkblue'} }).appendTo("body");
+        $("div.red").after("<p>a note below oooo the label</p>");
+
+        $('li').add('p,div').css('background-color', 'pink');
+
+        $("div.red").after("<p>a note below the label</p>");
+//        $("div").addClass(function(index,currentClass){
+//            if(currentClass==="red"){
+//                alert('oooooo');
+//            }
+//        })
+
+        $('ul').append('<li>new list item</li>');
+        $('ul').clone().appendTo("body");
+
+        var bb=$(".closest")[0];
+        var pp=$(".target")[0];
+
+//       console.log(pp.concat(bb, pp));
+
+
+        $(".target li").each(function(index){
+            if(index===1){
+                $(this).css('color','red')
+            }
+//            console.log("li %d %o",index,this);
+        })
+
+    });
+
+    $(".closest").closest('form').css('color','yellow');
+
+    //    var $parent = $(".parent");
+    //    console.log($.contains($(".parent"), $(".node")));
+
+</script>
+
+<script src="./test_01_files/js"></script><p style="background-color: rgb(255, 192, 203);">Hello</p><p id="greeting" style="color: rgb(0, 0, 139); background-color: rgb(255, 192, 203);">Hello</p><ul class="target">
+    <li style="background-color: rgb(255, 192, 203);">list item 1</li>
+    <li style="background-color: rgb(255, 192, 203);">list item 2</li>
+    <li style="background-color: rgb(255, 192, 203);">list item 3</li>
+<li>new list item</li></ul><ul>
+            <li class="closest" style="background-color: rgb(255, 192, 203);"></li>
+        <li>new list item</li></ul></body></html>

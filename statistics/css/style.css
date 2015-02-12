@@ -1,0 +1,235 @@
+@charset "utf-8";
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body, div, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, pre, form, p, blockquote, input, textarea, abbr, article, aside, figcaption, figure, footer, header, mark, meter, menu, nav, output, progress, section, summary, time {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+html, body {
+    overflow-x: hidden;
+    word-wrap: break-word;
+}
+
+html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {
+    -webkit-text-size-adjust: none;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+
+iframe, a, img, button {
+    border: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+a, a:hover {
+    text-decoration: none;
+    outline: none;
+}
+
+a.a-u {
+    text-decoration: underline;
+}
+
+.clear {
+    clear: both;
+}
+
+.fleft {
+    float: left;
+}
+
+.fright {
+    float: right;
+}
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+    overflow: hidden;
+}
+
+em, i, s {
+    font-style: normal;
+}
+
+input:-webkit-input-placeholder {
+    color: #cecece;
+}
+
+input:-moz-placeholder, input::-moz-placeholder {
+    color: #cecece;
+}
+
+input:-ms-input-placeholder {
+    color: #cecece;
+}
+
+body {
+    font: 400 14px/1.5 "Helvetica Neue", Helvetica, "Microsoft YaHei", STHeiTi, "Droid Sans Fallback", sans-serif;
+    color: #000;
+    overflow-x: hidden;
+
+}
+
+a, button, input {
+    color: #343434;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a.blue {
+    color: #007ead;
+}
+
+h1, h2, h3 {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.control-bar-wrapper {
+    padding: 30px 0 10px;
+    background: #d7eff4;
+    margin-bottom: 40px;
+    border: 1px solid #bef1f4;
+}
+
+.control-bar-wrapper .control-bar {
+    margin-left: 20px;
+}
+
+.control-bar-wrapper .control-bar .date-select-bar a {
+    display: inline-block;
+    cursor: pointer;
+    color: #0965b8;
+    padding: 2px 10px;
+
+}
+
+.control-bar-wrapper .control-bar .date-select-bar select{
+    margin: 0 5px;
+    width: 150px;
+    height: 26px;
+    border-radius: 0;
+    background: #fff;
+    border: 1px solid #c2d3e5;
+}
+.control-bar-wrapper .control-bar .date-select-bar a {
+    display: inline-block;
+    cursor: pointer;
+    color: #0965b8;
+    padding: 2px 10px;
+
+}
+
+.control-bar-wrapper .control-bar .time-select-bar {
+    margin-left: 10px;
+}
+
+.control-bar-wrapper .control-bar .time-select-bar input {
+    border: 1px solid #c2d3e5;
+    color: #0965b8;
+    padding: 2px 0 2px 4px;
+    margin: 0 5px;
+}
+
+.control-bar-wrapper .control-bar .time-span a {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 1px;
+    padding: 3px 10px;
+    color: #0965b8;
+    background: #f6f6f6;
+    border-width: 1px 0 1px 1px;
+    border-color: #c2d3e5;
+    border-style: solid;
+}
+
+.control-bar-wrapper .control-bar .time-span a:last-child {
+    border-right: 1px solid #c2d3e5;
+}
+
+.control-bar-wrapper .control-bar a:hover, .control-bar-wrapper .control-bar a.active {
+    background: #73b1e0;
+    color: #fff;
+}
+
+.control-bar-wrapper .control-bar .site-selector select {
+    margin-right: 20px;
+    width: 200px;
+    height: 26px;
+    border-radius: 0;
+    background: #fff;
+    border: 1px solid #c2d3e5;
+}
+
+table.summary {
+    width: 100%;
+    border-top: 1px solid #f1f1f1;
+    border-bottom: 1px solid #f1f1f1;
+    background-color: #fdf2ef;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 40px;
+}
+
+table.summary tr td {
+    text-align: center;
+    border-bottom: 1px solid white;
+    border-right: 1px solid #e4e4e4;
+    border-top: 1px solid white;
+    padding: 8px 30px;
+    line-height: 1.2;
+}
+
+table.summary tr td span.text {
+    color: #999;
+    line-height: 24px;
+}
+
+table.summary tr td span.value {
+    font-size: 20px;
+    color: #333;
+}
+
+#ui-datepicker-div {
+    font-size: 12px;
+}
+
+#ui-datepicker-div .ui-widget-header, .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    background: none;
+    background: #d7eff4 !important;
+    text-align: center;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>手机安装量统计</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="controlBarWrapper" class="control-bar-wrapper">
+    <div class="control-bar clearfix">
+        <div class="date-select-bar fleft"><a>今天</a><a>昨天</a><a>本周</a><a>本月</a><a>本年</a>
+            <select>
+                <option>全部</option>
+                <option>IOS(全部)</option>
+                <option>IOS(1.2.0)</option>
+                <option>IOS(1.2.1)</option>
+                <option>Android(全部)</option>
+                <option>Android(3.2.0)</option>
+                <option>Android(3.2.1)</option>
+            </select>
+        </div>
+
+        <div class="site-selector fright">
+            <select>
+                <option>Android流量统计</option>
+                <option>IOS流量统计</option>
+                <option>网站流量统计</option>
+                <option>产品查看量统计</option>
+                <option>手机安装量统计</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div id="Summary" class="section ">
+    <table class="summary">
+        <tbody>
+        <tr>
+            <td><span class="text">IOS安装量<a href="javascript:void(0)">
+                &nbsp;</a></span><br><span class="value">20</span></td>
+            <td><span class="text">Android安装量<a href="javascript:void(0)">
+                &nbsp;</a></span><br><span class="value">20</span></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script src="js/highcharts.js"></script>
+<script src="js/exporting.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var json_data = [
+            {
+                "name": "月份",
+                "data": ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"]
+            },
+
+            {
+                "name": "IOS安装量",
+                "data": [23987, 24784, 25899, 25569, 25897, 25668, 24114, 23899, 24987, 25111, 25899, 23221]
+//
+            },
+            {
+                "name": "Android安装量",
+                "data": [21990, 22365, 21987, 22369, 22558, 22987, 23521, 23003, 22756, 23112, 22987, 22897]
+            }
+        ];
+
+        var options = {
+            chart: {
+                renderTo: 'container',
+                type: 'line'
+            },
+            title: {
+                text: '手机安装量统计'
+            },
+            xAxis: {
+                categories: []
+            },
+            yAxis: {
+                title: {
+                    text: '数量'
+                }
+            },
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.series.name + '</b><br/>' +
+                            this.x + ': ' + this.y;
+                }
+            },
+            series: []
+        };
+
+
+        window.onload = function () {
+            options.xAxis.categories = json_data[0]['data'];
+            options.series[0] = json_data[1];
+            options.series[1] = json_data[2];
+            chart = new Highcharts.Chart(options);
+        };
+    });
+</script>
+</body>
+</html>

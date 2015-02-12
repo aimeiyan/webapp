@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div class="parent">
+    <p class="node">$.contains</p>
+</div>
+<ul class="target">
+    <li>list item 1</li>
+    <li class="indexOf">list item 2</li>
+    <li>list item 3</li>
+</ul>
+<p>a paragraph</p>
+<div class="first">
+    <form>
+        <ul>
+            <li class="closest"></li>
+        </ul>
+    </form>
+</div>
+<hr>
+
+<div class="comment">
+    <p></p>
+</div>
+
+<input type="text" value="toggle">
+<input type="button" value="toggle">
+
+<div>This div should be white</div>
+<div class="red">This div will be green because it now has the "green" and "red" classes.
+    It would be red if the addClass function failed.
+</div>
+<div>This div should be white</div>
+<p>There are zero green divs</p>
+
+<section>
+    <code>joiuweo</code>
+</section>
+
+
+<script type="text/javascript" src="js/zepto.min.js"></script>
+
+<style>.delete { display: none; }</style>
+
+<ul id=items>
+    <li>List item 1 <span class=delete>DELETE</span></li>
+    <li>List item 2 <span class=delete>DELETE</span></li>
+</ul>
+
+<script>
+    // show delete buttons on swipe
+    $('#items li').swipe(function(){
+        $('.delete').hide()
+        $('.delete', this).show()
+    })
+
+    // delete row on tapping delete button
+    $('.delete').tap(function(){
+        $(this).parent('li').remove()
+    })
+</script>
+<script>
+    $(function () {
+
+        $.Event('mylib:change', { bubbles: true });
+
+        $(document).on('mylib:change', function(e, from, to){
+            console.log('change on %o with data %s, %s', e.target, from, to)
+        });
+
+        $(document.body).trigger('mylib:change', ['one', 'two']);
+
+        var obj = {name: 'Zepto'},handler = function(){ console.log("hello from + ", this.name) };
+
+        // ensures that the handler will be executed in the context of `obj`:
+        $(document).on('click', $.proxy(handler, obj));
+
+        $('<em>broken</em>').wrap('<li>').appendTo(document.body);
+
+        $('<em>better</em>').appendTo(document.body).wrap('<li>');
+        $("code").wrap('<div class=highlight><pre /></div>');
+
+        $(".red").wrap('<section>');
+
+        var input = $('input[type=text]');
+        $('input[type="button"]').toggle(input.val().length>5);
+
+         $(".first").first().css('fontSize','30px');
+
+        $("<p>Hello</p>").appendTo("body");
+        $("<p />", { text: "Hello", id: "greeting", css: {color: 'darkblue'} }).appendTo("body");
+        $("div.red").after("<p>a note below oooo the label</p>");
+
+        $('li').add('p,div').css('background-color', 'pink');
+
+        $("div.red").after("<p>a note below the label</p>");
+//        $("div").addClass(function(index,currentClass){
+//            if(currentClass==="red"){
+//                alert('oooooo');
+//            }
+//        })
+
+        $('ul').append('<li>new list item</li>');
+        $('ul').clone().appendTo("body");
+
+        var bb=$(".closest")[0];
+        var pp=$(".target")[0];
+
+//       console.log(pp.concat(bb, pp));
+
+        $(".target li").eq(-1).css('background','blue');
+
+        $(".target li").each(function(index){
+            if(index===1){
+                $(this).css('color','red')
+            }
+//            console.log("li %d %o",index,this);
+        });
+
+//        console.log($(".target li:nth-child(3)").index(),'-----');
+
+//        console.log($(".target li").eq(0).indexOf($(".indexOf"),2));
+
+    });
+
+    $(".closest").closest('form').css('color','yellow');
+
+    //    var $parent = $(".parent");
+    //    console.log($.contains($(".parent"), $(".node")));
+
+</script>
+</body>
+</html>

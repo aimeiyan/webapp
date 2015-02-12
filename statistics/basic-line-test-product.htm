@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>产品查看量统计</title>
+
+<link href="css/style.css" rel="stylesheet">
+<link href="jquery-ui-1.11.2/jquery-ui.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div id="controlBarWrapper" class="control-bar-wrapper">
+    <div class="control-bar clearfix">
+        <div class="date-select-bar fleft"><a>今天</a><a>昨天</a><a>本周</a><a>本月</a><a>本年</a><select>
+            <option>全部</option>
+            <option>IOS</option>
+            <option>Android</option>
+            <option>网站</option>
+        </select></div>
+        <div class="time-select-bar fleft">从<input type="text" class="from">到<input type="text" class="to"></div>
+        <div class="time-span fleft"><a class="hour">按时</a><a class="day">按日</a><a class="week">按周</a><a class="month">按月</a><a
+                class="year">按年</a></div>
+        <div class="site-selector fright">
+            <select>
+                <option>Android流量统计</option>
+                <option>IOS流量统计</option>
+                <option>网站流量统计</option>
+                <option>产品查看量统计</option>
+                <option>手机安装量统计</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div id="Summary" class="section ">
+    <table class="summary">
+        <tbody>
+        <tr>
+            <td><span class="text">通宝图1号<a href="javascript:void(0)">
+                &nbsp;</a></span><br><span class="value">20</span></td>
+            <td><span class="text">通宝图2号<a href="javascript:void(0)">
+                &nbsp;</a></span><br><span class="value">20</span></td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="jquery-ui-1.11.2/jquery-ui.min.js"></script>
+
+<script src="js/highcharts.js"></script>
+<script src="js/exporting.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var json_data = [
+            {
+                "name": "月份",
+                "data": ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"]
+            },
+//            {
+//                "name": "小时",
+//                "data": ["1", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"]
+//            },
+            {
+                "name": "通宝图1号",
+                "data": [23987, 24784, 25899, 25569, 25897, 25668, 24114, 23899, 24987, 25111, 25899, 23221]
+//
+            },
+            {
+                "name": "通宝图2号",
+                "data": [21990, 22365, 21987, 22369, 22558, 22987, 23521, 23003, 22756, 23112, 22987, 22897]
+            }
+        ];
+
+        var options = {
+            chart: {
+                renderTo: 'container',
+                type: 'line'
+            },
+            title: {
+                text: '产品查看量统计'
+//                x: -20 //center
+            },
+            xAxis: {
+//                type: 'datetime',
+                categories: []
+            },
+            yAxis: {
+                title: {
+                    text: '数量'
+                }
+            },
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.series.name + '</b><br/>' +
+                            this.x + ': ' + this.y;
+                }
+            },
+            series: []
+        };
+
+
+        $(".hour").click(function () {
+            options.xAxis.categories = json_data[0]['data'];
+            options.series[0] = json_data[1];
+            options.series[1] = json_data[2];
+            chart = new Highcharts.Chart(options);
+        });
+
+        $(".day").click(function () {
+            options.xAxis.categories = json_data[0]['data'];
+            options.series[0] = json_data[2];
+            chart = new Highcharts.Chart(options);
+
+        });
+
+        $(".hour").trigger("click");
+
+        // Apply the theme
+        var highchartsOptions = Highcharts.setOptions(Highcharts.theme);
+
+        $(".from").datepicker({
+            defaultDate: "+1w",
+            changeMonth: true,
+            onClose: function (selectedDate) {
+                $("#to").datepicker("option", "minDate", selectedDate);
+            }
+        });
+        $(".to").datepicker({
+            defaultDate: "+1w",
+            changeMonth: true,
+            onClose: function (selectedDate) {
+                $("#from").datepicker("option", "maxDate", selectedDate);
+            }
+        });
+
+        $(".datepicker").datepicker();
+
+    });
+</script>
+</body>
+</html>

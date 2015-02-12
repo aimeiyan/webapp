@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title></title>
+
+    <style>
+        .delete {
+            display: none;
+        }
+
+        #some_element {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+
+<ul id=items>
+    <li>List item 1 <span class=delete>DELETE</span></li>
+    <li>List item 2 <span class=delete>DELETE</span></li>
+</ul>
+
+<div id="some_element"></div>
+<div>
+    <a class="tap">点击</a>
+</div>
+
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript" src="js/event.js"></script>
+<script type="text/javascript" src="js/touch.js"></script>
+<script type="text/javascript" src="js/fx.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+
+        // 判断函数是否是null空值
+        function isOwnEmpty (obj) {
+            for (var name in obj) {
+                if (obj.hasOwnProperty(name)) {
+                    return false;
+                }
+            }
+            return true;
+        };
+
+        var obj=[1,1,1,2,3];
+        console.log(isOwnEmpty(obj),'[[]]');
+
+
+        // show delete buttons on swipe
+        $('#items li').swipe(function () {
+            $('.delete').hide()
+            $('.delete', this).show()
+        });
+
+        // delete row on tapping delete button
+        $('.delete').tap(function () {
+            $(this).parent('li').remove()
+        });
+
+        var t1, t2, t3;
+        $('.tap').tap(function () {
+            t1 = Date.now();
+//            console.log(t1);
+
+        });
+
+
+        $('.tap').click(function () {
+            t2 = Date.now();
+            alert(t2 - t1, 't2-t1');
+//            console.log(t2-t1);
+//            t3=t2-t1;
+//            console.log(t3);
+
+        });
+
+
+        // 判断屏幕是否旋转
+        function orientationChange() {
+            switch (window.orientation) {
+                case 0:
+                    alert("肖像模式 0,screen-width: " + screen.width + "; screen-height:" + screen.height);
+                    break;
+                case -90:
+                    alert("左旋 -90,screen-width: " + screen.width + "; screen-height:" + screen.height);
+                    break;
+                case 90:
+                    alert("右旋 90,screen-width: " + screen.width + "; screen-height:" + screen.height);
+                    break;
+                case 180:
+                　　alert("风景模式 180,screen-width: " + screen.width + "; screen-height:" + screen.height);
+        　　        break;
+            }
+        };
+// 添加事件监听
+        addEventListener('load', function () {
+            setTimeout(function(){ window.scrollTo(0, 1); }, 100);
+            orientationChange();
+            window.onorientationchange = orientationChange;
+        });
+    })
+
+
+</script>
+
+</body>
+</html>
