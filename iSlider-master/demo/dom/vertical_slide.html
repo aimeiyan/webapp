@@ -37,7 +37,11 @@
 		margin: 1em 0;	
 	}
 
-	.page1{
+	.home{
+		background-color: #f58a4b;
+		color: #FFF;
+	}
+    .page1{
 		background-color: #F5A8A8;
 		color: #FFF;
 	}
@@ -60,7 +64,7 @@
 </head>
 <body>
 	<div id="iSlider"></div>
-	<script type="text/javascript" src="../public/js/islider.js"></script>
+	<script type="text/javascript" src="../public/js/islider_core.js"></script>
 	<script>
 		var list = [{
 			'content' : '<div class="content home"><h1>Home</h1><h2>This is home page</h2><p>home is pretty awsome</p><div>'
@@ -84,8 +88,9 @@
 		    data: list,
 		    type: 'dom',
 		    dom: document.getElementById("iSlider"),
-		    duration: 1000,
-		    isVertical: true
+		    duration: 0,
+            animateType: 'card',
+            isVertical: true
 		});
 	</script>
 </body>
