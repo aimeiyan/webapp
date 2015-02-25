@@ -6,31 +6,28 @@
     <script src="js/angular.js" type="text/javascript"></script>
 </head>
 <body>
-<!--<div ng-app="" ng-init="firstName='John'">-->
-    <!--<p>Name:<input type="text" ng-model="name"></p>-->
-
-    <!--<p ng-bind="name"></p>-->
-
-    <!--<p>The name is <span ng-bind="firstName"></span></p>-->
-        <!--<p>My first expression:{{5+5}}</p>-->
-
-
-<!--</div>-->
-
-<div ng-app="" ng-controller="personController">
-
-    First Name: <input type="text" ng-model="firstName"><br>
-    Last Name: <input type="text" ng-model="lastName"><br>
+<div ng-app="" ng-init="citys=[{name:'Jani',country:'Norway'},{name:'Hege',country:'Sweden'},{name:'kai',country:'Denmark'}];names=['Jani','Hege','Kai'];points=[1,15,19,2,40];firstName='Nancy';lastName='ADWORD';quantity=1;cost=5;person={firstName:'John',lastName:'Doe'}">
+    <p>姓名为<span ng-bind="firstName"></span></p>
+    <p>姓名：<input type="text" ng-model="name"></p>
+    <p ng-bind="name"></p>
+    <p>{{5+5}}</p>
+    <p>{{firstName+' '+lastName}}</p>
+    <p><span ng-bind="quantity*cost"></span></p>
+    <p>姓为：{{person.lastName}}</p>
+    <p>第三个值为:{{points[2]}}</p>
+    数量：<input type="number" ng-model="quantity">
+    价格：<input type="number" ng-model="cost">
+    <p>总价：{{quantity * cost}}</p>
     <br>
-    Full Name: {{firstName + " " + lastName}}
+    <p>使用 ng-repeat 来循环数组</p>
+    <ul>
+        <li ng-repeat="x in names">{{x}}</li>
+    </ul>
+
+    <ul>
+        <li ng-repeat="x in citys">{{x.name+' —— '+x.country}}</li>
+    </ul>
 
 </div>
-
-<script>
-    function personController($scope) {
-        $scope.firstName = "John";
-        $scope.lastName = "Doe";
-    }
-</script>
 </body>
 </html>
