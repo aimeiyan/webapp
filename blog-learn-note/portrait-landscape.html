@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <title></title>
+
+    <!--或外链不同的CSS文件，每个CSS文件控制对应文字的显示隐藏：-->
+    <!--<link rel="stylesheet" media="all and (orientation:portrait)" href="portrait.css">-->
+    <!--<link rel="stylesheet" media="all and (orientation:landscape)" href="landscape.css">-->
+
+    <style type="text/css">
+
+        .portrait,.landscape{
+            display: none;
+        }
+
+        @media all and (orientation:portrait) {
+            .portrait{
+                display: inline;
+            }
+        }
+
+        @media  all and (orientation:landscape) {
+            .landscape{
+                display: inline;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<span class="portrait">Portrait Mode</span>
+<span class="landscape">Landscape Mode</span>
+</body>
+</html>

@@ -1,0 +1,2735 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Any Order, Any Layout Columns</title>
+    <link type="text/css" rel="stylesheet" href="css/layouts.css"/>
+    <style type="text/css">
+        <!--
+        body {
+            margin: 20px;
+            padding: 0;
+            background: #f0f0f0;
+            color: #333;
+            font: 12px/20px Arial, Helvetica, sans-serif, '宋体';
+        }
+
+        h1 {
+            font: bold 14px/2em Verdana, Geneva, sans-serif;
+        }
+
+        h2 {
+            margin: 25px 0 0;
+            font: bold 18px/2em Verdana, Geneva, sans-serif;
+        }
+
+        h3 {
+            margin: 10px 5px 5px;
+            font: bold 12px/2em Verdana, Geneva, sans-serif;
+        }
+
+        /* colors */
+        .r {
+            margin: -1px 0 0;
+            padding: 8px 3px;
+            border: 1px solid #ddd;
+            background: #fff;
+        }
+
+        .r .cMain .cInt,
+        .r .cInt .cMain .cInt {
+            padding: 8px;
+            background: #69f;
+        }
+
+        .r .cSub .cInt,
+        .r .cInt .cSub .cInt {
+            padding: 8px;
+            background: #9cf;
+        }
+
+        .r .cExtra .cInt,
+        .r .cInt .cExtra .cInt {
+            padding: 8px;
+            background: #fc9;
+        }
+
+        -->
+    </style>
+</head>
+
+<body>
+
+<h1>原文：<a href="http://mutian.info/tech/581" target="_blank">任意分栏布局 Any Order, Any Layout Columns</a></h1>
+
+<h2>二分栏：百分比宽度</h2>
+
+<h3>m,s:100%</h3>
+
+<div class="r r-100">
+    <div class="rInt">
+        <div class="cMain">
+            <div class="cInt">①. Main 栏宽100%</div>
+        </div>
+        <div class="cSub">
+            <div class="cInt">②. Sub 栏宽100%</div>
+        </div>
+    </div>
+</div>
+
+<h3>m:50% | s:50%</h3>
+
+<div class="r r-m50p-s50p">
+    <div class="rInt">
+        <div class="cMain">
+            <div class="cInt">①. Main 栏宽50%</div>
+        </div>
+        <div class="cSub">
+            <div class="cInt">②. Sub 栏宽50%</div>
+        </div>
+    </div>
+</div>
+
+<h3>s:50% | m:50%</h3>
+
+<div class="r r-s50p-m50p">
+    <div class="rInt">
+        <div class="cMain">
+            <div class="cInt">①. Main 栏宽50%</div>
+        </div>
+        <div class="cSub">
+            <div class="cInt">②. Sub 栏宽50%</div>
+        </div>
+    </div>
+</div>
+
+<h3>m:66% | s:33%</h3>
+
+<div class="r r-m66p-s33p">
+    <div class="rInt">
+        <div class="cMain">
+            <div class="cInt">①. Main 栏宽66%</div>
+        </div>
+        <div class="cSub">
+            <div class="cInt">②. Sub 栏宽33%</div>
+        </div>
+    </div>
+</div>
+
+<h3>s:66% | m:33%</h3>
+
+<div class="r r-s66p-m33p">
+    <div class="rInt">
+        <div class="cMain">
+            <div class="cInt">①. Main 栏宽33%</div>
+        </div>
+        <div class="cSub">
+            <div class="cInt">②. Sub 栏宽66%</div>
+        </div>
+    </div>
+</div>
+
+<h3>m:33% | s:66%</h3>
+
+<div class="r r-m33p-s66p">
+    <div class="rInt">
+        <div class="cMain">
+            <div class="cInt">①. Main 栏宽33%</div>
+        </div>
+        <div class="cSub">
+            <div class="cInt">②. Sub 栏宽66%</div>
+        </div>
+    </div>
+</div>
+
+<h3>s:33% | m:66%</h3>
+
+<div class="r r-s33p-m66p">
+    <div class="rInt">
+        <div class="cMain">
+            <div class="cInt">①. Main 栏宽66%</div>
+        </div>
+        <div class="cSub">
+            <div class="cInt">②. Sub 栏宽33%</div>
+        </div>
+    </div>
+</div>
+
+
+<h2>二分栏：一栏定宽，另一栏自适应</h2>
+
+<h3>m:200px | s:auto</h3>
+
+<div class="r r-m200-sAuto">
+    <div class="rInt">
+        <div class="cMain">
+            <div class="cInt">①. Main 栏宽200px</div>
+        </div>
+        <div class="cSub">
+            <div class="cInt">②. Sub 栏宽度自适应</div>
+        </div>
+    </div>
+</div>
+
+<h3>s:200px | m:auto</h3>
+
+<div class="r r-s200-mAuto">
+    <div class="rInt">
+        <div class="cMain">
+            <div class="cInt">①. Main 栏宽度自适应</div>
+        </div>
+        <div class="cSub">
+            <div class="cInt">②. Sub 栏宽200px</div>
+        </div>
+    </div>
+</div>
+
+<h3>m:auto | s:200px</h3>
+
+<div class="r r-mAuto-s200">
+    <div class="rInt">
+        <div class="cMain">
+            <div class="cInt">①. Main 栏宽度自适应</div>
+        </div>
+        <div class="cSub">
+            <div class="cInt">②. Sub 栏宽200px</div>
+        </div>
+    </div>
+</div>
+
+<h3>s:auto | m:200px</h3>
+
+<div class="r r-sAuto-m200">
+    <div class="rInt">
+        <div class="cMain">
+            <div class="cInt">①. Main 栏宽200px</div>
+        </div>
+        <div class="cSub">
+            <div class="cInt">②. Sub 栏宽度自适应</div>
+        </div>
+    </div>
+</div>
+
+
+<h2>三分栏：百分比宽度</h2>
+
+<h3>m,s,e:100%</h3>
+
+<div class="r r-100">
+    <div class="rInt">
+        <div class="cMain">
+            <div class="cInt">①. Main 栏宽100%</div>
+        </div>
+        <div class="cSub">
+            <div class="cInt">②. Sub 栏宽100%</div>
+        </div>
+        <div class="cExtra">
+            <div class="cInt">③. Extra 栏宽100%</div>
+        </div>
+    </div>
+</div>
+
+<h3>s:25% | m:50% | e:25%</h3>
+
+<div class="r r-s25p-m50p-e25p">
+    <div class="rInt">
+        <div class="cMain">
+            <div class="cInt">①. Main 栏宽50%</div>
+        </div>
+        <div class="cSub">
+            <div class="cInt">②. Sub 栏宽25%</div>
+        </div>
+        <div class="cExtra">
+            <div class="cInt">③. Extra 栏宽25%</div>
+        </div>
+    </div>
+</div>
+
+<h3>e:25% | m:50% | s:25%</h3>
+
+<div class="r r-e25p-m50p-s25p">
+    <div class="rInt">
+        <div class="cMain">
+            <div class="cInt">①. Main 栏宽50%</div>
+        </div>
+        <div class="cSub">
+            <div class="cInt">②. Sub 栏宽25%</div>
+        </div>
+        <div class="cExtra">
+            <div class="cInt">③. Extra 栏宽25%</div>
+        </div>
+    </div>
+</div>
+
+<h3>m:25% | s:50% | e:25%</h3>
+
+<div class="r r-m25p-s50p-e25p">
+    <div class="rInt">
+        <div class="cMain">
+            <div class="cInt">①. Main 栏宽25%</div>
+        </div>
+        <div class="cSub">
+            <div class="cInt">②. Sub 栏宽50%</div>
+        </div>
+        <div class="cExtra">
+            <div class="cInt">③. Extra 栏宽25%</div>
+        </div>
+    </div>
+</div>
+
+<h3>m:25% | e:50% | s:25%</h3>
+
+<div class="r r-m25p-e50p-s25p">
+    <div class="rInt">
+        <div class="cMain">
+            <div class="cInt">①. Main 栏宽25%</div>
+        </div>
+        <div class="cSub">
+            <div class="cInt">②. Sub 栏宽25%</div>
+        </div>
+        <div class="cExtra">
+            <div class="cInt">③. Extra 栏宽50%</div>
+        </div>
+    </div>
+</div>
+
+<h3>s:25% | e:50% | m:25%</h3>
+
+<div class="r r-s25p-e50p-m25p">
+    <div class="rInt">
+        <div class="cMain">
+            <div class="cInt">①. Main 栏宽25%</div>
+        </div>
+        <div class="cSub">
+            <div class="cInt">②. Sub 栏宽25%</div>
+        </div>
+        <div class="cExtra">
+            <div class="cInt">③. Extra 栏宽50%</div>
+        </div>
+    </div>
+</div>
+
+<h3>e:25% | s:50% | m:25%</h3>
+
+<div class="r r-e25p-s50p-m25p">
+    <div class="rInt">
+        <div class="cMain">
+            <div class="cInt">①. Main 栏宽25%</div>
+        </div>
+        <div class="cSub">
+            <div class="cInt">②. Sub 栏宽50%</div>
+        </div>
+        <div class="cExtra">
+            <div class="cInt">③. Extra 栏宽25%</div>
+        </div>
+    </div>
+</div>
+
+
+<h2>三分栏：左右栏定宽，中间栏自适应</h2>
+
+<h3>s:200px | m:auto | e:200px</h3>
+
+<div class="r r-s200-mAuto-e200">
+    <div class="rInt">
+        <div class="cMain">
+            <div class="cInt">①. Main 栏宽度自适应</div>
+        </div>
+        <div class="cSub">
+            <div class="cInt">②. Sub 栏宽200px</div>
+        </div>
+        <div class="cExtra">
+            <div class="cInt">③. Extra 栏宽200px</div>
+        </div>
+    </div>
+</div>
+
+<h3>e:200px | m:auto | s:200px</h3>
+
+<div class="r r-e200-mAuto-s200">
+    <div class="rInt">
+        <div class="cMain">
+            <div class="cInt">①. Main 栏宽度自适应</div>
+        </div>
+        <div class="cSub">
+            <div class="cInt">②. Sub 栏宽200px</div>
+        </div>
+        <div class="cExtra">
+            <div class="cInt">③. Extra 栏宽200px</div>
+        </div>
+    </div>
+</div>
+
+
+<h2>三块二分栏：</h2>
+
+<h3>m,e:auto | s:200px</h3>
+
+<div class="r r-meAuto-s200">
+    <div class="rInt">
+        <div class="cMain">
+            <div class="cInt">①. Main 栏宽度自适应</div>
+        </div>
+        <div class="cSub">
+            <div class="cInt">②. Sub 栏宽200px</div>
+        </div>
+        <div class="cExtra">
+            <div class="cInt">③. Extra 栏宽度自适应</div>
+        </div>
+    </div>
+</div>
+
+<h3>s:200px | m,e:auto</h3>
+
+<div class="r r-s200-meAuto">
+    <div class="rInt">
+        <div class="cMain">
+            <div class="cInt">①. Main 栏宽度自适应</div>
+        </div>
+        <div class="cSub">
+            <div class="cInt">②. Sub 栏宽200px</div>
+        </div>
+        <div class="cExtra">
+            <div class="cInt">③. Extra 栏宽度自适应</div>
+        </div>
+    </div>
+</div>
+
+
+<h2>二分栏结构，两层布局嵌套</h2>
+
+<h3>m:50% | s:50%</h3>
+
+<div class="r r-m50p-s50p">
+<div class="rInt">
+<div class="cMain">
+    <div class="cInt">
+        ①. Main 栏宽50%
+
+        <div class="r r-100">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽100%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽100%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m50p-s50p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽50%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽50%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s50p-m50p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽50%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽50%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m66p-s33p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽66%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽33%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s66p-m33p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽33%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽66%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m33p-s66p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽33%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽66%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s33p-m66p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽66%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽33%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m200-sAuto">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽200px</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽度自适应</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s200-mAuto">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽度自适应</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽200px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-mAuto-s200">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽度自适应</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽200px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-sAuto-m200">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽200px</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽度自适应</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="cSub">
+    <div class="cInt">
+        ②. Sub 栏宽50%
+
+        <div class="r r-100">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽100%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽100%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m50p-s50p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽50%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽50%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s50p-m50p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽50%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽50%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m66p-s33p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽66%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽33%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s66p-m33p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽33%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽66%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m33p-s66p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽33%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽66%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s33p-m66p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽66%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽33%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m200-sAuto">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽200px</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽度自适应</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s200-mAuto">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽度自适应</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽200px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-mAuto-s200">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽度自适应</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽200px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-sAuto-m200">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽200px</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽度自适应</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<h3>s:50% | m:50%</h3>
+
+<div class="r r-s50p-m50p">
+<div class="rInt">
+<div class="cMain">
+    <div class="cInt">
+        ①. Main 栏宽50%
+
+        <div class="r r-100">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽100%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽100%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m50p-s50p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽50%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽50%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s50p-m50p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽50%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽50%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m66p-s33p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽66%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽33%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s66p-m33p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽33%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽66%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m33p-s66p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽33%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽66%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s33p-m66p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽66%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽33%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m200-sAuto">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽200px</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽度自适应</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s200-mAuto">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽度自适应</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽200px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-mAuto-s200">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽度自适应</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽200px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-sAuto-m200">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽200px</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽度自适应</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="cSub">
+    <div class="cInt">
+        ②. Sub 栏宽50%
+
+        <div class="r r-100">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽100%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽100%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m50p-s50p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽50%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽50%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s50p-m50p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽50%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽50%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m66p-s33p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽66%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽33%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s66p-m33p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽33%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽66%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m33p-s66p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽33%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽66%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s33p-m66p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽66%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽33%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m200-sAuto">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽200px</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽度自适应</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s200-mAuto">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽度自适应</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽200px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-mAuto-s200">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽度自适应</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽200px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-sAuto-m200">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽200px</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽度自适应</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<h3>m:66% | s:33%</h3>
+
+<div class="r r-m66p-s33p">
+<div class="rInt">
+<div class="cMain">
+    <div class="cInt">
+        ①. Main 栏宽66%
+
+        <div class="r r-100">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽100%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽100%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m50p-s50p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽50%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽50%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s50p-m50p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽50%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽50%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m66p-s33p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽66%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽33%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s66p-m33p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽33%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽66%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m33p-s66p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽33%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽66%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s33p-m66p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽66%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽33%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m200-sAuto">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽200px</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽度自适应</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s200-mAuto">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽度自适应</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽200px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-mAuto-s200">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽度自适应</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽200px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-sAuto-m200">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽200px</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽度自适应</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="cSub">
+    <div class="cInt">
+        ②. Sub 栏宽33%
+
+        <div class="r r-100">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽100%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽100%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m50p-s50p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽50%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽50%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s50p-m50p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽50%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽50%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m66p-s33p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽66%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽33%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s66p-m33p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽33%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽66%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m33p-s66p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽33%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽66%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s33p-m66p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽66%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽33%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m200-sAuto">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽200px</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽度自适应</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s200-mAuto">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽度自适应</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽200px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-mAuto-s200">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽度自适应</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽200px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-sAuto-m200">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽200px</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽度自适应</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<h3>s:66% | m:33%</h3>
+
+<div class="r r-s66p-m33p">
+<div class="rInt">
+<div class="cMain">
+    <div class="cInt">
+        ①. Main 栏宽33%
+
+        <div class="r r-100">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽100%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽100%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m50p-s50p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽50%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽50%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s50p-m50p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽50%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽50%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m66p-s33p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽66%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽33%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s66p-m33p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽33%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽66%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m33p-s66p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽33%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽66%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s33p-m66p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽66%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽33%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m200-sAuto">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽200px</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽度自适应</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s200-mAuto">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽度自适应</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽200px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-mAuto-s200">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽度自适应</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽200px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-sAuto-m200">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽200px</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽度自适应</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="cSub">
+    <div class="cInt">
+        ②. Sub 栏宽66%
+
+        <div class="r r-100">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽100%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽100%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m50p-s50p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽50%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽50%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s50p-m50p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽50%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽50%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m66p-s33p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽66%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽33%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s66p-m33p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽33%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽66%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m33p-s66p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽33%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽66%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s33p-m66p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽66%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽33%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m200-sAuto">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽200px</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽度自适应</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s200-mAuto">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽度自适应</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽200px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-mAuto-s200">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽度自适应</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽200px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-sAuto-m200">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽200px</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽度自适应</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<h3>m:33% | s:66%</h3>
+
+<div class="r r-m33p-s66p">
+<div class="rInt">
+<div class="cMain">
+    <div class="cInt">
+        ①. Main 栏宽33%
+
+        <div class="r r-100">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽100%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽100%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m50p-s50p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽50%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽50%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s50p-m50p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽50%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽50%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m66p-s33p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽66%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽33%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s66p-m33p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽33%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽66%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m33p-s66p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽33%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽66%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s33p-m66p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽66%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽33%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m200-sAuto">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽200px</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽度自适应</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s200-mAuto">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽度自适应</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽200px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-mAuto-s200">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽度自适应</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽200px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-sAuto-m200">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽200px</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽度自适应</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="cSub">
+    <div class="cInt">
+        ②. Sub 栏宽66%
+
+        <div class="r r-100">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽100%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽100%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m50p-s50p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽50%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽50%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s50p-m50p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽50%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽50%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m66p-s33p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽66%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽33%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s66p-m33p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽33%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽66%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m33p-s66p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽33%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽66%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s33p-m66p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽66%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽33%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m200-sAuto">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽200px</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽度自适应</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s200-mAuto">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽度自适应</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽200px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-mAuto-s200">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽度自适应</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽200px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-sAuto-m200">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽200px</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽度自适应</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<h3>s:33% | m:66%</h3>
+
+<div class="r r-s33p-m66p">
+<div class="rInt">
+<div class="cMain">
+    <div class="cInt">
+        ①. Main 栏宽66%
+
+        <div class="r r-100">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽100%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽100%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m50p-s50p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽50%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽50%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s50p-m50p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽50%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽50%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m66p-s33p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽66%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽33%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s66p-m33p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽33%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽66%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m33p-s66p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽33%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽66%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s33p-m66p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽66%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽33%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m200-sAuto">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽200px</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽度自适应</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s200-mAuto">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽度自适应</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽200px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-mAuto-s200">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽度自适应</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽200px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-sAuto-m200">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽200px</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽度自适应</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="cSub">
+    <div class="cInt">
+        ②. Sub 栏宽33%
+
+        <div class="r r-100">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽100%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽100%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m50p-s50p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽50%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽50%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s50p-m50p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽50%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽50%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m66p-s33p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽66%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽33%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s66p-m33p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽33%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽66%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m33p-s66p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽33%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽66%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s33p-m66p">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽66%</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽33%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-m200-sAuto">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽200px</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽度自适应</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-s200-mAuto">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽度自适应</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽200px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-mAuto-s200">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽度自适应</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽200px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="r r-sAuto-m200">
+            <div class="rInt">
+                <div class="cMain">
+                    <div class="cInt">①. Main 栏宽200px</div>
+                </div>
+                <div class="cSub">
+                    <div class="cInt">②. Sub 栏宽度自适应</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<h3>m:200px | s:auto</h3>
+
+<div class="r r-m200-sAuto">
+    <div class="rInt">
+        <div class="cMain">
+            <div class="cInt">
+                ①. Main 栏宽200px
+            </div>
+        </div>
+        <div class="cSub">
+            <div class="cInt">
+                ②. Sub 栏宽度自适应
+
+                <div class="r r-100">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽100%</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽100%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-m50p-s50p">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽50%</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽50%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-s50p-m50p">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽50%</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽50%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-m66p-s33p">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽66%</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽33%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-s66p-m33p">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽33%</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽66%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-m33p-s66p">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽33%</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽66%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-s33p-m66p">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽66%</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽33%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-m200-sAuto">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽200px</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽度自适应</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-s200-mAuto">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽度自适应</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽200px</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-mAuto-s200">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽度自适应</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽200px</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-sAuto-m200">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽200px</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽度自适应</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3>s:200px | m:auto</h3>
+
+<div class="r r-s200-mAuto">
+    <div class="rInt">
+        <div class="cMain">
+            <div class="cInt">
+                ①. Main 栏宽度自适应
+
+                <div class="r r-100">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽100%</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽100%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-m50p-s50p">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽50%</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽50%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-s50p-m50p">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽50%</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽50%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-m66p-s33p">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽66%</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽33%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-s66p-m33p">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽33%</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽66%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-m33p-s66p">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽33%</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽66%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-s33p-m66p">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽66%</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽33%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-m200-sAuto">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽200px</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽度自适应</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-s200-mAuto">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽度自适应</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽200px</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-mAuto-s200">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽度自适应</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽200px</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-sAuto-m200">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽200px</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽度自适应</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cSub">
+            <div class="cInt">
+                ②. Sub 栏宽200px
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3>m:auto | s:200px</h3>
+
+<div class="r r-mAuto-s200">
+    <div class="rInt">
+        <div class="cMain">
+            <div class="cInt">
+                ①. Main 栏宽度自适应
+
+                <div class="r r-100">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽100%</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽100%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-m50p-s50p">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽50%</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽50%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-s50p-m50p">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽50%</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽50%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-m66p-s33p">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽66%</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽33%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-s66p-m33p">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽33%</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽66%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-m33p-s66p">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽33%</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽66%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-s33p-m66p">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽66%</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽33%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-m200-sAuto">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽200px</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽度自适应</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-s200-mAuto">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽度自适应</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽200px</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-mAuto-s200">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽度自适应</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽200px</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-sAuto-m200">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽200px</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽度自适应</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cSub">
+            <div class="cInt">
+                ②. Sub 栏宽200px
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3>s:auto | m:200px</h3>
+
+<div class="r r-sAuto-m200">
+    <div class="rInt">
+        <div class="cMain">
+            <div class="cInt">
+                ①. Main 栏宽200px
+            </div>
+        </div>
+        <div class="cSub">
+            <div class="cInt">
+                ②. Sub 栏宽度自适应
+
+                <div class="r r-100">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽100%</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽100%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-m50p-s50p">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽50%</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽50%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-s50p-m50p">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽50%</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽50%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-m66p-s33p">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽66%</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽33%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-s66p-m33p">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽33%</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽66%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-m33p-s66p">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽33%</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽66%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-s33p-m66p">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽66%</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽33%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-m200-sAuto">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽200px</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽度自适应</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-s200-mAuto">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽度自适应</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽200px</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-mAuto-s200">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽度自适应</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽200px</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r r-sAuto-m200">
+                    <div class="rInt">
+                        <div class="cMain">
+                            <div class="cInt">①. Main 栏宽200px</div>
+                        </div>
+                        <div class="cSub">
+                            <div class="cInt">②. Sub 栏宽度自适应</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p id="copyright">&copy;2008 <a href="http://mutian.info/">Mutian.info</a></p>
+
+<br>
+<br>
+
+<p>布局实践，二分栏：一栏定宽，另一栏自适应</p>
+<style type="text/css">
+
+    .test-01 .test-wrapper {
+        padding-left: 200px;
+
+    }
+
+    .test-01 .test-wrapper .fixed-width {
+        width: 200px;
+        float: left;
+        margin-left: -200px;
+        /*background-color: orange;*/
+    }
+
+    .test-01 .test-wrapper .adaptive-width {
+        float: right;
+        width: 100%;
+
+    }
+
+    .test-01 .test-wrapper .fixed-width div, .test-01 .test-wrapper .adaptive-width div {
+        margin: 0 5px;
+        padding: 8px;
+        background-color: #ffea32;
+    }
+
+</style>
+<div class="r test-01">
+    <div class="rInt test-wrapper">
+        <div class="fixed-width">
+            <div>fixed 栏宽200px</div>
+        </div>
+        <div class="adaptive-width">
+            <div>adaptive 栏宽</div>
+        </div>
+    </div>
+
+</div>
+<br>
+<br>
+
+<p>布局实践，三分栏：百分比宽度</p>
+<style type="text/css">
+
+    .test-02 .test-wrapper .part-01 {
+        width: 25%;
+        float: left;
+    }
+
+    .test-02 .test-wrapper .part-02 {
+        width: 50%;
+        float: left;
+    }
+
+    .test-02 .test-wrapper .part-03 {
+        width: 25%;
+        float: right;
+    }
+
+    .test-02 .test-wrapper .part-01 div, .test-02 .test-wrapper .part-02 div, .test-02 .test-wrapper .part-03 div {
+        margin: 0 5px;
+        padding: 8px;
+        background-color: #ffea32;
+    }
+
+</style>
+<div class="r test-02">
+    <div class="rInt test-wrapper">
+        <div class="part-01">
+            <div>part-01</div>
+        </div>
+        <div class="part-02">
+            <div>part-02</div>
+        </div>
+        <div class="part-03">
+            <div>part-03</div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+
+<p>未知高度，div垂直居中的一个跨浏览器方案</p>
+<style type="text/css">
+    .test-03 div {
+        display: table-cell;
+        zoom: 1;
+        padding: 10px;
+        vertical-align: middle;
+    }
+
+    .test-03 div:first-child {
+        background: #69f;
+        color: #fff;
+    }
+
+    .test-03 div.part-02 {
+        background: #fc0;
+    }
+</style>
+<div class="test-03">
+    <div class="part-01">blah blah...看见我居中了吗?</div>
+    <div class="part-02">
+        <p>blah blah...</p>
+
+        <p>blah blah...</p>
+
+        <p>blah blah...</p>
+
+        <p>blah blah...</p>
+
+        <p>blah blah...</p>
+
+        <p>blah blah...</p>
+
+        <p>blah blah...</p>
+
+        <p>blah blah...</p>
+
+        <p>blah blah...</p>
+    </div>
+</div>
+<br>
+<br>
+
+<p>CSS 控制左右两列高度相等</p>
+<style type="text/css">
+    #wrap #header {
+        text-align: center;
+        background-color: #c2c2c2;
+    }
+
+    #wrap #header h1{
+        margin: 0;
+    }
+
+    #wrap {
+        width: 750px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    #wrap #sideleft {
+        width: 580px;
+        float: left;
+        background-color: #aceaca;
+    }
+
+    #wrap #sideright {
+        width: 170px;
+        float: left;
+        background-color: #2bdd89;
+
+    }
+
+    #wrap #footer {
+        float: left;
+        width: 100%;
+        background-color: #999;
+        text-align: center;
+        color: #e9e7ff;
+    }
+
+    #sideleft:before, #sideright:before {
+        content: '[DO NOT LEAVE IT IS NOT REAL]';
+        display: block;
+        background: inherit;
+        padding-top: 32767px !important;
+        margin-bottom: -32767px !important;
+        height: 0;
+    }
+</style>
+<div id="wrap">
+    <div id="header">
+        <h1>Head</h1>
+    </div>
+    <div id="sideleft">
+        <h2>sideleft</h2>
+
+        <p> 要从固定的、基于像素的设计方法转到弹性的、相对的设计方法并不容易。但是如果恰当利用，就可以成为增强亲和力和易用性的一个自然选择，同时又无须做出设计上的牺牲。 </p>
+
+        <p> 像素是计算机屏幕上的不可缩放的点，而一个
+            h3 就是一个字大小的方块。由于字体大小的变化， h3
+            代表用户喜欢的文字大小的相对单位。 </p>
+
+        <p> 采用印刷式的固定设计方案或许要容易些，因为如果尺寸不变，则考虑的东西就相对较少。可是如果采用弹性的设计方法，就可以充分利用电脑的显示器和浏览器。 </p>
+
+        <p> 也许你想你的网站以某种特定的方式显示，但是你的用户想看到的可能不一样。任何强加于用户的东西都不利于易用性，从而对网站的成功造成损害。 </p>
+
+        <p> 要从固定的、基于像素的设计方法转到弹性的、相对的设计方法并不容易。但是如果恰当利用，就可以成为增强亲和力和易用性的一个自然选择，同时又无须做出设计上的牺牲。 </p>
+
+        <p> 像素是计算机屏幕上的不可缩放的点，而一个
+            h3 就是一个字大小的方块。由于字体大小的变化， h3
+            代表用户喜欢的文字大小的相对单位。 </p>
+
+        <p> 采用印刷式的固定设计方案或许要容易些，因为如果尺寸不变，则考虑的东西就相对较少。可是如果采用弹性的设计方法，就可以充分利用电脑的显示器和浏览器。 </p>
+
+        <p> 也许你想你的网站以某种特定的方式显示，但是你的用户想看到的可能不一样。任何强加于用户的东西都不利于易用性，从而对网站的成功造成损害。 </p>
+    </div>
+    <div id="sideright">
+        <h2>sideright</h2>
+
+        <p> 要从固定的、基于像素的设计方法转到弹性的、相对的设计方法并不容易。但是如果恰当利用，就可以成为增强亲和力和易用性的一个自然选择，同时又无须做出设计上的牺牲。 </p>
+
+        <p> 像素是计算机屏幕上的不可缩放的点，而一个
+            h3 就是一个字大小的方块。由于字体大小的变化， h3
+            代表用户喜欢的文字大小的相对单位。 </p>
+
+        <p> 采用印刷式的固定设计方案或许要容易些，因为如果尺寸不变，则考虑的东西就相对较少。可是如果采用弹性的设计方法，就可以充分利用电脑的显示器和浏览器。 </p>
+
+        <p> 也许你想你的网站以某种特定的方式显示，但是你的用户想看到的可能不一样。任何强加于用户的东西都不利于易用性，从而对网站的成功造成损害。 </p>
+    </div>
+    <div id="footer">
+        <address>
+            Footer
+        </address>
+    </div>
+</div>
+<br>
+<br>
+</body>
+</html>
