@@ -4,184 +4,472 @@
  * Author: Matt Wang (www.uiland.com)
  */
 
-
 /* Columns Layouts */
-.r{margin:0 -5px;}
-.r .rInt:after{content:'\0020';display:block;clear:both;height:0;}
-.r .rInt{zoom:1;}
+.r {
+    margin: 0 -5px;
+}
+
+.r .rInt:after {
+    content: '\0020';
+    display: block;
+    clear: both;
+    height: 0;
+}
+
+.r .rInt {
+    zoom: 1;
+}
+
 .r .rInt,
-.r .r .rInt{padding:0;}
+.r .r .rInt {
+    padding: 0;
+}
+
 .r .cMain,
 .r .cExtra,
-.r .cSub{_display:inline;_overflow-x:hidden;}
-.r .cInt{margin:0 5px;}
+.r .cSub {
+    _display: inline;
+    _overflow-x: hidden;
+}
+
+.r .cInt {
+    margin: 0 5px;
+}
+
 .r .r .cMain,
 .r .r .cExtra,
-.r .r .cSub{margin:0;}
-
+.r .r .cSub {
+    margin: 0;
+}
 
 /** 2 Columns: Percentage **/
 
 /* 通栏结构 */
-.r-100{}
+.r-100 {
+}
+
 .r-100 .cMain,
 .r-100 .cExtra,
 .r-100 .cSub,
 .cInt .r-100 .cMain,
 .cInt .r-100 .cExtra,
-.cInt .r-100 .cSub{width:100%;}
+.cInt .r-100 .cSub {
+    width: 100%;
+}
 
 /* m:50% | s:50% */
-.r-m50p-s50p{}
+.r-m50p-s50p {
+}
+
 .r-m50p-s50p .cMain,
-.cInt .r-m50p-s50p .cMain{float:left;width:49.99%;}
+.cInt .r-m50p-s50p .cMain {
+    float: left;
+    width: 49.99%;
+}
+
 .r-m50p-s50p .cSub,
-.cInt .r-m50p-s50p .cSub{float:right;width:49.99%;}
+.cInt .r-m50p-s50p .cSub {
+    float: right;
+    width: 49.99%;
+}
 
 /* s:50% | m:50% */
-.r-s50p-m50p{}
+.r-s50p-m50p {
+}
+
 .r-s50p-m50p .cMain,
-.cInt .r-s50p-m50p .cMain{float:right;width:49.99%;}
+.cInt .r-s50p-m50p .cMain {
+    float: right;
+    width: 49.99%;
+}
+
 .r-s50p-m50p .cSub,
-.cInt .r-s50p-m50p .cSub{float:left;width:49.99%;}
+.cInt .r-s50p-m50p .cSub {
+    float: left;
+    width: 49.99%;
+}
 
 /* m:66% | s:33% */
-.r-m66p-s33p{}
+.r-m66p-s33p {
+}
+
 .r-m66p-s33p .cMain,
-.cInt .r-m66p-s33p .cMain{float:left;width:66.49%;}
+.cInt .r-m66p-s33p .cMain {
+    float: left;
+    width: 66.49%;
+}
+
 .r-m66p-s33p .cSub,
-.cInt .r-m66p-s33p .cSub{float:right;width:33.49%;}
+.cInt .r-m66p-s33p .cSub {
+    float: right;
+    width: 33.49%;
+}
 
 /* s:66% | m:33% */
-.r-s66p-m33p{}
+.r-s66p-m33p {
+}
+
 .r-s66p-m33p .cMain,
-.cInt .r-s66p-m33p .cMain{float:right;width:33.49%;}
+.cInt .r-s66p-m33p .cMain {
+    float: right;
+    width: 33.49%;
+}
+
 .r-s66p-m33p .cSub,
-.cInt .r-s66p-m33p .cSub{float:left;width:66.49%;}
+.cInt .r-s66p-m33p .cSub {
+    float: left;
+    width: 66.49%;
+}
 
 /* m:33% | s:66% */
-.r-m33p-s66p{}
+.r-m33p-s66p {
+}
+
 .r-m33p-s66p .cMain,
-.cInt .r-m33p-s66p .cMain{float:left;width:33.49%;}
+.cInt .r-m33p-s66p .cMain {
+    float: left;
+    width: 33.49%;
+}
+
 .r-m33p-s66p .cSub,
-.cInt .r-m33p-s66p .cSub{float:right;width:66.49%;}
+.cInt .r-m33p-s66p .cSub {
+    float: right;
+    width: 66.49%;
+}
 
 /* s:33% | m:66% */
-.r-s33p-m66p{}
-.r-s33p-m66p .cMain,
-.cInt .r-s33p-m66p .cMain{float:right;width:66.49%;}
-.r-s33p-m66p .cSub,
-.cInt .r-s33p-m66p .cSub{float:left;width:33.49%;}
+.r-s33p-m66p {
+}
 
+.r-s33p-m66p .cMain,
+.cInt .r-s33p-m66p .cMain {
+    float: right;
+    width: 66.49%;
+}
+
+.r-s33p-m66p .cSub,
+.cInt .r-s33p-m66p .cSub {
+    float: left;
+    width: 33.49%;
+}
 
 /** 2 Columns: Liquid, secondary column fixed-width **/
 
 /* m:200px | s:auto */
-.r-m200-sAuto{}
+.r-m200-sAuto {
+}
+
 .r-m200-sAuto .rInt,
-.rInt .r-m200-sAuto .rInt{padding-left:200px;}
+.rInt .r-m200-sAuto .rInt {
+    padding-left: 200px;
+}
+
 .r-m200-sAuto .cMain,
-.cInt .r-m200-sAuto .cMain{float:left;width:200px;margin:0 0 0 -200px;}
+.cInt .r-m200-sAuto .cMain {
+    float: left;
+    width: 200px;
+    margin: 0 0 0 -200px;
+}
+
 .r-m200-sAuto .cSub,
-.cInt .r-m200-sAuto .cSub{float:right;width:100%;}
+.cInt .r-m200-sAuto .cSub {
+    float: right;
+    width: 100%;
+}
 
 /* s:200px | m:auto */
-.r-s200-mAuto{}
+.r-s200-mAuto {
+}
+
 .r-s200-mAuto .rInt,
-.rInt .r-s200-mAuto .rInt{padding-left:200px;}
+.rInt .r-s200-mAuto .rInt {
+    padding-left: 200px;
+}
+
 .r-s200-mAuto .cMain,
-.cInt .r-s200-mAuto .cMain{float:right;width:100%;}
+.cInt .r-s200-mAuto .cMain {
+    float: right;
+    width: 100%;
+}
+
 .r-s200-mAuto .cSub,
-.cInt .r-s200-mAuto .cSub{float:left;width:200px;margin:0 0 0 -200px;}
+.cInt .r-s200-mAuto .cSub {
+    float: left;
+    width: 200px;
+    margin: 0 0 0 -200px;
+}
 
 /* m:auto | s:200px */
-.r-mAuto-s200{}
+.r-mAuto-s200 {
+}
+
 .r-mAuto-s200 .rInt,
-.rInt .r-mAuto-s200 .rInt{padding-right:200px;}
+.rInt .r-mAuto-s200 .rInt {
+    padding-right: 200px;
+}
+
 .r-mAuto-s200 .cMain,
-.cInt .r-mAuto-s200 .cMain{float:left;width:100%;}
+.cInt .r-mAuto-s200 .cMain {
+    float: left;
+    width: 100%;
+}
+
 .r-mAuto-s200 .cSub,
-.cInt .r-mAuto-s200 .cSub{float:right;width:200px;margin:0 -200px 0 0;}
+.cInt .r-mAuto-s200 .cSub {
+    float: right;
+    width: 200px;
+    margin: 0 -200px 0 0;
+}
 
 /* s:auto | m:200px */
-.r-sAuto-m200{}
-.r-sAuto-m200 .rInt,
-.rInt .r-sAuto-m200 .rInt{padding-right:200px;}
-.r-sAuto-m200 .cMain,
-.cInt .r-sAuto-m200 .cMain{float:right;width:200px;margin:0 -200px 0 0;}
-.r-sAuto-m200 .cSub,
-.cInt .r-sAuto-m200 .cSub{float:left;width:100%;}
+.r-sAuto-m200 {
+}
 
+.r-sAuto-m200 .rInt,
+.rInt .r-sAuto-m200 .rInt {
+    padding-right: 200px;
+}
+
+.r-sAuto-m200 .cMain,
+.cInt .r-sAuto-m200 .cMain {
+    float: right;
+    width: 200px;
+    margin: 0 -200px 0 0;
+}
+
+.r-sAuto-m200 .cSub,
+.cInt .r-sAuto-m200 .cSub {
+    float: left;
+    width: 100%;
+}
 
 /** 3 Columns: Percentage **/
 
 /* s:25% | m:50% | e:25% */
-.r-s25p-m50p-e25p{}
-.r-s25p-m50p-e25p .cMain{float:left;width:49.99%;margin:0 0 0 25%;}
-.r-s25p-m50p-e25p .cSub{float:left;width:25%;margin:0 0 0 -75%;}
-.r-s25p-m50p-e25p .cExtra{float:right;width:24.99%;}
+.r-s25p-m50p-e25p {
+}
+
+.r-s25p-m50p-e25p .cMain {
+    float: left;
+    width: 49.99%;
+    margin: 0 0 0 25%;
+}
+
+.r-s25p-m50p-e25p .cSub {
+    float: left;
+    width: 25%;
+    margin: 0 0 0 -75%;
+}
+
+.r-s25p-m50p-e25p .cExtra {
+    float: right;
+    width: 24.99%;
+}
 
 /* e:25% | m:50% | s:25% */
-.r-e25p-m50p-s25p{}
-.r-e25p-m50p-s25p .cMain{float:left;width:49.99%;margin:0 0 0 25%;}
-.r-e25p-m50p-s25p .cSub{float:right;width:24.99%;}
-.r-e25p-m50p-s25p .cExtra{float:left;width:25%;margin:0 0 0 -75%;}
+.r-e25p-m50p-s25p {
+}
+
+.r-e25p-m50p-s25p .cMain {
+    float: left;
+    width: 49.99%;
+    margin: 0 0 0 25%;
+}
+
+.r-e25p-m50p-s25p .cSub {
+    float: right;
+    width: 24.99%;
+}
+
+.r-e25p-m50p-s25p .cExtra {
+    float: left;
+    width: 25%;
+    margin: 0 0 0 -75%;
+}
 
 /* m:25% | s:50% | e:25% */
-.r-m25p-s50p-e25p{}
-.r-m25p-s50p-e25p .cMain{float:left;width:24.99%;}
-.r-m25p-s50p-e25p .cSub{float:left;width:49.99%;}
-.r-m25p-s50p-e25p .cExtra{float:right;width:24.99%;}
+.r-m25p-s50p-e25p {
+}
+
+.r-m25p-s50p-e25p .cMain {
+    float: left;
+    width: 24.99%;
+}
+
+.r-m25p-s50p-e25p .cSub {
+    float: left;
+    width: 49.99%;
+}
+
+.r-m25p-s50p-e25p .cExtra {
+    float: right;
+    width: 24.99%;
+}
 
 /* m:25% | e:50% | s:25% */
-.r-m25p-e50p-s25p{}
-.r-m25p-e50p-s25p .cMain{float:left;width:24.99%;}
-.r-m25p-e50p-s25p .cSub{float:right;width:24.99%;}
-.r-m25p-e50p-s25p .cExtra{float:left;width:49.99%;}
+.r-m25p-e50p-s25p {
+}
+
+.r-m25p-e50p-s25p .cMain {
+    float: left;
+    width: 24.99%;
+}
+
+.r-m25p-e50p-s25p .cSub {
+    float: right;
+    width: 24.99%;
+}
+
+.r-m25p-e50p-s25p .cExtra {
+    float: left;
+    width: 49.99%;
+}
 
 /* s:25% | e:50% | m:25% */
-.r-s25p-e50p-m25p{}
-.r-s25p-e50p-m25p .cMain{float:right;width:24.99%;}
-.r-s25p-e50p-m25p .cSub{float:left;width:24.99%;}
-.r-s25p-e50p-m25p .cExtra{float:left;width:49.99%;}
+.r-s25p-e50p-m25p {
+}
+
+.r-s25p-e50p-m25p .cMain {
+    float: right;
+    width: 24.99%;
+}
+
+.r-s25p-e50p-m25p .cSub {
+    float: left;
+    width: 24.99%;
+}
+
+.r-s25p-e50p-m25p .cExtra {
+    float: left;
+    width: 49.99%;
+}
 
 /* e:25% | s:50% | m:25% */
-.r-e25p-s50p-m25p{}
-.r-e25p-s50p-m25p .cMain{float:right;width:24.99%;}
-.r-e25p-s50p-m25p .cSub{float:right;width:49.99%;}
-.r-e25p-s50p-m25p .cExtra{float:left;width:24.99%;}
+.r-e25p-s50p-m25p {
+}
 
+.r-e25p-s50p-m25p .cMain {
+    float: right;
+    width: 24.99%;
+}
+
+.r-e25p-s50p-m25p .cSub {
+    float: right;
+    width: 49.99%;
+}
+
+.r-e25p-s50p-m25p .cExtra {
+    float: left;
+    width: 24.99%;
+}
 
 /** 3 Columns: Liquid, secondary columns fixed-width **/
 
 /* s:200px | m:auto | e:200px */
-.r-s200-mAuto-e200{}
-.r-s200-mAuto-e200 .rInt{padding-left:200px;padding-right:200px;}
-.r-s200-mAuto-e200 .cMain{float:left;width:100%;}
-.r-s200-mAuto-e200 .cSub{position:relative;left:-200px;_left:200px;float:left;width:200px;margin:0 0 0 -100%;}
-.r-s200-mAuto-e200 .cExtra{float:right;width:200px;margin:0 -200px 0 0;}
+.r-s200-mAuto-e200 {
+}
+
+.r-s200-mAuto-e200 .rInt {
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.r-s200-mAuto-e200 .cMain {
+    float: left;
+    width: 100%;
+}
+
+.r-s200-mAuto-e200 .cSub {
+    position: relative;
+    left: -200px;
+    _left: 200px;
+    float: left;
+    width: 200px;
+    margin: 0 0 0 -100%;
+}
+
+.r-s200-mAuto-e200 .cExtra {
+    float: right;
+    width: 200px;
+    margin: 0 -200px 0 0;
+}
 
 /* e:200px | m:auto | s:200px */
-.r-e200-mAuto-s200{}
-.r-e200-mAuto-s200 .rInt{padding-left:200px;padding-right:200px;}
-.r-e200-mAuto-s200 .cMain{float:left;width:100%;}
-.r-e200-mAuto-s200 .cSub{float:right;width:200px;margin:0 -200px 0 0;}
-.r-e200-mAuto-s200 .cExtra{position:relative;left:-200px;_left:200px;float:left;width:200px;margin:0 0 0 -100%;}
+.r-e200-mAuto-s200 {
+}
 
+.r-e200-mAuto-s200 .rInt {
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.r-e200-mAuto-s200 .cMain {
+    float: left;
+    width: 100%;
+}
+
+.r-e200-mAuto-s200 .cSub {
+    float: right;
+    width: 200px;
+    margin: 0 -200px 0 0;
+}
+
+.r-e200-mAuto-s200 .cExtra {
+    position: relative;
+    left: -200px;
+    _left: 200px;
+    float: left;
+    width: 200px;
+    margin: 0 0 0 -100%;
+}
 
 /** 3 Sections, 2 Columns:  **/
 
 /* m,e:auto | s:200px */
-.r-meAuto-s200{}
-.r-meAuto-s200 .rInt{padding-right:200px;}
-.r-meAuto-s200 .cMain{float:left;width:100%;}
-.r-meAuto-s200 .cSub{float:right;width:200px;margin:0 -200px 0 0;}
-.r-meAuto-s200 .cExtra{float:left;width:100%;}
+.r-meAuto-s200 {
+}
+
+.r-meAuto-s200 .rInt {
+    padding-right: 200px;
+}
+
+.r-meAuto-s200 .cMain {
+    float: left;
+    width: 100%;
+}
+
+.r-meAuto-s200 .cSub {
+    float: right;
+    width: 200px;
+    margin: 0 -200px 0 0;
+}
+
+.r-meAuto-s200 .cExtra {
+    float: left;
+    width: 100%;
+}
 
 /* s:200px | m,e:auto */
-.r-s200-meAuto{}
-.r-s200-meAuto .rInt{padding-left:200px;}
-.r-s200-meAuto .cMain{float:right;width:100%;}
-.r-s200-meAuto .cSub{float:left;width:200px;margin:0 0 0 -200px;}
-.r-s200-meAuto .cExtra{float:right;width:100%;}
+.r-s200-meAuto {
+}
+
+.r-s200-meAuto .rInt {
+    padding-left: 200px;
+}
+
+.r-s200-meAuto .cMain {
+    float: right;
+    width: 100%;
+}
+
+.r-s200-meAuto .cSub {
+    float: left;
+    width: 200px;
+    margin: 0 0 0 -200px;
+}
+
+.r-s200-meAuto .cExtra {
+    float: right;
+    width: 100%;
+}
 

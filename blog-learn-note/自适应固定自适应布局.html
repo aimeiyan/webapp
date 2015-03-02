@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <title>三分栏：左右两栏宽度自适应，中间栏宽度自适应固定</title>
+
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-width: 600px;
+        }
+
+        .clearfix:before, .clearfix:after {
+            content: "";
+            display: table;
+        }
+
+        .clearfix:after {
+            clear: both;
+            overflow: hidden;
+        }
+
+        #content{
+            margin-top: 20px;
+        }
+
+        #left, #right {
+            float: left;
+            width: 50%;
+            margin: 0 0 0 -151px;
+        }
+
+
+        #innerLeft {
+            margin: 0 0 0 151px;
+            background: #ff9189;
+        }
+
+        #innerRight {
+            margin: 0 0 0 151px;
+            background: #fc0;
+        }
+
+        #middle {
+            float: left;
+            width: 300px;
+            background: #69f;
+        }
+    </style>
+</head>
+<body>
+<div id="content" class="clearfix">
+    <div id="left">
+        <div id="innerLeft">
+            <h2>Left</h2>
+
+            <p>左边栏宽度固定为200px</p>
+        </div>
+
+    </div>
+    <div id="middle">
+        <div class="inner">
+            <h2>Middle</h2>
+
+            <p>中间栏宽度可以自适应</p>
+
+            <p><strong>原理：</strong>利用margin的负值错别固定的宽度</p>
+        </div>
+    </div>
+    <div id="right">
+        <div id="innerRight">
+            <h2>Right</h2>
+
+            <p>右边栏宽度固定为200px</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>  
