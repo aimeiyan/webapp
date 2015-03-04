@@ -1,0 +1,11 @@
+IDEA编辑器
+
+1、如果该编辑器一打开就死，重启也不管用，那么需要删掉下面的东西：
+    rm -rf ~/Library/Preferences/IntelliJIdea14
+    rm -rf ~/Library/Caches/IntelliJIdea14
+    rm -rf ~/Library/Logs/IntelliJIdea14
+
+
+2、license key：
+    User Name: http-kit
+    License Key: 542730-AIGXM-OJ2WF-UYKP8-FZH1D-W1KD6
