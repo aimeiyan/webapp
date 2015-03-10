@@ -12,3 +12,18 @@ CSS工具和资料：
 
 5、css工具
     http://enjoycss.com/start#text/0
+
+6、CSS实战技巧
+    http://www.w3cplus.com/node/170
+
+7、 :-webkit-any（selector）{}
+    :-moz-any(h1, h2, h3, h4, h5, h5) i.serif{text-transform: capitalize;}
+
+8、
+    word-break:break-all;  允许在单词内换行。
+    word-wrap:break-word;  允许长单词换行到下一行。
+
+9、css 动画实例网站
+   http://daneden.github.io/animate.css/
+   http://spmjs.io/docs/alice-animate/
+   http://spmjs.io/docs/alice-animate/
