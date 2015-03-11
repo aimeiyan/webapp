@@ -121,7 +121,7 @@ textarea:focus,input:focus { border: 1px solid #71b643; }
 
 /**
  * 提示小纸条
- * -u-note
+ * -u-canvas-note
  */
 .u-note { position: fixed; left: 120px; top:50%; margin-top:-40px;  width: 400px; padding: 15px 0; text-align: center; font-size: 26px; border-radius: 8px; 
 	 opacity: 0;

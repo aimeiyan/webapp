@@ -1001,7 +1001,7 @@ function bind(self, fn) {
             : fn.call(self);
         };
   } else {
-    // in IE, native methods are not functions so they cannot be bound (note: they don't need to be)
+    // in IE, native methods are not functions so they cannot be bound (canvas-note: they don't need to be)
     return fn;
   }
 }
@@ -12725,7 +12725,7 @@ function $ParseProvider() {
       if (typeof newValue === 'object') {
 
         // attempt to convert the value to a primitive type
-        // TODO(docs): add a note to docs that by implementing valueOf even objects and arrays can
+        // TODO(docs): add a canvas-note to docs that by implementing valueOf even objects and arrays can
         //             be cheaply dirty-checked
         newValue = getValueOf(newValue);
 
@@ -15346,7 +15346,7 @@ function $SceDelegateProvider() {
  * protocols, you may either either {@link ng.$sceDelegateProvider#resourceUrlWhitelist whitelist
  * them} or {@link ng.$sce#trustAsResourceUrl wrap it} into a trusted value.
  *
- * *Please note*:
+ * *Please canvas-note*:
  * The browser's
  * [Same Origin Policy](https://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_XMLHttpRequest)
  * and [Cross-Origin Resource Sharing (CORS)](http://www.w3.org/TR/cors/)
@@ -15573,7 +15573,7 @@ function $SceProvider() {
    * constants or objects even if not wrapped.  All such implementations fulfill this contract.
    *
    *
-   * A note on the inheritance model for SCE contexts
+   * A canvas-note on the inheritance model for SCE contexts
    * ------------------------------------------------
    * I've used inheritance and made RESOURCE_URL wrapped types a subtype of URL wrapped types.  This
    * is purely an implementation details.
@@ -22543,7 +22543,7 @@ is set to `true`. The parse error is stored in `ngModel.$error.parse`.
  *      is unfulfilled, its key will be added to the controllers `$pending` property. Also, all asynchronous validators
  *      will only run once all synchronous validators have passed.
  *
- * Please note that if $http is used then it is important that the server returns a success HTTP response code
+ * Please canvas-note that if $http is used then it is important that the server returns a success HTTP response code
  * in order to fulfill the validation and a status level of `4xx` in order to reject the validation.
  *
  * ```js
@@ -24579,7 +24579,7 @@ var NG_HIDE_IN_PROGRESS_CLASS = 'ng-hide-animate';
  *
  * By default you don't need to override in CSS anything and the animations will work around the display style.
  *
- * ## A note about animations with `ngShow`
+ * ## A canvas-note about animations with `ngShow`
  *
  * Animations in ngShow/ngHide work with the show and hide events that are triggered when the directive expression
  * is true and false. This system works like the animation system present with ngClass except that
@@ -24753,7 +24753,7 @@ var ngShowDirective = ['$animate', function($animate) {
  *
  * By default you don't need to override in CSS anything and the animations will work around the display style.
  *
- * ## A note about animations with `ngHide`
+ * ## A canvas-note about animations with `ngHide`
  *
  * Animations in ngShow/ngHide work with the show and hide events that are triggered when the directive expression
  * is true and false. This system works like the animation system present with ngClass, except that the `.ng-hide`

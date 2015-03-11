@@ -1,7 +1,10 @@
 CSS工具和资料：
 
 1、http://css3generator.com/
-2、
+
+2、CSS Transition Type: 动画效果运动的函数
+   http://hosted.zeh.com.br/tweener/docs/en-us/misc/transitions.html
+
 3、RGBA 工具
    http://beijingyoung.com/articles/rgba-argb-converter/
 
@@ -11,7 +14,78 @@ CSS工具和资料：
     http://codepen.io/natewiley/pen/Ciwyn/
 
 5、css工具
+
     http://enjoycss.com/start#text/0
+
+  (1) Transforms
+
+       <1> Transforms
+           -webkit-transform: scaleX(2) scaleY(2) scaleZ(2);
+           transform: scaleX(2) scaleY(2) scaleZ(2);
+
+       <2> Translate: 单位 px、em、％；
+           -webkit-transform: translateX(10px) translateY(10px) translateZ(20px);
+           transform: translateX(10px) translateY(10px) translateZ(20px);
+
+       <3> Rotate
+           -webkit-transform: rotateX(50deg) rotateY(10deg) rotateZ(30deg);
+           transform: rotateX(50deg) rotateY(10deg) rotateZ(30deg);
+
+       <4> Origin
+           -webkit-transform-origin: 50% 50% 0;
+           transform-origin: 50% 50% 0;
+
+  (2) Transitions:[ property|| duration (s||ms) || transition curve || start delay (s||ms)]
+
+       -webkit-transition: background-color 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 10ms;
+       -moz-transition: background-color 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 10ms;
+       -o-transition: background-color 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 10ms;
+       transition: background-color 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 10ms;
+
+       ------------------------------------------------------------------------------------------------------------------
+       property 可以为：
+           color,
+           font-size,
+           font-weight,
+           letter-spacing,
+           line-height,
+           text-indent,
+           text-shadow,
+           vertical-align,
+           word-spacing,
+           background,
+           background-color,
+           background-image,
+           background-position,
+           background-size,
+           box-shadow,
+           text-shadow,
+           border,
+           border-color,
+           border-type,
+           border-width,
+           border-radius,
+           height,
+           width,
+           padding,
+           margin,
+           top,
+           right,
+           bottom,
+           left,
+           z-index,
+           opacity,
+           perspective,
+           perspective-origin,
+           transform,
+           transform-origin.
+
+       (3) Text shadows:[offsetX || offsetY || blur || color]
+            text-shadow: -4px -3px 1px rgba(45,153,38,0.64) ;
+
+       (4) Box shadows:[offsetX || offsetY || blur || spread || type]
+           -webkit-box-shadow: 4px 4px 3px 3px rgba(0,0,0,0.2) inset;
+           box-shadow: 4px 4px 3px 3px rgba(0,0,0,0.2) inset;
 
 6、CSS实战技巧
     http://www.w3cplus.com/node/170

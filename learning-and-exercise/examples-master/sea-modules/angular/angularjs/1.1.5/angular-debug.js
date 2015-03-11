@@ -746,7 +746,7 @@ function bind(self, fn) {
             : fn.call(self);
         };
   } else {
-    // in IE, native methods are not functions so they cannot be bound (note: they don't need to be)
+    // in IE, native methods are not functions so they cannot be bound (canvas-note: they don't need to be)
     return fn;
   }
 }

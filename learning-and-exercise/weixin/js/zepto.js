@@ -770,7 +770,7 @@ var Zepto = (function() {
         parentOffset = rootNodeRE.test(offsetParent[0].nodeName) ? { top: 0, left: 0 } : offsetParent.offset()
 
       // Subtract element margins
-      // note: when an element has margin: auto the offsetLeft and marginLeft
+      // canvas-note: when an element has margin: auto the offsetLeft and marginLeft
       // are the same in Safari causing offset.left to incorrectly be 0
       offset.top  -= parseFloat( $(elem).css('margin-top') ) || 0
       offset.left -= parseFloat( $(elem).css('margin-left') ) || 0
