@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<canvas id="myCanvas" width="578" height="200"></canvas>
+<script>
+
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    var rectWidth = 200;
+    var rectHeight = 100;
+    var rectX = 189;
+    var rectY = 80;
+    var cornerRadius = 50;
+
+    context.beginPath();
+    context.moveTo(rectX,rectY);
+    context.lineTo(rectX+rectWidth-cornerRadius,rectY);
+    context.arcTo(rectX+rectWidth,rectY,rectX+rectWidth,rectY+cornerRadius,cornerRadius);
+    context.lineTo(rectX+rectWidth,rectY+rectHeight);
+    context.lineWidth=5;
+    context.stroke();
+
+
+</script>
+</body>
+</html>

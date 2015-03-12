@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<canvas id="myCanvas" width="578" height="400"></canvas>
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    var imageObj=new Image();
+    var x=188;
+    var y=30;
+    var height=200;
+    var width=300;
+
+    imageObj.onload=function(){
+        context.drawImage(imageObj,x,y,width,height);
+    };
+
+    imageObj.src='http://www.html5canvastutorials.com/demos/assets/darth-vader.jpg';
+
+</script>
+</body>
+</html>

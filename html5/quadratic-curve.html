@@ -11,24 +11,18 @@
     </style>
 </head>
 <body>
-<canvas id="myCanvas" width="578" height="250"></canvas>
+<canvas id="myCanvas" width="578" height="200"></canvas>
 <script>
 
     var canvas = document.getElementById('myCanvas');
     var context = canvas.getContext('2d');
-    var x = canvas.width / 2;
-    var y = canvas.height / 2;
-    var radius = 75;
-    var startAngle = 1.1 * Math.PI;
-    var endAngle = 1.9 * Math.PI;
-    var counterClockwise = false;
 
     context.beginPath();
-    context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
-    context.lineWidth = 15;
+    context.moveTo(188, 150);
+    context.quadraticCurveTo(288, 0, 388, 150);
+    context.lineWidth = 10;
 
-    // line color
-    context.strokeStyle = '#756487';
+    context.strokeStyle = '#567090';
     context.stroke();
 
 </script>

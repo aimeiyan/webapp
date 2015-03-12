@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<canvas id="myCanvas" width="578" height="200"></canvas>
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+
+    context.beginPath();
+    context.rect(0, 0, 500, 200);
+
+//     线性渐变
+//    var grd = context.createLinearGradient(0, 0, canvas.width, canvas.height);
+    var grad = context.createRadialGradient(250, 100, 50, 238, 150, 300);
+
+//    grd.addColorStop(0, '#8ED6FF');
+//    grd.addColorStop(1, '#2967E9');
+
+    grad.addColorStop(0, '#8ED6FF');
+    grad.addColorStop(1, '#2967E9');
+
+//        context.fillStyle=grd;
+    context.fillStyle = grad;
+    context.fill();
+//    context.lineWidth = 5;
+//    context.strokeStyle = 'black';
+//    context.stroke();
+
+</script>
+</body>
+</html>
