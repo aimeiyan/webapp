@@ -1,0 +1,43 @@
+/*iPhone 6 Portrait横*/
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : portrait) {
+	    
+}	
+
+/*iPhone 6 landscape竖*/
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : landscape) {
+
+}
+
+/*iPhone 6+ Portrait*/
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation : portrait) {
+     
+}
+
+/*iPhone 6+ landscape*/
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation : landscape) {
+     
+}
+
+/*iPhone 6 and iPhone 6+ portrait and landscape*/
+@media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px){
+     
+}
+
+/*iPhone 6 and iPhone 6+ portrait*/
+@media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px) and (orientation : portrait){
+	.company_intro{
+	    margin:30px auto 0 auto;
+	}
+    .likedppl{
+        margin-bottom: 30px;
+    }
+    .like div{
+        padding: 16px 0;
+        margin: 12px 8%;
+    }
+}
+
+/*iPhone 6 and iPhone 6+ landscape*/
+@media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px) and (orientation : landscape){
+     
+}

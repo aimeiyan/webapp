@@ -1,0 +1,15 @@
+
+/* 小米3  锤子*/
+@media screen and (-webkit-min-device-pixel-ratio:3.0) {
+	 .openthings{
+	    position:relative;
+	    top:80px;
+	}
+	.draglogo{
+		margin-top:70px;
+	}
+	.company_intro{
+	    margin: 120px auto 0 auto;
+	    top:130px;
+	}
+}

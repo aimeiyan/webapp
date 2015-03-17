@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="../dist/css/swiper.min.css">
+    <link rel="stylesheet" href="../dist/css/your-style.css">
+    <style>
+        html, body {
+            position: relative;
+            height: 100%;
+        }
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color:#000;
+            margin: 0;
+            padding: 0;
+        }
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .swiper-slide-01{
+            background: palevioletred;
+        }
+        .swiper-slide-02{
+            background: #8cd8db;
+        }
+        .swiper-slide-03{
+            background: #db7f61;
+        }
+    </style>
+</head>
+<body>
+<!-- Slider main container -->
+<div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide swiper-slide-01">Slide 1</div>
+        <div class="swiper-slide swiper-slide-02">Slide 2</div>
+        <div class="swiper-slide swiper-slide-03">Slide 3</div>
+    </div>
+
+</div>
+<script src="../dist/js/zepto.min.js"></script>
+<script src="../dist/js/swiper.min.js"></script>
+<script>
+
+    $(function(){
+        var mySwiper = new Swiper ('.swiper-container', {
+            // Optional parameters
+            direction: 'vertical',
+            effect:'slide',
+//            slidesPerView:'2'
+//            freeModeMomentumBounce:'false'
+//            freeModeMomentum:'false'
+//            freeMode:'true'
+//            autoplay:'auto',
+//            autoplayDisableOnInteraction:'true'
+//            speed:'5000'
+//            initialSlide:'2'
+        })
+    })
+
+</script>
+</body>
+</html>
