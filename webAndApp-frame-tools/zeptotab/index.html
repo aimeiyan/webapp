@@ -1,0 +1,159 @@
+<!--参考网站 http://www.163css.com/hihilinxuan/cssjs/2013/01/zeptotab/index.html-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no">
+    <link href="css/163css.css" rel="stylesheet">
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+<div class="box_163css">
+    <div class="top_box">
+        <ul class="nav_top">
+            <li class="on">新闻</li>
+            <li>股票</li>
+            <li>军事</li>
+            <li>博客</li>
+        </ul>
+        <span class="line"></span>
+    </div>
+    <div class="nav_mid">
+        <div class="box01">
+            <ul class="newlist">
+                <li><em class="em_arrow">&nbsp;</em><a href="#">詹姆斯32分热火客场输球</a></li>
+                <li><em class="em_arrow">&nbsp;</em><a href="#">爵士(21-19)二连胜。艾尔-杰弗森拿下了23分11个篮板</a></li>
+                <li><em class="em_arrow">&nbsp;</em><a href="#">热火连续6个客场之旅注定不顺利</a></li>
+                <li><em class="em_arrow">&nbsp;</em><a href="#">詹姆斯空中接力上篮，热火以18-12领先</a></li>
+            </ul>
+            <a href="#" class="btn_href">进入新闻中心>></a>
+        </div>
+        <div class="box01">
+            <ul class="newlist">
+                <li><em class="em_arrow">&nbsp;</em><a href="#">今日沪深两市大盘双双高开</a></li>
+                <li><em class="em_arrow">&nbsp;</em><a href="#">深成指报9381.69点，上涨65.42点</a></li>
+                <li><em class="em_arrow">&nbsp;</em><a href="#">热火连续6个客场之旅注定不顺利</a></li>
+                <li><em class="em_arrow">&nbsp;</em><a href="#">詹姆斯空中接力上篮，热火以18-12领先</a></li>
+            </ul>
+            <a href="#" class="btn_href">进入股票中心>></a>
+        </div>
+        <div class="box01">
+            <ul class="newlist">
+                <li><em class="em_arrow">&nbsp;</em><a href="#">日拟派F15战机常驻下地岛机场</a></li>
+                <li><em class="em_arrow">&nbsp;</em><a href="#">爵士(21-19)二连胜。艾尔-杰弗森拿下了23分11个篮板</a></li>
+                <li><em class="em_arrow">&nbsp;</em><a href="#">热火连续6个客场之旅注定不顺利</a></li>
+                <li><em class="em_arrow">&nbsp;</em><a href="#">詹姆斯空中接力上篮，热火以18-12领先</a></li>
+            </ul>
+            <a href="#" class="btn_href">进入军事频道>></a>
+        </div>
+        <div class="box01">
+            <ul class="newlist">
+                <li><em class="em_arrow">&nbsp;</em><a href="#">谭咏麟:坠物竟是我行李</a></li>
+                <li><em class="em_arrow">&nbsp;</em><a href="#">南方如何温暖度过寒冷冬天？</a></li>
+                <li><em class="em_arrow">&nbsp;</em><a href="#">热火连续6个客场之旅注定不顺利</a></li>
+                <li><em class="em_arrow">&nbsp;</em><a href="#">詹姆斯空中接力上篮，热火以18-12领先</a></li>
+            </ul>
+            <a href="#" class="btn_href">进入博客>></a>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../zepto-master/src/zepto.js"></script>
+<script type="text/javascript" src="../zepto-master/src/event.js"></script>
+<script type="text/javascript" src="../zepto-master/src/touch.js"></script>
+<script type="text/javascript">
+
+    $(function () {
+        var len = 0;
+        var f = 0;
+        var cq = 0;
+        $('.nav_top li').tap(function () {
+            var t = $(this).index();
+            var wh = $('.line').width();
+            f = -25 * t + "%";
+            cq = 100 * t + "%";
+
+            console.log(f, '-25*t+"%"');
+            console.log(cq, '100*t+"%"');
+
+            $(this).parents('.box_163css').find('.nav_mid').css({
+                '-webkit-transform': 'translate(' + f + ')',
+                'transform': 'translate(' + f + ')',
+                '-webkit-transition': '500ms linear',
+                'transition': '500ms linear'
+            });
+            $(this).parents('.box_163css').find('.line').css({
+                '-webkit-transform': 'translate(' + cq + ')',
+                '-webkit-transition': '300ms linear'
+            });
+            $(this).siblings().removeClass('on');
+            $(this).addClass('on');
+        });
+
+        $('.box01').swipeLeft(function () {
+            var i = $(this).index() + 1;
+            len = -25 * i + "%";
+            cq = 100 * i + "%";
+
+            console.log(i, '$(this).index()+1');
+            console.log(len, '-25*i+"%"');
+            console.log(cq, '100*i+"%"');
+
+            if (i == 4) {
+                return false
+            }
+            else {
+                $(this).parent('.nav_mid').css({
+                    '-webkit-transform': 'translate(' + len + ')',
+                    '-webkit-transition': '500ms linear'
+                });
+                $(this).parents('.box_163css').find('.line').css({
+                    '-webkit-transform': 'translate(' + cq + ')',
+                    '-webkit-transition': '500ms linear'
+                });
+                $(this).parents('.box_163css').find('.nav_top li').eq(i).siblings().removeClass('on');
+                $(this).parents('.box_163css').find('.nav_top li').eq(i).addClass('on');
+            }
+        });
+
+        $('.box01').swipeRight(function () {
+            var i = $(this).index();
+            if (i == 0) {
+                return false
+            }
+            else {
+                var n = i - 1;
+                len = -25 * n + "%";
+                cq = 100 * n + "%";
+
+                console.log(n, 'i-1');
+                console.log(len, '-25*n+"%"');
+                console.log(cq, '100*n+"%"');
+
+                $(this).parents('.box_163css').find('.nav_mid').css({
+                    '-webkit-transform': 'translate(' + len + ')',
+                    '-webkit-transition': '500ms linear'
+                });
+
+                $(this).parents('.box_163css').find('.line').css({
+                    '-webkit-transform': 'translate(' + cq + ')',
+                    '-webkit-transition': '500ms linear'
+                });
+                $(this).parents('.box_163css').find('.nav_top li').eq(i - 1).siblings().removeClass('on');
+                $(this).parents('.box_163css').find('.nav_top li').eq(i - 1).addClass('on');
+            }
+        })
+    })
+
+
+</script>
+</body>
+</html>

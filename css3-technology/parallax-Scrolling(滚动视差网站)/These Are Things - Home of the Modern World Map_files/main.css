@@ -1,0 +1,775 @@
+/* PARALLAX SCROLLING EXPERIMENT
+   Master Styles
+   Author: Jonathan Nicol (f6design.com)
+*****************************************************************/
+
+
+/* Global reset
+   http://meyerweb.com/eric/tools/css/reset/ 
+*****************************************************************/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+::selection {
+	background: #f0542f; /* Safari */
+	color: #fff;
+	}
+::-moz-selection {
+	background: #f0542f; /* Firefox */
+	color: #fff;
+}
+
+/* Extended base styles (site specific)
+*****************************************************************/
+
+html { 
+	overflow-y: scroll; /* always force a scrollbar in non-IE */
+	}
+	
+body {
+	background: #f9f5f0 url('../images/bg-full.jpg') center 0;
+	background-repeat: repeat-x;
+	overflow-x: visible;
+	color: #000;
+	
+	font-size: 14px;
+	line-height: 16px;
+	font-family: "museo-slab-1","museo-slab-2",'Georgia',serif;
+}
+
+h1 {
+    font-family: futura-pt-1,futura,arial,sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+	
+}
+
+a, a:link,
+a:active,
+a:visited {
+	-webkit-transition: all 0.25s ease-out;
+	-moz-transition: all 0.25s ease-out;
+	-o-transition: all 0.25s ease-out;
+	transition: all 0.25s ease-out;
+	color:#f0542f;
+	outline: none;
+	text-decoration:none;
+	}
+	a:hover { 
+		color:#fff;
+		background: #f0542f;
+		}
+img { 
+	display:block;
+	}
+
+
+/* Page structure
+*****************************************************************/
+
+#wrapper {
+	position: relative;
+}
+
+
+/* Nav
+*****************************************************************/
+
+nav#primary {
+	z-index: 5000;
+	position: fixed;
+	top: 50%;
+	right: 16px;
+	margin-top: -40px;
+}
+nav#primary li {
+	position: relative;
+	height: 20px;
+}
+nav#primary a {
+	display: block;
+	width: 20px;
+	height: 20px;
+	text-indent: -9999px;
+	background: transparent url('../images/nav-dot.png') 4px -16px no-repeat;
+	
+	-webkit-transition: all 0s ease-out;
+	-moz-transition: all 0s ease-out;
+	-o-transition: all 0s ease-out;
+	transition: all 0s ease-out;
+}
+nav#primary a:hover, nav#primary a.active {
+	background: transparent url('../images/nav-dot.png') 4px 4px no-repeat;
+}
+nav#primary h1 {
+	position: absolute;
+	right: 22px;
+	top: -7px;
+	display: none;
+	padding: 3px 10px;
+	color: #fff;
+	white-space: nowrap;
+	background: #f0542f;
+	
+	box-shadow: 0 0 10px rgba(128, 78, 34, 0.5);
+	
+	font-size: 12px;
+	font-family: futura-pt-1, Futura, Arial, sans-serif;
+	line-height: 28px;
+	letter-spacing: 2px;
+	font-weight: bold;
+	text-transform: uppercase;
+	}
+	
+nav.next-prev {
+	margin: -5px auto;
+    width: 44px;
+	}
+	a.prev,
+	a.next {
+		display: block;
+		width: 22px;
+		height: 16px;
+		text-indent: -9999px;
+		float: left;
+		
+			-webkit-transition: all 0s ease-out;
+		-moz-transition: all 0s ease-out;
+		-o-transition: all 0s ease-out;
+		transition: all 0s ease-out;
+	
+		}
+	a.prev {
+		margin: 0 auto 5px auto;
+		background: transparent url('../images/scroll-arrow-up.png') 0 0 no-repeat;
+		}
+		a.prev:hover {
+			background: transparent url('../images/scroll-arrow-up.png') 0 -16px no-repeat;
+			}
+	a.next {
+		margin: 2px auto 0 auto;
+		background: transparent url('../images/scroll-arrow-down.png') -1px -16px no-repeat;
+		}
+		a.next:hover {
+			background: transparent url('../images/scroll-arrow-down.png') -1px 0 no-repeat;
+			}
+	
+	a.next2 {
+		margin: -5px auto 0 auto;
+		background: transparent url('../images/scroll-arrow-down.gif') 0 0 no-repeat;
+		display: block;
+		width: 22px;
+		height: 32px;
+		text-indent: -9999px;
+		}
+		a.next2:hover {
+			background: transparent url('../images/scroll-arrow-down.gif') 0 0 no-repeat;
+			}
+	
+
+/* Parallax
+*****************************************************************/
+
+/* content */
+#content {
+	position: relative;
+	max-width: 940px;
+	height: 3750px;
+	padding: 0 10px;
+	margin: 0 auto;
+	line-height: 1.7;
+	text-align: center;
+	}
+	#content article {
+		width: 350px;
+		}
+		
+	#content article h1 {
+			margin: 0;
+			font-size: 12px;
+			font-family: futura-pt-1, Futura, Arial, sans-serif;
+			line-height: 28px;
+			letter-spacing: 2px;
+			font-weight: bold;
+			text-transform: uppercase;
+	}
+	
+	#content article h1 a {
+		color: #000;
+		padding: 5px 10px;
+		cursor: pointer;
+	}
+	
+	#content article h1 a:hover {
+		color: #fff;
+	}
+	
+	article a, article a:link, article a:visited {
+		color: #000;
+		font-weight: bold;
+		cursor: pointer	
+	}
+	
+	article a:hover {
+		color: #fff;	
+	}
+		
+	#content article p {
+	
+		font-family: "museo-slab-1","museo-slab-2",'Georgia',serif;
+		
+		margin:0 0 20px 0;
+		font-size:14px;
+		line-height: 21px;
+		font-style: normal;
+	}
+	
+		#scene01-about ,
+		#scene02-shop,
+		#scene03-studio,
+		#scene04-blog,
+		#scene05-about,
+		#scene06-contact {
+			padding-top: 120px;
+			z-index: 500;
+			left: 50%;
+			margin-left: -175px;
+			}
+		#scene01-about {
+			position: absolute;
+			top: 0px;
+			}
+		#scene02-shop {
+			position: absolute;
+			top: 640px;
+			}
+		#scene03-studio {
+			position: absolute;
+			top: 1280px;
+			}
+				
+		#scene04-blog {
+			position: absolute;
+			top: 1920px;
+			}
+			
+		#scene05-about {
+			position: absolute;
+			top: 2560px;
+			}
+			
+		#scene06-contact {
+			position: absolute;
+			top: 3200px;
+			}
+				
+
+
+
+#socialsign {
+	left: 763px;
+    line-height: 18px;
+    position: absolute;
+    text-align: left;
+    top: 3635px;
+    z-index: 1000;
+    font-size: 12px;
+    width: 120px;
+
+}
+
+#socialsign a {
+	color: #000;
+}
+
+#socialsign a:hover {
+	color: #fff;
+}
+
+
+/* foreground  */
+#parallax-bg3 {
+	z-index: 100;
+	position: fixed;
+	left: 50%; /* align left edge with center of viewport */
+	top: 0;
+	width: 940px;
+	margin-left: -470px; /* move left by half element's width */
+	}
+		
+	/* counter */	
+	#bg3-2 {
+		left: 227px;
+    	position: absolute;
+    	top: 2085px;
+		}
+		
+	/*chair*/	
+	#bg3-3 {
+		left: -40px;
+    	position: absolute;
+    	top: 3565px;
+		}
+		
+	/*suit*/	
+	#bg3-32 {
+		left: 341px;
+    	position: absolute;
+    	top: 3865px;
+		}
+		
+	/*diary*/	
+	#bg3-4 {
+		left: 230px;
+    position: absolute;
+    top: 5355px;
+		}
+		
+	/*travel elements*/	
+	#bg3-51 {
+		left: -32px;
+    position: absolute;
+    top: 7445px;
+		}
+		
+
+		
+		
+/* midground */
+#parallax-bg2 {
+	z-index: 2;
+	position: fixed;
+	left: 50%; /* align left edge with center of viewport */
+	top: 0;
+	width: 1200px;
+	margin-left: -600px; /* move left by half element's width */
+	}
+	
+	/*ground*/
+	#bg2-1 {
+		position: absolute;
+		top: 480px;
+		left: 0;
+		}
+		
+	/* cats */
+	#bg3-1 {
+		left: 350px;
+    	position: absolute;
+    	top: 485px;
+		}
+		
+	/* flowers */
+	#bg3-12 {
+		left: 245px;
+    	position: absolute;
+    	top: 523px;
+		}		
+			
+	/*plane bg*/
+	#bg2-12 {
+		left: 70px;
+    	position: absolute;
+    	top: 210px;
+		}
+		
+	/*globe*/	
+	#bg2-2 {
+		left: 123px;
+    	position: absolute;
+    	top: 1311px;
+		}
+	
+	/*desk*/	
+	#bg2-3 {
+		left: 114px;
+    	position: absolute;
+    	top: 2830px;
+		}
+	
+	/*pile*/
+	#bg2-4 {
+		left: 105px;
+    	position: absolute;
+    	top: 3908px;
+		}
+	
+	/*map elements*/
+	#bg2-5 {
+	left: 153px;
+    position: absolute;
+    top: 5248px;
+		}
+		
+/* background */
+#parallax-bg1 {
+	z-index: 1;
+	position: fixed;
+	left: 50%; /* align left edge with center of viewport */
+	top: 0;
+	width: 1200px;
+	margin-left: -600px; /* move left by half element's width */
+	}
+	
+	
+	/*Clouds bg*/
+	#bg1-1 {
+		position: absolute;
+		top: 165px;
+		left: 140px;
+		}
+	
+	/*Clouds bg*/
+	#bg1-11 {
+		position: absolute;
+		top: 25px;
+		left: -740px;
+		}
+		
+	/*Clouds bg*/
+	#bg1-12 {
+		position: absolute;
+		top: 25px;
+		right: -740px;
+		}
+
+	
+	/*maps bg*/
+	#bg1-2 {
+		left: 95px;
+    	position: absolute;
+    	top: 739px;
+		}
+		
+	/*wall art*/	
+	#bg1-3 {
+		left: 119px;
+    position: absolute;
+    top: 1377px;
+		}
+		
+	/*pile*/
+	#bg1-4 {
+		left: 105px;
+    	position: absolute;
+    	top: 1983px;
+		}
+		
+	/*polaroidbg*/
+	#bg1-41 {
+		left: 435px;
+    	position: absolute;
+    	top: 2170px;
+		}
+	
+	/*large map*/	
+	#bg3-5 {
+    left: 50%;
+    margin-left: -485px;
+    position: absolute;
+    top: 2607px;
+}
+
+	/*night sky*/	
+	#bg3-7 {
+    left: 50%;
+    margin-left: -485px;
+    position: absolute;
+    top: 3182px;
+}
+
+	/*stars*/	
+	#bg3-8 {
+    left: 50%;
+    margin-left: -1455px;
+    position: absolute;
+    top: 3182px;
+}
+
+	/*stars2*/	
+	#bg3-9 {
+    left: 50%;
+    margin-left: 485px;
+    position: absolute;
+    top: 3182px;
+}
+
+
+/*Fixed Top bar */
+
+#topbar {
+    background: url("../images/topbar.png") repeat scroll left top transparent;
+    height: 75px;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5000
+}
+
+#topbar img {
+	float: left;
+}
+
+#topbar p {
+	color: #FFFFFF;
+    float: right;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 100;
+    letter-spacing: 1px;
+    line-height: 45px;
+
+}
+
+#topbar p a {
+	color: #fff;
+
+}
+
+#topbar p a:hover {
+	text-shadow: 0 0 5px #fff;
+	}
+
+
+/*J + O Sprite Fixed middle*/
+
+#jando {
+    min-width: 960px;
+    position: absolute;
+    top: 580px;
+    width: 100%;
+    z-index: 70;
+}
+
+
+.jando_container {
+    margin: 0 auto;
+    overflow-y: hidden;
+    width: 100%;
+}
+
+#jando_sprite {
+    background: url("../images/jando.png") no-repeat scroll center top transparent;
+    display: block;
+    height: 310px;
+    position: fixed;
+    top: 345px;
+    z-index: 70;
+}
+
+
+/*footer */
+	
+#footer {
+    background: url('../images/footer-bg.png') left top repeat-x, #4f4e39;
+    height: 750px;
+    display: block;
+    padding: 0;
+    width: 100%;
+    z-index: 100;
+   	box-shadow: 0px -5px 15px rgba(128,78,34,.25);
+   	color: #fff;
+   	position: absolute;
+}
+
+#footernav {
+	padding-top: 25px;
+	width: 475px;
+	float: left;
+}
+
+#footernav p {
+	font-size: 12px;
+	line-height: 32px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: #fff;
+}
+
+#footernav p a {
+	color: #fff;
+}
+
+#footernav p a:hover {
+	color: #fff;
+	background: #f0542f;
+}
+
+
+#footermailinglist {
+	padding-top: 30px;
+	width: 475px;
+	float: left;
+	
+	text-align: right;
+}
+
+#footermailinglist p {
+	font-size: 9px;
+	letter-spacing: 2px;
+	font-weight: 500;
+}
+
+.mc-field-group {
+	margin-left: 188px
+}
+
+.mc-field-group, .mc-button {
+	float: left;
+	margin-top:5px;
+}
+
+.mc-field-group input {
+	background: none repeat scroll 0 0 #F9F5F0;
+    border: 1px solid #FFFFFF;
+    font-family: futura-pt-1,futura,arial,sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 5px;
+    text-transform: uppercase;
+    width: 250px;
+}
+
+.mc-button input {
+	-moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    -moz-transition: all 0.25s ease-in-out 0s;
+    background: none repeat scroll 0 0 #4F4E39;
+    border-color: #FFFFFF #FFFFFF #FFFFFF -moz-use-text-color;
+    border-style: solid solid solid none;
+    border-width: 1px 1px 1px medium;
+    color: #FFFFFF;
+    font-size: 15px;
+    height: 25px;
+    padding-bottom: 2px;
+    padding-right: 3px;
+    width: 25px;
+}
+
+.mc-button input:hover {
+	color: #fff;
+	background: #f0542f;
+	
+	cursor: pointer;
+}
+
+.fb-like {
+top: -4px;
+}
+
+#bottombanner {
+	background: url("../images/footer-banner.png") no-repeat scroll 0 0 transparent;
+    clear: both;
+    display: block;
+    font-family: futura-pt-1,futura,arial,sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    height: 50px;
+    letter-spacing: 2px;
+    line-height: 50px;
+    margin: 125px auto;
+    text-align: center;
+    text-transform: uppercase;
+    width: 500px;
+    }
+
+
+/*hidden cats*/
+    
+#bg3-6 {
+	height: 48px;
+	width: 342px;
+	background: url('../images/scene05-hiddencats.png');
+	background-position: 0 18px;
+	background-repeat: no-repeat;
+    left: 50%;
+    margin-left: -171px;
+    position: absolute;
+    top: 4452px;
+    z-index: 5000;
+    
+    -moz-transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+#bg3-6:hover {
+	background-position: 0 0;
+
+}
+
+#panel {
+background: none repeat scroll 0 0 #FFFFFF;
+    display: none;
+    height: 475px;
+    left: 50%;
+    margin-left: -245px;
+    position: absolute;
+    top: 3275px;
+    width: 490px;
+    z-index: 100;
+    
+    box-shadow: 0 0 15px rgba(128, 78, 35, 0.3); 
+}
+
+
+/*facebook fix*/
+
+#fb_xdm_frame_http {
+	display: none;
+
+}
+
+#fb_xdm_frame_https {
+	display: none;	
+}

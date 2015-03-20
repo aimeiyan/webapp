@@ -1,0 +1,20 @@
+(function () {
+  var added = false;
+  function add_js () {
+    if(added) { return; }
+    var js = document.createElement('script');
+    js.src = "http://192.168.1.75:9088/_d/polling";
+    var scripts = document.getElementsByTagName('script'),
+        s = scripts[scripts.length - 1];
+    s.parentNode.insertBefore(js, s);
+    if(window.console && console.log) {
+      console.log("http-watcher reload connected");
+    }
+    added = true;
+  }
+
+	setTimeout(function(){
+  	setTimeout(add_js, 600);
+  	window.onload = add_js;
+	}, 600)
+})();

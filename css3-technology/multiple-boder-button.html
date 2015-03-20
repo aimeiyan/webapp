@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+
+        body {
+            line-height: 1.5;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            font: 400 14px/1.8 Arial, Helvetica, "Microsoft YaHei", STHeiti, "Droid Sans Fallback", sans-serif;
+        }
+
+        /*
+
+    INSTRUCTIONS
+
+    Using CSS properties alone, recreate this button:
+
+        http://i.imgur.com/gnZnY.png.
+
+    Spend no longer than 15 minutes on it, we don't
+    expect it to be a perfect match. It's open book,
+    feel free to hit Google but be prepared to
+    explain your solution.
+
+*/
+        a {
+            /*第一步当然是调调位置和大小了*/
+            display: block;
+            width: 250px;
+            height: 62px;
+            margin: 28px;
+
+            /*第二步设置字体*/
+            font-family: arial;
+            font-size: 24px;
+            font-weight: bold;
+            color: #535253;
+            text-decoration: none;
+            text-transform: uppercase;
+
+            /*第三步文字的位置*/
+            /*文字位置第一种方法*/
+            background: #ccc;
+            text-align: center; /* text-indent:53px;也是可以的 */
+            line-height: 63px;
+
+            /*文字位置第二种方法*/
+            box-sizing: border-box;
+            /*box-sizing: content-box;*/
+            /* 此参数会使 a 标签的高和宽包含 padding 值 */
+            /*padding-left: 60px;*/
+            /*padding-top: 15px;*/
+
+            /*第四步简单效果：文字阴影，圆角边框*/
+            border-radius: 10px;
+            text-shadow: 0 1px #eee; /* 第一个是阴影向右偏移的像素，第二个是向下偏移的像素，第三个颜色 */
+
+            /*第六步 多层边框*/
+            /*box-shadow: 0 1px 2px 1px #656565, 0 0 0 6px #CACACA, 0 0 0 8px #fff, 0 0 0 10px #696969, 0 2px 3px 11px #CBCBCB;*/
+            box-shadow: 0 29px rgba(222, 222, 222, 1) inset, 0 1px 2px 1px #656565, 0 0 0 6px #CACACA, 0 0 0 8px #fff, 0 0 0 10px #696969, 0 2px 3px 11px #CBCBCB; /* 这种方法设置了一层 inset shadow 和 5 层外部shadow */
+
+            /*第七步 分段背景*/
+            /*background: linear-gradient(rgba(219, 219, 219, 0.9) 48%, rgba(169, 169, 169, 0.6) 48%);*/
+
+            /*background: rgba(182, 182, 182, 0.6);*/
+        }
+
+        /*第五步 加星星*/
+        a:before, a:after {
+            font-size: 27px;
+            color: #888;
+            content: '★';
+            text-shadow: 0 1px #fff;
+        }
+
+        a:before {
+            margin-right: 10px;
+        }
+
+        a:after {
+            margin-left: 10px;
+        }
+
+        dt{
+            font-weight: bold;
+        }
+
+        dd {
+            margin-left: 0;
+        }
+    </style>
+</head>
+<body>
+
+<!--由于不能改变HTML结构，那么能使用的方法也就只剩:before和:after了。-->
+<!--参考文档（http://pinkyjie.com/2015/03/02/an-interesting-css-interview/）-->
+<p>经测试：IE8 不支持css3的效果。</p>
+<p>css 实现的图片效果</p>
+<a href="#">Checkout</a>
+<p>图片demo：</p>
+<img src="http://i.imgur.com/gnZnY.png">
+<dl>
+    <dt>问题1：什么是行内元素？什么是块级元素？两者有什么特点和区别？</dt>
+    <dd>答：首先，a标签属于行内元素，行内元素不像div这种块级元素可以独占一行，并且对于宽高也有一定的限制：</dd>
+    <ul>
+        <li>宽度：只能是内容的宽度，不能改变。</li>
+        <li>高度：只能是内容的高度，不能改变，类似line-height这种样式也是没用的。</li>
+        <li>margin：只有左右的margin才生效。</li>
+        <li>
+            padding：上下左右都生效，但上下的padding比较特殊。以padding-bottom举例，如果行内元素后面紧跟一个块级元素（比如div），则块级元素会与padding的部分重合，即padding-bottom并不能使下面的行下移。
+        </li>
+        <li>也就是说，想让一个行内元素有固定的宽度和高度，必须先改变其display样式使其变为块级元素才行。</li>
+    </ul>
+</dl>
+<dl>
+    <dt>问题2：怎么设置字体的偏移？text-indent/line-height和padding-left/padding-top有什么区别呢？</dt>
+    <ul>
+        <li>使用padding会使整个a标签的宽度和高度增大，使得与原始图片的宽高已经不一致了，此时就需要重新调整宽度和高度。</li>
+    </ul>
+</dl>
+<dl>
+    <dt>问题3：元素在页面中实际占用的宽度和高度如何计算？</dt>
+    <dt>问题4：什么是CSS中的盒子模型？</dt>
+    <dt>问题5：box-sizing属性是干什么用的？</dt>
+    <ul>
+        <li>IE盒模型：实际占用的宽（高）度 = 内容宽（高）度[CSS值]。在IE盒模型中，不管pading和border设置多大，元素在页面中实际占用的宽高度都与CSS设置的保持一致。</li>
+        <li>标准盒模型：实际占用的宽（高）度 = 内容宽（高）度[CSS值] + 左（上）padding + 右（下）padding + 左（上）border + 右（下）border。</li>
+        <li>试着将text-align和line-height注释掉，添加box-sizing样式，并适当调整padding的值。</li>
+        <li>box-sizing样式赋了一个border-box，意思就是使用类似IE的盒模型来计算宽高。</li>
+        <li>box-sizing取content-box，就是W3C默认的标准盒模型了</li>
+        <li>正是由于这个便利，可以发现很多CSS框架（如bootstrap）都会有这么一条样式* {box-sizing:
+            border-box}，即将所有的元素都按IE的盒模型处理，因为这样给我们的布局带来很多便利，避免不必要的像素计算。
+        </li>
+    </ul>
+</dl>
+<dl>
+    <dt>问题6：before和after是干什么用的？</dt>
+    <dd>答：这一步给按钮加上了左右两个小星星，由于不能改变HTML结构，那么能使用的方法也就只剩:before和:after了</dd>
+    <ul>
+        <li>根据字面意思理解，其实就是在指定标签的内容前面和后面插入内容，而插入的内容呢是由content属性来定义的。</li>
+        <li>先来说说这个content，肯定要有人问了，这个五角星是怎么打出来呢？用Mac的同学自然不用着急，所有编辑器的“编辑”菜单下面都有这么一项子菜单：特殊字符。里面有各种字符，各种五角星。</li>
+        <li>除此之外，还可以使用Unicode编码来代表五角星，五角星的CSS编码是\272D，所以我们将content属性替换为content: "\272D"即可</li>
+        <li>除了使用margin-left以外，还可以将before、after的position属性设置为absolute，使用top和left属性来随意调整。</li>
+    </ul>
+</dl>
+<dl>
+    <dt>问题7：如何实现多层边框？</dt>
+    <dd>答：box-shadow:向右，向下的阴影偏移，第三个参数是阴影模糊的距离，第四个参数是阴影的宽度，第五个参数是颜色。</dd>
+</dl>
+
+<dl>
+    <dt>问题8：颜色渐变的时候这个百分比参数是干嘛用的？</dt>
+    <dd>答：百分比参数最常见的用法就是background: linear-gradient(red 0%, green
+        100%)，也就是最上面是红色，最下面是绿色，中间渐变。那这里第一个百分比不是0%代表什么呢？其实可以理解为其前面有一个同样颜色的0%。以上面的CSS代码为例，在前面加一个rgba(219, 219, 219, 0.9)
+        0%的效果与现在是一致的。同样，最后一个百分比不是100%的话，就相当于在后面加一个同样颜色的100%。这样一来就好解释了，从0%到48%是颜色1到颜色1的渐变（显然，颜色渐变区间为0，无渐变效果），从48%到48%是颜色1到颜色2的渐变（显然，距离渐变区间为0，无渐变效果），最后，从48%到100%是颜色2到颜色2的渐变（也是无渐变效果）。通过这种方式，就实现了颜色分界的效果。那么最后一个问题来了，问题10：如果颜色分3层怎么实现呢？类推一下就可以写出来，比如从上到下分别为红绿蓝的话，CSS为：background:
+        linear-gradient(red 33%, green 33%, green 66%, blue 66%)，自己试试就明白啦。
+    </dd>
+</dl>
+</body>
+</html>
