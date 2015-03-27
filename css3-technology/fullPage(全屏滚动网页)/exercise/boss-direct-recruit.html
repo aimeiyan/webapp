@@ -53,16 +53,25 @@
         #fullpage .fp-slide .li > img {
             position: absolute;
             display: block;
-            bottom: 30%;
+            bottom: -50%;
             right: 62%;
             height: 56%;
-            z-index: 80;
+            z-index: 9;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            -webkit-transition: all 1s ease-out;
+            -moz-transition: all 1s ease-out;
+            -ms-transition: all 1s ease-out;
+            -o-transition: all 1s ease-out;
+            transition: all 1s ease-out;
         }
 
         #fullpage .s1_w {
             height: 30%;
             background: #fff;
             text-align: center;
+            position: relative;
+            z-index: 10;
         }
 
         #fullpage .s1_w img {
@@ -163,14 +172,21 @@
             position: absolute;
             bottom: 30%;
             height: 50%;
+            -webkit-transition: all 1s ease-out;
+            -moz-transition: all 1s ease-out;
+            -ms-transition: all 1s ease-out;
+            -o-transition: all 1s ease-out;
+            transition: all 1s ease-out;
         }
 
         #fullpage .s2 .entrance_top img:first-child {
-            right: 51%;
+            right: 60%;
+            opacity: 0;
         }
 
         #fullpage .s2 .entrance_top img:last-child {
-            left: 51%;
+            left: 60%;
+            opacity: 0;
         }
 
         #fullpage .s4_w .s4_bg {
@@ -262,6 +278,7 @@
             height: 100%;
             margin: 0 auto;
         }
+
     </style>
 </head>
 <body>
@@ -287,7 +304,7 @@
                 <div class="s1_w">
                     <img src="images/s1_word.jpg">
                 </div>
-                <img src="images/ss_1_1.png">
+                <img src="images/ss_1_1.png" class="s1_ss">
             </div>
             <div class="li">
                 <div class="s1 s1_02">
@@ -306,7 +323,7 @@
                 <div class="s1_w">
                     <img src="images/s1_word.jpg">
                 </div>
-                <img src="images/ss_1_2.png">
+                <img src="images/ss_1_2.png" class="s1_ss">
             </div>
             <div class="li">
                 <div class="s1 s1_03">
@@ -325,15 +342,15 @@
                 <div class="s1_w">
                     <img src="images/s1_word.jpg">
                 </div>
-                <img src="images/ss_1_3.png">
+                <img src="images/ss_1_3.png" class="s1_ss">
             </div>
         </div>
     </div>
     <div class="section">
         <div class="s2">
             <div class="entrance_top">
-                <img src="images/s2_ss.jpg">
-                <img src="images/s2_ss_02.jpg">
+                <img src="images/s2_ss.jpg" class="s2_ss_l">
+                <img src="images/s2_ss_02.jpg" class="s2_ss_r">
             </div>
 
         </div>
@@ -344,8 +361,8 @@
     <div class="section">
         <div class="s3 s2">
             <div class="entrance_top">
-                <img src="images/s3_ss.jpg">
-                <img src="images/s3_ss_02.jpg">
+                <img src="images/s3_ss.jpg" class="s3_ss_l">
+                <img src="images/s3_ss_02.jpg" class="s3_ss_r">
             </div>
 
         </div>
@@ -384,15 +401,73 @@
 <script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
 <script type="text/javascript">
     $(function () {
+
+        $.support.css3Property = function(prop){
+            var div = document.createElement('div'),
+                    vendors = ['Webkit', 'Moz', 'O', 'Ms'],
+                    len = vendors.length;
+            if(prop in div.style){
+                return true;
+            }
+
+            prop = prop.replace(/^[a-z]/, function(str){
+                return str.toUpperCase();
+            });
+            while(len--){
+                if(vendors[len] + prop in div.style){
+                    return true;
+                }
+            }
+            return false;
+        };
+
+        var isSupportTran = $.support.css3Property('transition'),
+
+                s1 = $('img.s1_ss'),
+                s2L = $('img.s2_ss_l'),
+                s2R = $('img.s2_ss_r'),
+                s3L = $('img.s3_ss_l'),
+                s3R = $('img.s3_ss_r');
+
+        console.log('isSupportTran','----');
+
+        $.fn.optimizedAnimation = function(o){
+            if(isSupportTran){
+                $(this).css(o);
+            }else{
+                $(this).animate(o, {'easing': 'easeOutSine', 'duration': 1000});
+            }
+        };
+
         $('#fullpage').fullpage({
             sectionsColor: ['#f2f2f2', '#edf0f4', '#fff', '#edf0f4'],
             navigation: true,
-
             navigationPosition: 'right',
+            navigationTooltips: ['更简单的招聘', '职业方向', '职位直聊', '你在哪儿'],
             slidesNavigation: false,
             fixedElements: '#header',
-            css3: true
+            css3: true,
+            afterLoad:function(anchorLink,index){
+                if(index==1){
+                    changeBanner();
+                }else{
+                    clearInterval(bannerInterId);
+                }
+
+                if(index==1){
+                    s1.optimizedAnimation({'bottom':'30%','opacity':'1'});
+                }
+                if(index==2||index==3){
+                    s2L.optimizedAnimation({'right': '51%', 'opacity': '1'});
+                    s2R.optimizedAnimation({'left': '51%', 'opacity': '1'});
+                    s3L.optimizedAnimation({'right': '51%', 'opacity': '1'});
+                    s3R.optimizedAnimation({'left': '51%', 'opacity': '1'});
+                }
+            }
         });
+
+        s1.optimizedAnimation({'bottom': '30%', 'opacity': '1'});
+
 
         //第一屏banner切换
         var bannerInterId;
