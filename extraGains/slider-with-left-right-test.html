@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
+    <style type="text/css">
+        body {
+            background: #999;
+        }
+
+        .news {
+            margin: auto;
+            padding: 20px;
+            width: 910px;
+            background: #0000ff;
+        }
+
+        .news div p {
+            width: 214px;
+        }
+
+        .news div p img {
+            width: 100%;
+        }
+
+        button.slick-prev {
+            display: block;
+            width: 30px;
+            height: 80px;
+            background: url("images/platform_07.png") no-repeat;
+        }
+
+        button.slick-next {
+            display: block;
+            width: 30px;
+            height: 80px;
+            background: url("images/platform_08.png") no-repeat;
+        }
+
+        .slick-prev:hover, .slick-prev:focus {
+            background: url("images/platform_07.png") no-repeat;
+
+        }
+
+        .slick-next:hover, .slick-next:focus {
+            background: url("images/platform_08.png") no-repeat;
+
+        }
+
+        .slick-prev, .slick-next {
+            margin-top: -40px;
+        }
+
+        .slick-prev:before, .slick-next:before {
+            content: '';
+        }
+    </style>
+</head>
+<body>
+<div class="news">
+    <div>
+        <p><img src="images/platform_03.jpg"></p>
+
+        <p>2010年7月30日，北京石油交易仪式中北京市委副书记，市长郭金龙出席。</p>
+    </div>
+    <div>
+        <p><img src="images/platform_04.jpg"></p>
+
+        <p>2012年2月24日，证监会副主席、党委委员姚刚，证监会纪委书记黎晓宏到北油所调研</p>
+    </div>
+    <div>
+        <p><img src="images/platform_05.jpg"></p>
+
+        <p>2012年11月6日，第十届全国政协常委、原化工部副部长、中国石油和化学工业联合会会长李勇武会长到北油所调研</p>
+    </div>
+    <div>
+        <p><img src="images/platform_06.jpg"></p>
+
+        <p>2013年5月13日，芝加哥商品交易所集团Leo Melamed先生到访北油所</p>
+    </div>
+    <div>
+        <p><img src="images/platform_03.jpg"></p>
+
+        <p>2010年7月30日，北京石油交易仪式中北京市委副书记，市长郭金龙出席。</p>
+    </div>
+    <div>
+        <p><img src="images/platform_04.jpg"></p>
+
+        <p>2012年2月24日，证监会副主席、党委委员姚刚，证监会纪委书记黎晓宏到北油所调研</p>
+    </div>
+    <div>
+        <p><img src="images/platform_05.jpg"></p>
+
+        <p>2012年11月6日，第十届全国政协常委、原化工部副部长、中国石油和化学工业联合会会长李勇武会长到北油所调研</p>
+    </div>
+    <div>
+        <p><img src="images/platform_06.jpg"></p>
+
+        <p>2013年5月13日，芝加哥商品交易所集团Leo Melamed先生到访北油所</p>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="js/slick.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.news').slick({
+            infinite: false,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000
+        });
+    });
+</script>
+</body>
+</html>
