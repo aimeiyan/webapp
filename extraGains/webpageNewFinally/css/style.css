@@ -1,0 +1,1050 @@
+@charset "utf-8";
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body, div, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, pre, form, p, blockquote, input, abbr, article, aside, figcaption, fieldset, figure, footer, header, mark, meter, menu, nav, output, progress, section, summary, time {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+iframe, a, img, button {
+    border: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+input, textarea, select {
+    outline: 0;
+}
+
+textarea {
+    resize: none;
+    overflow: auto;
+}
+
+img {
+    vertical-align: middle;
+}
+
+em, i, s {
+    font-style: normal;
+}
+
+p {
+    word-wrap: break-word;
+}
+
+a {
+    text-decoration: none;
+}
+
+.clear {
+    clear: both;
+}
+
+.fleft {
+    float: left;
+}
+
+.fright {
+    float: right;
+}
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+    overflow: hidden;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.none {
+    display: none;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.t-center {
+    text-align: center;
+}
+
+.t-right {
+    text-align: right;
+}
+
+.t-left {
+    text-align: left;
+}
+
+.middle {
+    vertical-align: middle;
+}
+
+.hand {
+    cursor: pointer;
+}
+
+h1, h2, h3 {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.clear-border {
+    border: 0 !important;
+}
+
+input[type=submit], input[type=button], input[type=text], textarea, button, select {
+    -webkit-appearance: none;
+}
+
+button[disabled], html input[disabled] {
+    cursor: default;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+}
+
+::-webkit-input-placeholder {
+    color: #999;
+}
+
+:-moz-placeholder {
+    color: #999;
+}
+
+::-moz-placeholder {
+    color: #999;
+}
+
+:-ms-input-placeholder {
+    color: #999;
+}
+
+.mt5 {
+    margin-top: 5px;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
+.mt15 {
+    margin-top: 15px;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.mt25 {
+    margin-top: 25px;
+}
+
+.mt30 {
+    margin-top: 30px;
+}
+
+.mt50 {
+    margin-top: 50px;
+}
+
+.mb10 {
+    margin-bottom: 10px;
+}
+
+.mb15 {
+    margin-bottom: 15px;
+}
+
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.mb25 {
+    margin-bottom: 25px;
+}
+
+.mb30 {
+    margin-bottom: 30px;
+}
+
+.ml5 {
+    margin-left: 5px;
+}
+
+.ml10 {
+    margin-left: 10px;
+}
+
+.ml15 {
+    margin-left: 15px;
+}
+
+.ml20 {
+    margin-left: 20px;
+}
+
+.mr5 {
+    margin-right: 5px;
+}
+
+.mr10 {
+    margin-right: 10px;
+}
+
+.mr15 {
+    margin-right: 15px;
+}
+
+.mr20 {
+    margin-right: 20px;
+}
+
+.mr25 {
+    margin-right: 25px;
+}
+
+.pt10 {
+    padding-top: 10px;
+}
+
+.pt15 {
+    padding-top: 15px;
+}
+
+.pb10 {
+    padding-bottom: 10px;
+}
+
+.pb15 {
+    padding-bottom: 15px;
+}
+
+.pr20 {
+    padding-right: 20px;
+}
+
+.pr30 {
+    padding-right: 30px;
+}
+
+.f_12 {
+    font-size: 12px;
+}
+
+.f_14 {
+    font-size: 14px;
+}
+
+.f_16 {
+    font-size: 16px;
+}
+
+.f_15 {
+    font-size: 15px;
+}
+
+.f_18 {
+    font-size: 18px;
+}
+
+body {
+    font: 400 14px/1.5 Helvetica, Arial, "microsoft yahei","微软雅黑", STHeiti, simsun, sans-serif;
+    color: #343434;
+    background-color: #EEEEEE;
+}
+
+body.grey-bg {
+    background-color: #eaeaea;
+}
+
+input, button, textarea {
+    font: 400 14px/1.5 Helvetica, Arial, Microsoft YaHei, STHeiti, simsun, sans-serif;
+}
+
+a {
+    color: #007ead;
+    outline-style: none;
+}
+
+a:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.grey {
+    color: #6d6d6d;
+}
+
+.orange {
+    color: #ed6330;
+}
+
+.blue_v2 {
+    color: #2c84cc;
+}
+
+.red {
+    color: #d60000;
+}
+
+.def {
+    color: #343434;
+}
+
+.grey_66 {
+    color: #666;
+}
+
+.grey_33 {
+    color: #333;
+}
+
+
+body {
+    min-width: 1024px;
+}
+
+/*页头样式*/
+
+.header .header-logo {
+    width: 1024px;
+    padding: 10px 0;
+    margin: 0 auto;
+}
+
+.header .nav {
+
+    background: #ed6330;
+    color: #fff;
+    height: 40px;
+    line-height: 43px;
+    font-size: 16px;
+}
+
+.header .nav ul {
+    width: 1024px;
+    padding: 0 24px 0 24px;
+    margin: 0 auto;
+    letter-spacing: 1px;
+}
+
+.header .nav ul li {
+    float: left;
+    padding: 0 28px;
+}
+
+.header .nav ul li a {
+    color: #fff;
+}
+
+.header .nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/*banner style*/
+.banner {
+    width: 100%;
+    height: 350px;
+    padding-top: 16px;
+    background: url("../images/banner.jpg") no-repeat center top #2e2c3a;
+    /*background-size: contain;*/
+}
+
+.banner .login-wrapper {
+    width: 1024px;
+    margin: 0 auto;
+}
+
+.banner .login-box {
+    width: 290px;
+    height: 334px;
+    background: #4a5e75;
+    border: 1px solid #747a86;
+    text-align: center;
+    float: right;
+}
+
+.banner .login-box h2 {
+    font-size: 24px;
+    color: #fff;
+    margin: 24px 0 8px;
+}
+
+.banner .login-box h1 {
+    font-size: 30px;
+    color: #ffb74e;
+    margin-bottom: 16px;
+
+}
+
+.banner .login-box form p:first-child {
+    margin-bottom: 22px;
+}
+
+.banner .login-box form p input[type=text] {
+    width: 190px;
+    height: 40px;
+    font-size: 16px;
+    padding: 0 10px;
+}
+
+.banner .login-box form p input[type=submit] {
+    margin-top: 25px;
+    width: 144px;
+    height: 33px;
+    line-height: 36px;
+    font-size: 20px;
+    background: url("../images/submit.png") no-repeat center;
+}
+
+/*主要内容*/
+div.container {
+    width: 1024px;
+    margin: 0 auto;
+}
+
+/*稳定高收益*/
+.container .high-yield .wrapper {
+    padding: 20px 0 10px;
+    position: relative;
+}
+
+.container .high-yield .tag {
+    position: absolute;
+    right: -35px;
+    top: -80px;
+}
+
+.container .high-yield .wrapper .finance-product {
+    width: 987px;
+    height: 221px;
+    margin: 0 auto;
+    padding-top: 9px;
+    background: url("../images/high_yield_02.png") no-repeat;
+}
+
+.container .high-yield .wrapper .finance-product.second {
+    width: 987px;
+    height: 268px;
+    padding-top: 9px;
+    background: url("../images/high_yield_01.png") no-repeat;
+}
+
+.container .high-yield .wrapper .finance-product table {
+    width: 100%;
+    text-align: center;
+    color: #7c7c7c;
+}
+
+.container .high-yield .wrapper .finance-product table thead {
+    color: #fff;
+    font-size: 18px;
+}
+
+.container .high-yield .wrapper .finance-product table thead tr {
+    height: 38px;
+    line-height: 38px;
+}
+
+.container .high-yield .wrapper .finance-product table tbody tr {
+    height: 30px;
+}
+
+.container .high-yield .wrapper .finance-product table tbody tr td {
+    padding-top: 8px;
+}
+
+.container .high-yield .wrapper .finance-product table tbody tr:first-child td {
+    padding-top: 18px;
+}
+
+.container .high-yield .wrapper .finance-product:last-child table tbody tr:first-child td {
+    padding-top: 12px;
+}
+
+.container .high-yield h1.title {
+    position: relative;
+}
+
+.container .high-yield h1.title img {
+    position: absolute;
+    bottom: 15px;
+    left: 260px;
+}
+
+.container .high-yield .wrapper .finance-product {
+    margin-bottom: 20px;
+}
+
+/*在线开户流程*/
+.container .open-account-flow {
+    padding: 14px 46px 10px 52px;
+    color: #ed6330;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+}
+
+.container .open-account-flow .line {
+    position: absolute;
+    top: 60px;
+    left: 140px;
+    width: 430px;
+    height: 12px;
+    background: #c9c9c9;
+    z-index: -1;
+}
+
+.container .open-account-flow .open-account-action {
+    position: absolute;
+    top: 36px;
+    right: 36px;
+}
+
+.container .open-account-flow .open-account-action p.link {
+    margin-top: 22px;
+    text-align: right;
+}
+
+.container .open-account-flow .open-account-action p.link a {
+    width: 130px;
+    height: 36px;
+    line-height: 38px;
+    font-size: 18px;
+    text-align: center;
+    color: #fff;
+    display: inline-block;
+    background: url("../images/flow_03.png") no-repeat left top;
+}
+
+.container .open-account-flow ul li {
+    float: left;
+    font-size: 16px;
+}
+
+.container .open-account-flow ul li.active {
+    margin: 0 152px;
+}
+
+.container .open-account-flow ul li div {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 5px;
+    background: url("../images/flow_01.png") no-repeat 0 0;
+}
+
+.container .open-account-flow ul li.active div {
+    background-position: -100px 0;
+}
+
+.container .open-account-flow ul li.deal div {
+    background-position: -200px 0;
+}
+
+/*会员账户*/
+.container .high-yield, .container .open-account-flow, .container .vip, .container .cert, .container .common-ques, .container .client-case, .container .open-platform {
+    background: #fff;
+    border: 1px solid #d4d4d4;
+    -webkit-box-shadow: 0 0 15px 3px #ccc; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow: 0 0 15px 3px #ccc; /* Firefox 3.5 - 3.6 */
+    box-shadow: 0 0 15px 3px #ccc; /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+.container .vip .top-banner, .container .cert .top-banner, .container .open-platform .top-banner {
+    position: relative;
+}
+
+.container .vip .top-banner img, .container .cert .top-banner img, .container .open-platform .top-banner img {
+    width: 100%;
+    display: block;
+}
+
+.container .vip .top-banner a, .container .cert .top-banner a, .container .open-platform .top-banner a {
+    position: absolute;
+    display: block;
+    width: 222px;
+    height: 49px;
+    right: 17px;
+    top: 41px;
+    cursor: pointer;
+    background: url("../images/vip_06.png") no-repeat 0 0;
+}
+
+.container .vip .wrapper {
+    padding: 36px 28px;
+}
+
+.container .vip .wrapper > li {
+    float: left;
+    padding: 0 4px;
+}
+
+.container .vip .wrapper > li > div {
+    width: 312px;
+    height: 372px;
+    color: #32363a;
+    padding-top: 20px;
+    background: url("../images/vip_02.jpg") no-repeat;
+}
+
+.container .vip .wrapper > li > p {
+    margin-top: 10px;
+}
+
+.container .vip .wrapper > li > p a {
+    display: block;
+    width: 118px;
+    height: 38px;
+    margin: 0 auto;
+    line-height: 27px;
+    color: #fff;
+    text-align: center;
+    background: url("../images/vip_04.jpg") no-repeat;
+}
+
+.container .vip .wrapper > li > div > h1 {
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.container .vip .wrapper > li > div .sub-wrapper {
+    padding: 0 30px 0 25px;
+    color: #373a3f;
+    font-size: 15px;
+}
+
+.container .vip .wrapper > li > div .sub-wrapper > li {
+    padding-left: 15px;
+    margin-top: 20px;
+    background: url("../images/vip_03.jpg") no-repeat 0 4px;
+}
+
+.container .vip .wrapper > li > div .sub-wrapper > li:first-child {
+    color: #fff;
+    background: url("../images/vip_05.jpg") no-repeat 0 4px;
+}
+
+.container .vip .wrapper > li > div .sub-wrapper > li > h2 {
+    font-size: 18px;
+}
+
+.container .vip .wrapper > li > div .sub-wrapper > li .inner-wrapper li {
+    float: left;
+    width: 50%;
+}
+
+/*客户案例*/
+
+.container .client-case h1.title {
+    position: relative;
+}
+
+.container .client-case h1.title img {
+    position: absolute;
+    bottom: 15px;
+    left: 260px;
+}
+
+.container .client-case .client-intro {
+    padding: 40px 20px 20px;
+}
+
+.container .client-case .client-intro .client {
+    margin-bottom: 20px;
+}
+
+.container .client-case .client-intro .client .photo {
+    float: left;
+    width: 260px;
+}
+
+.container .client-case .client-intro .client .personal-info {
+    float: right;
+    position: relative;
+    width: 720px;
+    height: 165px;
+    padding: 10px 10px 10px 18px;
+    border: 1px solid #cccccc;
+    color: #5f5f5f;
+    font-family: 'SimSun';
+}
+
+.container .client-case .client-intro .client .personal-info > p {
+    text-align: justify;
+    line-height: 1.3;
+}
+
+.container .client-case .client-intro .client .personal-info > p span{
+    font-family: "microsoft yahei", "微软雅黑";
+}
+
+.container .client-case .client-intro .client .personal-info > a {
+    position: absolute;
+    width: 135px;
+    height: 36px;
+    bottom: -3px;
+    right: 2px;
+    background: url("../images/client_05.jpg") no-repeat;
+}
+
+.container .client-case .analyst {
+    padding: 0 20px 40px;
+    color: #5f5f5f;
+}
+
+.container .client-case .analyst ul {
+    border: 1px solid #ccc;
+    height: 139px;
+}
+
+.container .client-case .analyst ul li {
+    float: left;
+}
+
+.container .client-case .analyst ul li.part {
+    position: relative;
+    width: 350px;
+    height: 124px;
+    padding: 10px 10px 10px 120px;
+    margin: 13px 0 0 20px;
+    font-family: 'simSun';
+    color: #888888;
+}
+
+.container .client-case .analyst ul li.part p:first-child {
+    margin-top: -10px;
+}
+
+.container .client-case .analyst ul li.analyst01 {
+    background: url("../images/client_06.jpg") no-repeat;
+}
+
+.container .client-case .analyst ul li.analyst02 {
+    background: url("../images/client_07.jpg") no-repeat;
+    padding-left: 130px;
+}
+
+.container .client-case .analyst ul li.part a {
+    position: absolute;
+    display: block;
+    width: 118px;
+    height: 25px;
+    line-height: 25px;
+    bottom: 10px;
+    left: 120px;
+    text-align: center;
+    color: #fff;
+    background: url("../images/client_10.png") no-repeat;
+    font-family: "microsoft yahei", "微软雅黑";
+}
+
+.container .client-case .analyst ul li.analyst02 a {
+    left: 130px;
+
+}
+
+/*认证通过*/
+.container .cert .advantage {
+    float: left;
+    width: 250px;
+    margin: 40px 0 28px 78px;
+}
+
+.container .cert .advantage .title {
+    font-size: 20px;
+    color: #ed6330;
+    font-weight: bold;
+    padding-left: 40px;
+    margin-top: 10px;
+    background: url("../images/cert_03.png") no-repeat 0 0px;
+    border-bottom: 1px dashed #ccc;
+}
+
+.container .cert .advantage h1.adg02 {
+    background: url("../images/cert_04.png") no-repeat 0 -2px;
+
+}
+
+.container .cert .advantage h1.adg03 {
+    background: url("../images/cert_01.png") no-repeat 0 0;
+
+}
+
+.container .cert .advantage .content {
+    padding-left: 40px;
+    margin-top: 5px;
+    color: #151515;
+}
+
+.container .cert .bank-img {
+    float: left;
+    margin-top: 40px;
+}
+
+/*常见问题*/
+.container .common-ques > h1.title, .container .client-case > h1.title, .container .high-yield > h1.title {
+    width: 248px;
+    height: 68px;
+    line-height: 70px;
+    font-size: 32px;
+    color: #fff;
+    padding-left: 20px;
+    background: url("../images/ques_02.png") no-repeat;
+}
+
+.container .common-ques > hr, .container .client-case > hr, .container .high-yield > hr {
+    height: 1px;
+    border: 1px solid #ed6330;
+}
+
+.container .common-ques ul {
+    padding: 30px 50px 40px 30px;
+}
+
+.container .common-ques li {
+    line-height: 2;
+    margin-bottom: 20px;
+}
+
+.container .common-ques li h2.title {
+    padding-left: 45px;
+    font-size: 16px;
+    color: #515151;
+    background: url("../images/ques_01.png") no-repeat;
+}
+
+.container .common-ques li h2.ques02 {
+    background: url("../images/ques_03.png") no-repeat;
+
+}
+
+.container .common-ques li h2.ques03 {
+    background: url("../images/ques_04.png") no-repeat;
+
+}
+
+.container .common-ques li p {
+    padding-left: 45px;
+    color: #969696;
+}
+
+/*开放平台*/
+.container .open-platform .top-banner img:first-child {
+    border-bottom: 1px solid #fff;
+}
+
+.container .open-platform .top-banner a.open {
+    position: absolute;
+    top: 180px;
+    right: 10px;
+    width: 110px;
+    height: 27px;
+    background: url("../images/vip_07.png") no-repeat 0 0;
+    cursor: pointer;
+}
+.container .open-platform .top-banner a.open:hover{
+    cursor: pointer;
+}
+.container .media {
+    margin-top: 20px;
+}
+
+.container .media img {
+    display: block;
+    margin: 0 auto;
+}
+
+.container .news {
+    margin: auto;
+    padding: 20px;
+    width: 960px;
+}
+
+.container .news div p {
+    width: 214px;
+    color: #5f5f5f;
+}
+
+.container .news div p.describe {
+    margin-top: 10px;
+    font-family: 'simSun';
+    color: #908f8f;
+}
+
+.container .news div p img {
+    width: 100%;
+}
+
+.container button.slick-prev {
+    display: block;
+    width: 30px;
+    height: 80px;
+    left: -18px;
+    background: url("../images/platform_07.png") no-repeat;
+}
+
+.container button.slick-next {
+    display: block;
+    width: 30px;
+    height: 80px;
+    right: -11px;
+    background: url("../images/platform_08.png") no-repeat;
+}
+
+.container .slick-prev:hover, .slick-prev:focus {
+    background: url("../images/platform_07.png") no-repeat;
+
+}
+
+.container .slick-next:hover, .slick-next:focus {
+    background: url("../images/platform_08.png") no-repeat;
+
+}
+
+.container .slick-prev, .slick-next {
+    margin-top: -80px;
+}
+
+.container .slick-prev:before, .slick-next:before {
+    content: '';
+}
+
+/*页脚*/
+.footer {
+    margin-top: 40px;
+    border-top: 1px solid #ed6330;
+    margin-bottom: 120px;
+}
+
+.footer .hr {
+    height: 1px;
+    background: #fff;
+}
+
+.footer .wrapper .company-info {
+    color: #808080;
+    text-align: center;
+    padding-top: 10px;
+    line-height: 2;
+}
+
+/*底部固定内容样式*/
+.fixed-box {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 10;
+}
+
+.fixed-box .wrapper .oval {
+    height: 25px;
+    margin-top: 10px;
+    background: url("../images/footer_05.png") no-repeat center top;
+}
+
+.fixed-box .wrapper .contract-box {
+    height: 45px;
+    background: #2e2c3a;
+}
+
+.fixed-box .wrapper .contract-box .contract-form {
+    width: 1024px;
+    height: 138px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.fixed-box .wrapper .service-hotline, .fixed-box .wrapper .right-trim, .fixed-box .wrapper .marked-words, .fixed-box .wrapper .form {
+    position: absolute;
+}
+
+.fixed-box .wrapper .service-hotline {
+    top: -78px;
+    left: -70px;
+}
+
+.fixed-box .wrapper .right-trim {
+    right: -84px;
+    top: -34px;
+}
+
+.fixed-box .wrapper .marked-words {
+    top: -60px;
+    left: 380px;
+    color: #fff;
+}
+
+.fixed-box .wrapper .marked-words img {
+    display: inline-block;
+    margin-bottom: 34px;
+}
+
+.fixed-box .wrapper .form {
+    left: 280px;
+    top: 5px;
+    z-index: 11;
+}
+
+.fixed-box .wrapper .form input[type=text] {
+    width: 210px;
+    height: 30px;
+    border-radius: 2px;
+    margin-left: 10px;
+    padding-left: 50px;
+    display: inline-block;
+    font-size: 18px;
+    background: url("../images/footer_06.png") no-repeat 10px 3px #bfbfbf;
+}
+
+.fixed-box .wrapper .form input[type=text]:first-child {
+    background: url("../images/footer_07.png") no-repeat 10px 3px #bfbfbf;
+}
+
+.fixed-box .wrapper .form input[type=submit] {
+    height: 30px;
+    width: 140px;
+    text-align: center;
+    margin-left: 20px;
+    color: #fff;
+    font-size: 16px;
+    background: url("../images/footer_04.png") no-repeat 0 -20px;
+}
+
+.my-placeholder{
+    color: #747474;
+}
