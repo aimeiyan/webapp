@@ -1,36 +1,12 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <title>标准面板（Panel）</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <script src="examples/kitchensink/bootstrap.js"></script>
-    <script src="../ext-4.0/locale/ext-lang-zh_CN.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://dev.sencha.com/deploy/dev/resources/css/ext-all.css">
-    <script type="text/javascript">
-        Ext.onReady(function () {
-            Ext.create('Ext.panel.Panel', {
-                title: '面板头部（header）',
-                tbar: ['顶端工具栏(top toolbars)'],
-                bbar: ['底端工具栏(bottom toolbars)'],
-                height: 200,
-                collapsible: true,
-                collapseDirection: 'left',
-                width: 300,
-                frame: true,
-                renderTo: Ext.getBody(),
-                bodyPadding: 5,
-                bodyStyle: 'background-color:#FFFFFF',
-                html: '面板体（body）',
-                tools: [
-                    { id: 'toggle' },
-                    { id: 'close' },
-                    { id: 'maximize' }
-                ],
-                buttons: [{
-                    text: '面板底部（footer）'
-                }]
-            });
-        });
-    </script>
+    <title>Welcome to Ext JS!</title>
+    <link rel="stylesheet" type="text/css" href="build/packages/ext-theme-neptune/build/resources/ext-theme-neptune-all.css">
+    <script type="text/javascript" src="build/ext-all.js"></script>
+    <script type="text/javascript" src="build/packages/ext-theme-neptune/build/ext-theme-neptune.js"></script>
+
+    <script type ="text/javascript" src="app.js"></script>
 </head>
-<body style="margin: 10px"></body>
+<body></body>
 </html>
