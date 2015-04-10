@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <style type="text/css">
+
+        /*img {*/
+        /*display: block;*/
+        /*width: 100%;*/
+        /*}*/
+
+        /*第一部分*/
+        .section-01 {
+            position: relative;
+        }
+
+        .section-01 .ad-wrapper .ad-img img {
+            display: block;
+            width: 100%;
+        }
+
+        .section-01 .ad-wrapper .ad-btn {
+            position: absolute;
+            right: 23px;
+            z-index: 9999;
+            width: 19px;
+            display: none;
+        }
+
+        .section-01 .ad-wrapper .ad-btn a {
+            display: block;
+            height: 55px;
+            cursor: pointer;
+            background: url("images/muyuImages/ad_btn.png") no-repeat 0 0;
+        }
+
+        .section-01 .ad-wrapper .ad-btn a.close {
+            display: block;
+            height: 55px;
+            cursor: pointer;
+            background: url("images/muyuImages/ad_btn.png") no-repeat -19px 0;
+
+        }
+
+        /*第二部分*/
+        .section-02 {
+            width: 100%;
+            height: 656px;
+            background: url("images/muyuImages/what-bj.png") no-repeat 50% #282828;
+            padding-top: 45px;
+        }
+
+        .section-02 .what-we-do {
+            height: 98px;
+            text-align: center;
+        }
+
+        .section-02 .bottom-border {
+            background: url("images/muyuImages/border-bottom.png") no-repeat center;
+            height: 3px;
+            width: 100%;
+        }
+
+        .section-02 .title {
+            font-size: 20px;
+            text-align: center;
+            color: #bbb;
+            padding: 70px 0 90px;
+            font-family: "simsun";;
+        }
+
+        .section-02 ul li {
+            width: 25%;
+            float: left;
+        }
+
+        .section-02 ul li a.item {
+            display: block;
+            /*width: 122px;*/
+            /*height: 122px;*/
+            text-align: center;
+        }
+
+        .section-02 ul li a.item span {
+            display: block;
+            width: 122px;
+            height: 122px;
+            margin: 0 auto;
+            background: url("images/muyuImages/move-ico.png") no-repeat center;
+        }
+
+        .section-02 ul li a.item span:hover {
+            background: url("images/muyuImages/move-ico-hover.png") no-repeat center;
+        }
+
+        .section-02 ul li a.item .title-wrapper{
+            margin-top: 20px;
+            height: 60px;
+            overflow: hidden;
+        }
+
+        .section-02 ul li a.item .title-wrapper p.ch-title{
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .section-02 ul li a.item .title-wrapper p.en-title{
+            font-size: 14px;
+        }
+        .section-02 ul li a.item .title-wrapper p.btn{
+            margin-top: 20px;
+        }
+        .section-02 ul li a.item .title-wrapper p.btn em{
+            display: block;
+            width: 162px;
+            height: 30px;
+            margin: 0 auto;
+            line-height: 30px;
+            background: #19bddd;
+            border-radius: 10px;
+            color: #fff;
+        }
+        /*第三部分*/
+        .section-03 {
+            width: 100%;
+            height: 807px;
+            background: url("images/muyuImages/work-bj.png") no-repeat 50% -70px;
+            padding-top: 45px;
+        }
+
+        .section-03 .what-top {
+            height: 98px;
+            text-align: center;
+        }
+
+        .section-03 .bottom-border {
+            background: url("images/muyuImages/border-bottom2.png") no-repeat center;
+            height: 3px;
+            width: 100%;
+        }
+
+        .slideTxtBox {
+            padding-top: 45px;
+            position: relative;
+        }
+
+        .slideTxtBox .bd ul {
+            width: 1240px;
+            margin: 0 auto;
+
+        }
+
+        .slideTxtBox .bd ul li {
+            float: left;
+            width: 25%;
+            height: 267px;
+            text-align: center;
+        }
+
+        .slideTxtBox .bd ul li a {
+            display: block;
+            width: 206px;
+            height: 206px;
+            background: url("images/muyuImages/word_01.png") no-repeat center;
+            position: relative;
+        }
+
+        .slideTxtBox .bd ul.panel-02 li a {
+            background: url("images/muyuImages/word_02.png") no-repeat center;
+
+        }
+
+        .slideTxtBox .bd ul li a div.blue-bg {
+            position: absolute;
+            background: #2ca6d2;
+            width: 0;
+            height: 0;
+            border-radius: 206px;
+            z-index: 100;
+            left: 103px;
+            top: 103px;
+        }
+
+        .slideTxtBox .bd ul li a div.content {
+            position: absolute;
+            width: 206px;
+            height: 206px;
+            line-height: 206px;
+            border-radius: 206px;
+            z-index: 100;
+            left: 50%;
+            top: 50%;
+            margin: -103px 0 0 -103px;
+            color: #fff;
+            font-size: 22px;
+            display: none;
+        }
+
+        .slideTxtBox .bd ul li a img {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .slideTxtBox .hd {
+            height: 30px;
+            font-family: '”Heiti SC”';
+            font-size: 22px;
+            line-height: 30px;
+            position: absolute;
+            left: 50%;
+            bottom: -20px;
+            width: 200px;
+            margin-left: -90px;
+        }
+
+        .slideTxtBox .hd ul li {
+            float: left;
+            width: 85px;
+            text-align: center;
+            line-height: 2;
+            cursor: pointer;
+            color: #565656;
+            border-top: 2px solid #565656;
+            margin-right: 5px;
+        }
+
+        .slideTxtBox .hd ul li.on {
+            height: 30px;
+            color: #2ca6d2;
+            border-top: 2px solid #2ca6d2;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <img src="images/muyuImages/header.png" style="display: block;width: 100%">
+</div>
+<div class="section section-01">
+    <div class="ad-wrapper">
+        <div class="ad-btn">
+            <a title="重播" class="play"></a>
+            <a title="关闭" class="close"></a>
+        </div>
+        <div class="ad-img">
+        </div>
+    </div>
+</div>
+<div class="section section-02">
+    <div class="what-we-do">
+        <img src="images/muyuImages/what-title.png">
+    </div>
+    <div class="bottom-border">&nbsp;</div>
+    <div class="title">
+        首家品牌整合型网站构建 · 荣获中国金牌网站设计机构 · 著名互动公司设计·技术·创意总监
+    </div>
+    <div>
+        <ul>
+            <li>
+                <a href="#" class="item">
+                    <span>&nbsp</span>
+                    <div class="title-wrapper">
+                        <div class="sub-wrapper">
+                            <p class="ch-title">著名互动公司设计</p>
+                            <p class="en-title">UI Design</p>
+                            <p class="btn"><em>查看更过</em></p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="item">
+                    <span>&nbsp</span>
+                    <div class="title-wrapper">
+                        <div class="sub-wrapper">
+                            <p class="ch-title">著名互动公司设计</p>
+                            <p class="en-title">UI Design</p>
+                            <p class="btn"><em>查看更过</em></p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="item">
+                    <span>&nbsp</span>
+                    <div class="title-wrapper">
+                        <div class="sub-wrapper">
+                            <p class="ch-title">著名互动公司设计</p>
+                            <p class="en-title">UI Design</p>
+                            <p class="btn"><em>查看更过</em></p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="item">
+                    <span>&nbsp</span>
+                    <div class="title-wrapper">
+                        <div class="sub-wrapper">
+                            <p class="ch-title">著名互动公司设计</p>
+                            <p class="en-title">UI Design</p>
+                            <p class="btn"><em>查看更过</em></p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="section section-03">
+    <div class="what-top">
+        <img src="images/muyuImages/work_word.png">
+    </div>
+    <div class="bottom-border">&nbsp;</div>
+    <div class="slideTxtBox">
+
+        <div class="bd clearfix">
+            <ul class="panel-01">
+                <li>
+                    <div>
+                        <a class="item6" href="http://www.SuperSlide2.com" target="_blank">
+                            <div class="blue-bg">&nbsp;</div>
+                            <div class="content">中国露营网</div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a class="item6" href="http://www.SuperSlide2.com" target="_blank">
+                            <div class="blue-bg"></div>
+                            <div class="content">中国露营网</div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a class="item6" href="http://www.SuperSlide2.com" target="_blank">
+                            <div class="blue-bg"></div>
+                            <div class="content">中国露营网</div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a class="item6" href="http://www.SuperSlide2.com" target="_blank">
+                            <div class="blue-bg"></div>
+                            <div class="content">中国露营网</div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a class="item6" href="http://www.SuperSlide2.com" target="_blank">
+                            <div class="blue-bg"></div>
+                            <div class="content">中国露营网</div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a class="item6" href="http://www.SuperSlide2.com" target="_blank">
+                            <div class="blue-bg"></div>
+                            <div class="content">中国露营网</div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a class="item6" href="http://www.SuperSlide2.com" target="_blank">
+                            <div class="blue-bg"></div>
+                            <div class="content">中国露营网</div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a class="item6" href="http://www.SuperSlide2.com" target="_blank">
+                            <div class="blue-bg"></div>
+                            <div class="content">中国露营网</div>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="panel-02">
+                <li>
+                    <div>
+                        <a class="item6" href="http://www.SuperSlide2.com" target="_blank">
+                            <div class="blue-bg"></div>
+                            <div class="content">中国露营网</div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a class="item6" href="http://www.SuperSlide2.com" target="_blank">
+                            <div class="blue-bg"></div>
+                            <div class="content">中国露营网</div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a class="item6" href="http://www.SuperSlide2.com" target="_blank">
+                            <div class="blue-bg"></div>
+                            <div class="content">中国露营网</div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a class="item6" href="http://www.SuperSlide2.com" target="_blank">
+                            <div class="blue-bg"></div>
+                            <div class="content">中国露营网</div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a class="item6" href="http://www.SuperSlide2.com" target="_blank">
+                            <div class="blue-bg"></div>
+                            <div class="content">中国露营网</div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a class="item6" href="http://www.SuperSlide2.com" target="_blank">
+                            <div class="blue-bg"></div>
+                            <div class="content">中国露营网</div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a class="item6" href="http://www.SuperSlide2.com" target="_blank">
+                            <div class="blue-bg"></div>
+                            <div class="content">中国露营网</div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a class="item6" href="http://www.SuperSlide2.com" target="_blank">
+                            <div class="blue-bg"></div>
+                            <div class="content">中国露营网</div>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+        <div class="hd">
+            <ul>
+                <li>案例</li>
+                <li>客户</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
+<script src="js/jquery.SuperSlide.2.1.1.js" type="text/javascript"></script>
+<script type="application/javascript">
+    /*-------广告动画-------*/
+    var fullAdUrl = 'http://shop117220995.taobao.com/';
+    var ad_html = '<a href="' + fullAdUrl + '" target="_blank"><img src="images/muyuImages/adImg.jpg" /></a>';//flash无法显示时，显示JPG广告;
+    var interval_time = 10000;
+    var animate_active;
+
+    function open_ad() {
+        $(".ad-wrapper .ad-img").html(ad_html).slideDown(300, function () {
+            $(".section-01 .ad-wrapper .ad-btn").show();
+            $(".ad-wrapper .ad-btn .play").hide();
+            $(".ad-wrapper .ad-btn .close").show();
+            animate_active = setTimeout(closed_ad, interval_time);
+        })
+    }
+
+    function closed_ad() {
+        $(".ad-wrapper .ad-img").slideUp(500, function () {
+                    $(".section-01 .ad-wrapper .ad-btn").show();
+                    $(".ad-wrapper .ad-btn .play").show();
+                    $(".ad-wrapper .ad-btn .close").hide();
+                }
+        )
+    }
+
+    $(".ad-wrapper .ad-btn .play").click(function () {
+        if (animate_active) {
+            clearTimeout(animate_active);
+        }
+        open_ad();
+    });
+
+    $(".ad-wrapper .ad-btn .close").click(function () {
+        if (animate_active) {
+            clearTimeout(animate_active);
+        }
+        closed_ad();
+    });
+
+    //        setTimeout(open_ad, 1500);
+
+    /*--------what we do---------*/
+
+    $(".section-02 ul li a.item").hover(function(){
+        $(this).find(".sub-wrapper").animate({marginTop:-58},100);
+    },function(){
+        $(this).find(".sub-wrapper").animate({marginTop:0},100);
+
+    })
+
+
+
+    /*--------my-work---------*/
+
+
+    $(function () {
+
+        $(".item6").hover(
+                function () {
+                    var that = this;
+                    item6Timer = setTimeout(function () {
+                        $(that).find(".blue-bg").animate({width: 206, height: 206, left: 0, top: 0}, 300, function () {
+                            $(that).find(".content").fadeIn(200);
+                        });
+                    }, 100);
+
+                },
+                function () {
+                    var that = this;
+                    clearTimeout(item6Timer);
+                    $(that).find(".content").fadeOut(200);
+                    $(that).find(".blue-bg").stop().animate({width: 0, height: 0, left: 103, top: 103}, 300);
+                }
+        )
+    });
+
+    $(".slideTxtBox").slide({autoPlay: true, delayTime: 1000});
+</script>
+</body>
+</html>

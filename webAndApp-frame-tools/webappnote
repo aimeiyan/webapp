@@ -1,2 +1,17 @@
 1、百度zeptoJS UI
    http://gmu.baidu.com/
+
+2、TouchSlide plugin (http://www.superslide2.com/TouchSlide/)
+TouchSlide v1.1
+触屏滑动特效插件 by 大话主席
+TouchSlide 是纯javascript打造的触屏滑动特效插件，面向手机、平板电脑等移动终端，
+能实现触屏焦点图、触屏Tab切换、触屏多图切换等常用效果。
+插件开源、体积小、简单实用、功能强大，是你架构移动终端网站的重要选择！
+ps：如果你SuperSlide的使用者，那么你会发现它是那么熟悉和易用。
+
+3、SuperSlide plugin (http://www.superslide2.com/)
+SuperSlide v2.1
+SuperSlide 致力于解决网站大部分特效展示问题，使网站代码规范整洁，方便维护更新。
+网站上常用的“焦点图/幻灯片”“Tab标签切换”“图片滚动”“无缝滚动”等只需要一个SuperSlide即可解决！
+从此无需网上苦苦寻觅特效，无需加载n个插件，无需害怕代码冲突，你需要的只是一个SuperSlide！
+还可以多个SuperSlide组合创造更多效果哦~
