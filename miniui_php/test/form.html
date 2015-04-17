@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<table class="form-table" border="0" cellpadding="1" cellspacing="2">
+    <tr>
+        <td class="form-label" style="width:60px;">姓名：</td>
+        <td style="width:150px">
+            <input name="name" class="mini-textbox" />
+        </td>
+        <td class="form-label" style="width:60px;">地址：</td>
+        <td style="width:150px">
+            <input name="addr" class="mini-textbox" />
+        </td>
+    </tr>
+    <tr>
+        <td class="form-label" style="width:60px;">姓名：</td>
+        <td style="width:150px">
+            <input id="username" name="username" onvalidation="onUserNameValidation" class="mini-textbox" required="true" />        </td>
+        <td class="form-label" style="width:60px;">地址：</td>
+        <td style="width:150px">
+            <input name="addr" class="mini-textbox" />
+        </td>
+    </tr>
+    <tr>
+        <td class="form-label">性别：</td>
+        <td >
+            <input name="gender" class="mini-radiobuttonlist" data="[{id: 1, text: '男'}, {id: 2, text: '女'}]"/>
+        </td>
+        <td class="form-label">年龄：</td>
+        <td >
+            <input name="age" class="mini-spinner" />
+        </td>
+    </tr>
+    <tr>
+        <td class="form-label">备注：</td>
+        <td colspan="3" >
+            <input name="remarks" class="mini-textarea" style="width:343px;height:60px;"/>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
