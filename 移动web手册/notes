@@ -1,0 +1,11 @@
+1、 浏览器差异细节：
+http://www.quirksmode.org/mobilewebhandbook/;
+
+2、代理浏览器
+opera mini、UC mini
+
+3、渲染引擎
+
+4、<meta name="device" content="width=device-width">      //使布局视口的宽度与理想的视口宽度一致。
+
+5、制作移动端网页，先直接告诉浏览器使用理想视口（<meta name="device" content="width=device-width"> ），接着使用媒体查询来保证网站响应不同的理想视口。
