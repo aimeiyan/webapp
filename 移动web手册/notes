@@ -9,3 +9,79 @@ opera mini、UC mini
 4、<meta name="device" content="width=device-width">      //使布局视口的宽度与理想的视口宽度一致。
 
 5、制作移动端网页，先直接告诉浏览器使用理想视口（<meta name="device" content="width=device-width"> ），接着使用媒体查询来保证网站响应不同的理想视口。
+
+6、screen.width 获取设备像素的个数。
+
+7、物理分辨率(DPI:Dots Per Inch):每英寸的像素，即一平方英寸面积内像素的多少。
+
+8、设备像素比（Device Pixel Ratio）:设备像素个数与理想视口的比。
+    js:window.devicePixelRatio
+    css:device-pixel-ratio(基于webkit的浏览器)
+    分辨率的媒体查询，所有浏览器都支持。
+
+10、针对不同分辨率的设备现实不同分辨的图片
+响应式图片社区小组：http://responsiveimages.org/
+
+11、dppx和dpi
+js的window.devicePixelRatio和媒体查询的device-pixel-ratio的单位都是dppx：每一个像素的点数。
+
+if(window.devicePixelRatio>=2){
+    //DPR大于等于2时执行
+}
+
+@media all and (-webkit-min-device-pixel-ratio:2){
+    //DPR大于等于2时生效
+}
+
+IE11- 不支持 dppx，因此用dpi单位代替，一英寸对应CSS分辨率中的96个像素，所以1dppx等于96dpi。
+
+@media all and ((-webkit-min-device-pixel-ratio:2),(min-resolution:192dpi)){
+    //DPR大于等于2时生效
+}
+
+12、<mata name="viewport" content="name=value,name=value">
+    width:设置布局视口的宽度为特定的值；
+    init-scale:设置页面的初始缩放程度和布局视口的宽度；
+    minimum-scale:设置了最小缩放程度；
+    maximum-scale:设置了最大缩放程度；
+    user-scalable:是否阻止用户进行缩放。
+
+13、理想视口应该响应设备的旋转，因为横屏比竖屏提供了更大的宽度。
+ios的safari，不会根据设备旋转调整理想视口，
+
+14、<meta name="viewport" content="width=device-width,initial-scale=1">
+上面的initial-scale可以解决safari旋转之后的自适应全屏，width=device-width解决了IE旋转之后的自适应全屏。
+
+15、IE只在手机上支持meta标签，而平板上是不支持的。使用下面的css样式，IE会符合设备尺寸的理想视口；
+
+    @-ms-viewport{
+        width:device-width;
+    }
+
+16、媒体查询语法
+
+    @media all and (max-width:400){
+        div.sidebar{
+            //这些给div.sidebar定义的样式在宽度小于或等于400px时才会生效
+        }
+    }
+
+    @media all and (max-width:400) and (orientation:portrait) and ((max-resolution:144dpi),(-webkit-max-device-pixel-ration:1.5)){
+
+        /* 只有在布局视口不超过400px、设备处于竖屏模式，并且devicePixelRatio小于等于1.5时才会生效 */
+
+    }
+
+17、在CSS中，1em等于一个字体的大小；对于一个14px的字体，1em将等于14px宽。术语font size通常是指的是文档根元素的字体大小，就是html元素的字体大小。
+毕竟媒体查询是对整个页面起作用，而不是对某一个特定元素。当然可以更改根元素html的字体大小。
+    em只有在网站的根元素字体大小有可能改变并且希望布局根据这个变化改变的时候比像素优秀。
+
+18、避免使用device-width和device-height，因为它们在所有浏览器上总是使用screen.width和screen.height.
+
+19、1dppx等同于设备像素比1，同时等于96dpi。所有browser都支持dpi，但没有都支持dppx。
+
+20、orientation:portrait 和 orientation:landscape，所有浏览器都支持。
+
+21、获取屏幕尺寸：screen.width。
+    获取浏览器窗口大小：window.innerWidth 和 window.innerHeight 包括滚动条的宽度或高度，接近被普遍支持。
+                    document.documentElement.clientwidth 和 document.documentElement.clientHeight 不包括滚动条的宽度或高度，被普遍支持。
