@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--<meta name="apple-touch-fullscreen" content="yes">-->
+    <meta name="format-detection" content="telephone=no,email=no">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font: 14px/1.5 "Arial", "microsoft yahei", "微软雅黑", "宋体";
+            padding: 10px;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-size: 14px;
+        }
+
+        h1 {
+            font-size: 1.5em;
+        }
+
+        h3 {
+            font-size: 1.2em;
+        }
+
+        .section-01 .tap {
+            display: block;
+            padding: 10px 20px;
+            background-color: blueviolet;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .section-02 {
+            width: 100%;
+            height: 100px;
+            margin: 10px auto;
+            background-color: red;
+            border-radius: 5px;
+
+        }
+
+        .swipeChangeColor {
+            background-color: darkred;
+        }
+
+        .swipeLeftChangeColor {
+            background-color: #8b7d20;
+        }
+
+        .swipeRightChangeColor {
+            background-color: #272b8b;
+        }
+
+        .swipeUpChangeColor {
+            background-color: #72148b;
+        }
+
+        .swipeDownChangeColor {
+            background-color: #078b06;
+        }
+    </style>
+</head>
+<body>
+<h1>Touch event:</h1>
+
+<p>tap,singleTap,doubleTap,longTap</p>
+
+<p>swipe,swipeLeft,swipeRight,swipeUP,swipeDown</p>
+
+<section class="section-01">
+    <a class="tap">tap event</a>
+</section>
+<section class="section-02">
+
+</section>
+<script src="js/zepto.min.js"></script>
+<script src="js/event.js"></script>
+<script src="js/touch.js"></script>
+<script>
+    $(function () {
+        $(".section-01 .tap").tap(function () {
+            alert("fire tap event");
+        });
+
+        $(".section-02").swipe(function () {
+            $(this).addClass("swipeChangeColor");
+        })
+
+        $(".section-02").swipeLeft(function () {
+            $(this).addClass("swipeLeftChangeColor");
+        })
+
+        $(".section-02").swipeUp(function () {
+            $(this).addClass("swipeUpChangeColor");
+        })
+
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title></title>
+    <style>
+        .section-01 .slider {
+            overflow-y: hidden;
+            max-height: 200px;
+
+            -webkit-transition-property: all;
+            -webkit-transition-duration: .5s;
+            -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+
+            -moz-transition-property: all;
+            -moz-transition-duration: .5s;
+            -moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+
+            -ms-transition-property: all;
+            -ms-transition-duration: .5s;
+            -ms-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+
+            transition-property: all;
+            transition-duration: .5s;
+            transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+
+            background: pink;
+            height: 200px;
+            width: 200px;
+        }
+
+        .section-01 .slider.closed {
+            max-height: 0;
+        }
+
+        .section-02 {
+            margin-top: 20px;
+        }
+
+        .section-02 .slider-02 {
+            max-height: 0;
+            overflow-y: hidden;
+            -webkit-transition-property: all;
+            -webkit-transition-duration: .5s;
+            -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+
+            -moz-transition-property: all;
+            -moz-transition-duration: .5s;
+            -moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+
+            -ms-transition-property: all;
+            -ms-transition-duration: .5s;
+            -ms-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+
+            transition-property: all;
+            transition-duration: .5s;
+            transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+            height: 0;
+            width: 200px;
+            background: pink;
+        }
+
+        .slider-02.open {
+            max-height: 200px;
+            height: 200px;
+            overflow-y: hidden;
+
+        }
+
+    </style>
+</head>
+<body>
+<section class="section-01">
+    <div class="slider">Some content here....</div>
+    <button class="btn-01">Toggle slider</button>
+</section>
+<section class="section-02">
+    <div class="slider-02">Some content here....</div>
+    <button class="btn-02">Toggle slider</button>
+</section>
+<script src="js/zepto.min.js"></script>
+<script src="js/event.js"></script>
+<script src="js/touch.js"></script>
+<script>
+    $(function () {
+        $('.btn-01').tap(function () {
+            $('.slider').toggleClass('closed');
+        });
+
+        $('.btn-02').tap(function () {
+            $('.slider-02').toggleClass('open');
+        })
+    })
+</script>
+</body>
+</html>

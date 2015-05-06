@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--<meta name="apple-touch-fullscreen" content="yes">-->
+    <meta name="format-detection" content="telephone=no,email=no">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font: 14px/1.5 "Arial", "microsoft yahei", "微软雅黑", "宋体";
+            padding: 10px;
+        }
+
+
+        #some_element {
+            width: 100px;
+            margin: 10px auto;
+            height: 100px;
+            background-color: palegreen;
+        }
+    </style>
+</head>
+<body>
+
+<section id="some_element">
+
+</section>
+<script src="js/zepto.min.js"></script>
+<script src="js/event.js"></script>
+<script src="js/touch.js"></script>
+<script src="js/fx.js"></script>
+<script>
+    $(function () {
+        $("#some_element").animate({
+            opacity: 0.25, left: '50px',
+            color: '#abcdef',
+            rotateZ: '360deg', translate3d: '0,10px,0'
+        }, 1000, 'ease-out')
+    });
+
+
+    //再补充snow的效果
+
+</script>
+</body>
+</html>

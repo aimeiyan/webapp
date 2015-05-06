@@ -85,3 +85,38 @@ ios的safari，不会根据设备旋转调整理想视口，
 21、获取屏幕尺寸：screen.width。
     获取浏览器窗口大小：window.innerWidth 和 window.innerHeight 包括滚动条的宽度或高度，接近被普遍支持。
                     document.documentElement.clientwidth 和 document.documentElement.clientHeight 不包括滚动条的宽度或高度，被普遍支持。
+
+22、document.documentElement.clientWidth/Height被普遍支持，并且提供布局视口的尺寸。
+当希望使用js而不是媒体查询来编写页面逻辑的时候，这很有帮助。
+如： @media all and (min-width:600) 与下例相同：
+
+    if(document.documentElement.clientWidth>=600){
+        //加载Twitter和facebook组件
+        //希望在布局视口足够宽的时候下载并显示一个第三方组件，应该使用js，延迟下载，直到确定布局视口足够宽时才正确的显示这个组件。
+    }
+
+ 如果使用CSS,要设置display:none,浏览器仍会下载资料并占用珍贵的带宽，即使它们最终不会被展示在页面上。
+
+23、window.devicePixelRatio:没有单位，屏幕的物理尺寸／理想视口。
+ device-pixel-ratio媒体查询得出同样的值。
+
+24、 var meta=document.getELementByTagName('meta')[0];
+meta.setAttribute('content','width=400');
+
+25、orientationchange事件和resize事件
+
+26、background-origin:
+       padding-box
+       border-box
+       content-box
+
+
+    background-clip:
+        border-box
+        padding-box
+        content-box
+
+27、触摸事件：
+    touchstart：触摸屏幕瞬间触发；
+    touchmove：在用户移动手指的过程中连续触发；
+    touchend：离开屏幕的瞬间触发。
