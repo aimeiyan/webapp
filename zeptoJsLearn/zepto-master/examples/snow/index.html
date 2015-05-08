@@ -47,7 +47,7 @@
         }
 
         function addFlake() {
-            var el = $('<div><div>' + glyphs[rand(glyphs.length)] + '</div></div>');
+            var el = $('<div>' + glyphs[rand(glyphs.length)] + '</div>');
             $('body').append(el);
             el.css({left: rand(100) + '%', top: -100 - rand(500), fontSize: 20 + rand(30)});
             el.anim(

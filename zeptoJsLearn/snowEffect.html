@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>飘雪</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        div {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<script src="js/zepto.min.js"></script>
+<script src="js/event.js"></script>
+<script src="js/fx.js"></script>
+<script>
+    $(function () {
+        var i = 100, glyphs = "❄❅❆".split('');
+
+        function rand(max) {
+            return Math.floor(Math.random() * max);
+        }
+
+        function addFlake() {
+            var el = $('<div>' + glyphs[rand(glyphs.length)] + '</div>');
+            $('body').append(el);
+            el.css({
+                left: rand(100) + '%',
+                top: -rand(500),
+                fontSize: 10+rand(30)
+            });
+            el.anim({
+                        translateY: 1500 + rand(500) + 'px',
+                        translateX: 100 - rand(200) + 'px',
+                        rotate: (2e3 - rand(4e3)) + 'deg'
+                    },
+                    6 + rand(10),
+                    'linear',
+                    function () {
+                        addFlake();
+                        el.remove();
+                    }
+            )
+
+        }
+
+        while (i--) addFlake();
+
+    })
+</script>
+</body>
+</html>
