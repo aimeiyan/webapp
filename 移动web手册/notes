@@ -1,4 +1,4 @@
-1、 浏览器差异细节：
+1、浏览器差异细节：
 http://www.quirksmode.org/mobilewebhandbook/;
 
 2、代理浏览器
@@ -19,7 +19,7 @@ opera mini、UC mini
     css:device-pixel-ratio(基于webkit的浏览器)
     分辨率的媒体查询，所有浏览器都支持。
 
-10、针对不同分辨率的设备现实不同分辨的图片
+10、针对不同分辨率的设备实现不同分辨率的图片
 响应式图片社区小组：http://responsiveimages.org/
 
 11、dppx和dpi
