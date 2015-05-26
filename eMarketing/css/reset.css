@@ -282,7 +282,7 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 }
 
 body {
-    font: 400 14px/1.5 Helvetica, Arial, "microsoft yahei","微软雅黑", STHeiti, simsun, sans-serif;
+    font: 400 14px/1.5 Helvetica, Arial,'simhei', "microsoft yahei", "微软雅黑", STHeiti, simsun, sans-serif;
     color: #343434;
     background-color: #f2f2f2;
       }
