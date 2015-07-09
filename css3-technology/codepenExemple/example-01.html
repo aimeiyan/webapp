@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        html, body{
+            width:100%;
+            height:100%;
+            background: -webkit-radial-gradient(ellipse, #3E657B 0%, #101821 100%);
+            background: radial-gradient(ellipse, #3E657B 0%, #101821 100%);
+        }
+        .lightGreenSword .blade{
+            width:12px;
+            height:0px;
+            box-shadow:inset 0 0 10px rgba(0,155,0,0.9);
+            border-radius:5px 5px 0 0;
+            animation:showBlade 1s 1s ease forwards;
+            margin-top:120px;
+            background:white;
+        }
+        .lightGreenSword .wrap{
+            width:12px;
+            height:0px;
+            box-shadow:0 0 10px rgba(0,155,0,0.9);
+            border-radius:5px 5px 0 0;
+            animation:showBlade 1s 1s ease forwards, flickerGreenWrap 0.1s infinite;
+        }
+        @-webkit-keyframes showBlade{
+            0%{
+                height:0px;
+                margin-top:120px;
+            }
+            100%{
+                height:120px;
+                margin-top:0px;
+            }
+        }
+        @-moz-keyframes showBlade{
+            0%{
+                height:0px;
+                margin-top:120px;
+            }
+            100%{
+                height:120px;
+                margin-top:0px;
+            }
+        }
+        @keyframes showBlade{
+            0%{
+                height:0px;
+                margin-top:120px;
+            }
+            100%{
+                height:120px;
+                margin-top:0px;
+            }
+        }
+        @-webkit-keyframes flickerGreenWrap{
+            0%{
+                box-shadow:0 0 10px rgba(0,155,0,0.9);
+            }
+            50%{
+                box-shadow:0 0 15px rgba(0,200,0,0.9);
+            }
+            100%{
+                box-shadow:0 0 10px rgba(0,155,0,0.9);
+            }
+        }
+        @-moz-keyframes flickerGreenWrap{
+            0%{
+                box-shadow:0 0 10px rgba(0,155,0,0.9);
+            }
+            50%{
+                box-shadow:0 0 15px rgba(0,200,0,0.9);
+            }
+            100%{
+                box-shadow:0 0 10px rgba(0,155,0,0.9);
+            }
+        }
+        @keyframes flickerGreenWrap{
+            0%{
+                box-shadow:0 0 10px rgba(0,155,0,0.9);
+            }
+            50%{
+                box-shadow:0 0 15px rgba(0,200,0,0.9);
+            }
+            100%{
+                box-shadow:0 0 10px rgba(0,155,0,0.9);
+            }
+        }
+        .handle{
+            width:10px;
+            height:40px;
+            border:1px #555 solid;
+            position:absolute;
+            vertical-align:bottom;
+        }
+        .firstpart{
+            height:35%;
+            width:100%;
+            background:#555;
+        }
+        .secondpart{
+            height:30%;
+            width:100%;
+            background:white;
+        }
+        .thirtpart{
+            height:35%;
+            width:100%;
+            background:#555;
+        }
+        .lightGreenSword{
+            margin-left:33%;
+            margin-top:5%;
+            height:160px;
+            width:12px;
+            display:inline-block;
+            position:absolute;
+            /* border:1px solid black; */
+            animation: actionLightGreenSword 5s 3s infinite;
+        }
+        .lightRedSword{
+            margin-left:66%;
+            margin-top:5%;
+            height:160px;
+            width:12px;
+            display:inline-block;
+            position:absolute;
+            /* border:1px solid black; */
+            animation: actionLightRedSword 5s 3s linear infinite;
+        }
+        .lightRedSword .blade{
+            width:12px;
+            height:0px;
+            box-shadow:inset 0 0 10px rgba(155,0,0,0.9);
+            border-radius:5px 5px 0 0;
+            animation:showBlade 1s 1s ease forwards;
+            margin-top:120px;
+            background:white;
+        }
+        .lightRedSword .wrap{
+            width:12px;
+            height:0px;
+            box-shadow:0 0 10px rgba(155,0,0,0.9);
+            border-radius:5px 5px 0 0;
+            animation:showBlade 1s 1s ease forwards, flickerRedWrap 0.1s infinite;
+        }
+        @-webkit-keyframes flickerRedWrap{
+            0%{
+                box-shadow:0 0 10px rgba(155,0,0,0.9);
+            }
+            50%{
+                box-shadow:0 0 15px rgba(200,0,0,0.9);
+            }
+            100%{
+                box-shadow:0 0 10px rgba(155,0,0,0.9);
+            }
+        }
+        @-moz-keyframes flickerRedWrap{
+            0%{
+                box-shadow:0 0 10px rgba(155,0,0,0.9);
+            }
+            50%{
+                box-shadow:0 0 15px rgba(200,0,0,0.9);
+            }
+            100%{
+                box-shadow:0 0 10px rgba(155,0,0,0.9);
+            }
+        }
+        @keyframes flickerRedWrap{
+            0%{
+                box-shadow:0 0 10px rgba(155,0,0,0.9);
+            }
+            50%{
+                box-shadow:0 0 15px rgba(200,0,0,0.9);
+            }
+            100%{
+                box-shadow:0 0 10px rgba(155,0,0,0.9);
+            }
+        }
+        @-webkit-keyframes actionLightRedSword{
+            7%{
+                margin-left:61%;
+                margin-top:2.5%;
+            }
+            12%{
+                margin-left:56%;
+                margin-top:5%;
+            }
+            20%{
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                margin-left:53%;
+                margin-top:6%;
+                z-index:2;
+            }
+            30%{
+                -webkit-transform: rotate(20deg);
+                transform: rotate(20deg);
+                margin-left:51%;
+                margin-top:4%;
+            }
+            45%{
+                -webkit-transform: rotate(-40deg);
+                transform: rotate(-40deg);
+                margin-left:54%;
+                margin-top:6%;
+                z-index:1;
+            }
+            47%{
+                margin-left:58%;
+                margin-top:6%;
+            }
+            54%{
+                margin-left:58%;
+                margin-top:6%;
+            }
+            60%{
+                -webkit-transform: rotate(250deg);
+                transform: rotate(250deg);
+                margin-left:54%;
+                margin-top:6%;
+            }
+            70%{
+                margin-left:58%;
+                margin-top:6%;
+            }
+            80%{
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                margin-left:58%;
+                margin-top:5%;
+            }
+            100%{
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+                margin-left:66%;
+                margin-top:5%;
+            }
+        }
+        @-moz-keyframes actionLightRedSword{
+            7%{
+                margin-left:61%;
+                margin-top:2.5%;
+            }
+            12%{
+                margin-left:56%;
+                margin-top:5%;
+            }
+            20%{
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                margin-left:53%;
+                margin-top:6%;
+                z-index:2;
+            }
+            30%{
+                -webkit-transform: rotate(20deg);
+                transform: rotate(20deg);
+                margin-left:51%;
+                margin-top:4%;
+            }
+            45%{
+                -webkit-transform: rotate(-40deg);
+                transform: rotate(-40deg);
+                margin-left:54%;
+                margin-top:6%;
+                z-index:1;
+            }
+            47%{
+                margin-left:58%;
+                margin-top:6%;
+            }
+            54%{
+                margin-left:58%;
+                margin-top:6%;
+            }
+            60%{
+                -webkit-transform: rotate(250deg);
+                transform: rotate(250deg);
+                margin-left:54%;
+                margin-top:6%;
+            }
+            70%{
+                margin-left:58%;
+                margin-top:6%;
+            }
+            80%{
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                margin-left:58%;
+                margin-top:5%;
+            }
+            100%{
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+                margin-left:66%;
+                margin-top:5%;
+            }
+        }
+        @keyframes actionLightRedSword{
+            7%{
+                margin-left:61%;
+                margin-top:2.5%;
+            }
+            12%{
+                margin-left:56%;
+                margin-top:5%;
+            }
+            20%{
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                margin-left:53%;
+                margin-top:6%;
+                z-index:2;
+            }
+            30%{
+                -webkit-transform: rotate(20deg);
+                transform: rotate(20deg);
+                margin-left:51%;
+                margin-top:4%;
+            }
+            45%{
+                -webkit-transform: rotate(-40deg);
+                transform: rotate(-40deg);
+                margin-left:54%;
+                margin-top:6%;
+                z-index:1;
+            }
+            47%{
+                margin-left:58%;
+                margin-top:6%;
+            }
+            54%{
+                margin-left:58%;
+                margin-top:6%;
+            }
+            60%{
+                -webkit-transform: rotate(250deg);
+                transform: rotate(250deg);
+                margin-left:54%;
+                margin-top:6%;
+            }
+            70%{
+                margin-left:58%;
+                margin-top:6%;
+            }
+            80%{
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                margin-left:58%;
+                margin-top:5%;
+            }
+            100%{
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+                margin-left:66%;
+                margin-top:5%;
+            }
+        }
+        @-webkit-keyframes actionLightGreenSword{
+            7%{
+                margin-left:38%;
+                margin-top:2.5%;
+            }
+            12%{
+                margin-left:42%;
+                margin-top:5%;
+            }
+            20%{
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+                margin-left:46%;
+                margin-top:6%;
+                z-index:1;
+            }
+            30%{
+                -webkit-transform: rotate(-20deg);
+                transform: rotate(-20deg);
+                margin-left:44%;
+                margin-top:4%;
+            }
+            45%{
+                -webkit-transform: rotate(40deg);
+                transform: rotate(40deg);
+                margin-left:47%;
+                margin-top:6%;
+                z-index:2;
+            }
+            47%{
+                margin-left:43%;
+                margin-top:6%;
+            }
+            60%{
+                -webkit-transform: rotate(-250deg);
+                transform: rotate(-250deg);
+                margin-left:47%;
+                margin-top:6%;
+            }
+            80%{
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+                margin-left:43%;
+                margin-top:5%;
+            }
+            100%{
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+                margin-left:33%;
+                margin-top:5%;
+            }
+        }
+        @-moz-keyframes actionLightGreenSword{
+            7%{
+                margin-left:38%;
+                margin-top:2.5%;
+            }
+            12%{
+                margin-left:42%;
+                margin-top:5%;
+            }
+            20%{
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+                margin-left:46%;
+                margin-top:6%;
+                z-index:1;
+            }
+            30%{
+                -webkit-transform: rotate(-20deg);
+                transform: rotate(-20deg);
+                margin-left:44%;
+                margin-top:4%;
+            }
+            45%{
+                -webkit-transform: rotate(40deg);
+                transform: rotate(40deg);
+                margin-left:47%;
+                margin-top:6%;
+                z-index:2;
+            }
+            47%{
+                margin-left:43%;
+                margin-top:6%;
+            }
+            60%{
+                -webkit-transform: rotate(-250deg);
+                transform: rotate(-250deg);
+                margin-left:47%;
+                margin-top:6%;
+            }
+            80%{
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+                margin-left:43%;
+                margin-top:5%;
+            }
+            100%{
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+                margin-left:33%;
+                margin-top:5%;
+            }
+        }
+        @keyframes actionLightGreenSword{
+            7%{
+                margin-left:38%;
+                margin-top:2.5%;
+            }
+            12%{
+                margin-left:42%;
+                margin-top:5%;
+            }
+            20%{
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+                margin-left:46%;
+                margin-top:6%;
+                z-index:1;
+            }
+            30%{
+                -webkit-transform: rotate(-20deg);
+                transform: rotate(-20deg);
+                margin-left:44%;
+                margin-top:4%;
+            }
+            45%{
+                -webkit-transform: rotate(40deg);
+                transform: rotate(40deg);
+                margin-left:47%;
+                margin-top:6%;
+                z-index:2;
+            }
+            47%{
+                margin-left:43%;
+                margin-top:6%;
+            }
+            60%{
+                -webkit-transform: rotate(-250deg);
+                transform: rotate(-250deg);
+                margin-left:47%;
+                margin-top:6%;
+            }
+            80%{
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+                margin-left:43%;
+                margin-top:5%;
+            }
+            100%{
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+                margin-left:33%;
+                margin-top:5%;
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="lightGreenSword">
+    <div class="wrap">
+        <div class="blade"></div>
+    </div>
+    <div class="handle">
+        <div class="firstpart"></div>
+        <div class="secondpart"></div>
+        <div class="thirtpart"></div>
+    </div>
+</div>
+<div class="lightRedSword">
+    <div class="wrap">
+        <div class="blade"></div>
+    </div>
+    <div class="handle">
+        <div class="firstpart"></div>
+        <div class="secondpart"></div>
+        <div class="thirtpart"></div>
+    </div>
+</div>
+</body>
+</html>

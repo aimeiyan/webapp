@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<p>localStorage 方法存储的数据没有时间限制。第二天、第二周或下一年之后，数据仍然可用。</p>
+<script type="text/javascript">
+    localStorage.lastname = "Smith";
+    document.write("lastname:" + localStorage.lastname);
+    if (localStorage.pagecount) {
+        localStorage.pagecount = Number(localStorage.pagecount) + 1;
+    } else {
+        localStorage.pagecount = 1;
+    }
+    document.write("Visits:" + localStorage.pagecount + "time(s).");
+
+
+</script>
+</body>
+</html>

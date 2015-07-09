@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+        pre{
+            background-color: #002240;
+            padding: 10px;
+        }
+        code{
+            color: #bbb;
+        }
+
+        h3{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<h3>IOS下移除按钮原生样式 -webkit-appearance：</h3>
+<p>IOS环境下的按钮都是经过美化的，但通常我们在设计web app的时候不需要这些看上去老土的样式，所以，去除这些显得很有必要。</p>
+<p>下面这句代码就是重置这些样式的：</p>
+<p>
+    <pre>
+      <code> input[type=button]{</code>
+        <code>-webkit-appearance:none;</code>
+        <code>outline:none</code>
+        <code>}</code>
+    </pre>
+</p>
+</body>
+</html>

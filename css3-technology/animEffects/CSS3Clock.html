@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>时钟效果</title>
+    <link rel="stylesheet" href="css/webReset.css" type="text/css">
+    <style type="text/css">
+
+        .clock {
+            width: 600px;
+            height: 600px;
+            background: url("images/clockface.jpg") no-repeat 0 0;
+            position: relative;
+        }
+
+        .clock .sec, .clock .hour, .clock .min {
+            position: absolute;
+            width: 30px;
+            height: 600px;
+            top: 0;
+            left: 50%;
+            margin-left: -15px;
+        }
+
+        .clock .sec {
+            background: url("images/sechand.png") no-repeat 0 0;
+            z-index: 3;
+        }
+
+        .clock .hour {
+            background: url("images/hourhand.png") no-repeat 0 0;
+            z-index: 1;
+        }
+
+        .clock .min {
+            background: url("images/minhand.png") no-repeat 0 0;
+            z-index: 2;
+        }
+
+    </style>
+</head>
+<body>
+<ul class="clock">
+    <li class="sec"></li>
+    <li class="hour"></li>
+    <li class="min"></li>
+</ul>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        setInterval(function () {
+            var current_sec = new Date().getSeconds();
+            var sdeg = current_sec * 6;
+            var sRotate = "rotate(" + sdeg + "deg)";
+
+            $(".sec").css({
+                "transform": sRotate,
+                "-webkit-transform": sRotate,
+                "-ms-transform": sRotate,
+                "-moz-transform": sRotate
+            })
+        }, 1000);
+
+
+        setInterval(function () {
+            var current_min = new Date().getMinutes();
+            var mdeg = current_min * 6;
+            var mRotate = "rotate(" + mdeg + "deg)";
+            $(".min").css({
+                "transform": mRotate,
+                "-webkit-transform": mRotate,
+                "-moz-transform": mRotate,
+                "-ms-transform": mRotate
+            })
+        }, 1000);
+
+        setInterval(function () {
+            var current_hour = new Date().getHours();
+            var mins = new Date().getMinutes();
+            var hdeg = current_hour * 30 + mins / 2;
+            var hRotate = "rotate(" + hdeg + "deg)";
+            $(".hour").css({
+                "transform": hRotate,
+                "-webkit-transform": hRotate,
+                "-ms-transform": hRotate,
+                "-moz-transform": hRotate
+            })
+        }, 1000)
+    })
+
+</script>
+</body>
+</html>

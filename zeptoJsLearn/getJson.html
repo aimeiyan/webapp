@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<div id="result"></div>
+<button id="btn">点击</button>
+<script src="js/zepto.min.js"></script>
+<script>
+
+    $(function () {
+        $("body").on('click', '#btn', function () {
+            $("#result").empty();
+            $.getJSON('js/jsonData.txt', function (data) {
+                $.each(data,function (index, item) {
+                    $("#result").append(item.fname);
+                })
+            })
+        })
+    })
+</script>
+</body>
+</html>

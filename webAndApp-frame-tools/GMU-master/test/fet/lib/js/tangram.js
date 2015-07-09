@@ -9391,7 +9391,7 @@
 	 *          url : "http://xxx.baidu.com/xpath/target.js",
 	 *      },
 	 *      {
-	 *          url : "http://xxx.baidu.com/xpath/jsonData.js",
+	 *          url : "http://xxx.baidu.com/xpath/jsonData.txt",
 	 *          requestType : "ajax",
 	 *          onload : fnExtractData
 	 *      }

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .img-switch {
+            width: 130px;
+            height: 60px;
+            background: url("images/logo2.png") no-repeat center 10px #FF5E52;
+            transition: background-position linear .2s;
+            -webkit-transition: background-position linear .2s;
+            -moz-transition: background-position linear .2s;
+        }
+
+        .img-switch:hover {
+            background-position: center -58px;
+            cursor: pointer;
+        }
+
+        .txt-switch {
+            width: 130px;
+            height: 60px;
+            color: #fff;
+            background-color: #FF5E52;
+            overflow: hidden;
+            font-family: simsun;
+        }
+
+        .wrapper {
+            transition: margin-top linear .2s;
+            -webkit-transition: margin-top linear .2s;
+            -moz-transition: margin-top linear .2s;
+            margin-top: 0;
+        }
+
+        .wrapper:hover {
+            margin-top: -60px;
+            cursor: pointer;
+
+        }
+
+        .wrapper .line-01 {
+            font-size: 30px;
+            padding: 5px 0 0;
+            text-align: center;
+        }
+
+        .wrapper .line-02 {
+            font-size: 13px;
+            padding-right: 8px;
+            text-align: right;
+            padding-bottom: 5px;
+        }
+
+        .wrapper .line-03 {
+            font-size: 26px;
+            padding-top: 18px;
+            text-align: center;
+        }
+
+        .mb10 {
+            margin-bottom: 10px;
+        }
+
+        .ml20 {
+            margin-left: 20px;
+        }
+
+        .mt20 {
+            margin-top: 20px;
+        }
+
+        .mt40 {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+<div class="container ml20 mt40">
+    <p class="mb10">基于图片的上下切换效果</p>
+
+    <div class="img-switch"></div>
+    <br>
+
+    <p class="mb10 mt40">基于文字的上下切换效果</p>
+
+    <div class="txt-switch">
+        <div class="wrapper">
+            <p class="line-01">阿里百秀</p>
+
+            <p class="line-02">ailibaixiu.com</p>
+
+            <p class="line-03">分享有趣</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
