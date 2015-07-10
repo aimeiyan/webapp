@@ -46,7 +46,7 @@ function windowToCanvas(canvas, x, y) {
 function drawBackground() {
    var VERTICAL_LINE_SPACING = 12,
        i = context.canvas.height;
-   
+
    context.clearRect(0,0,canvas.width,canvas.height);
    context.strokeStyle = 'lightgray';
    context.lineWidth = 0.5;

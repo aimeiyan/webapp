@@ -62,7 +62,7 @@ startButton.onclick = function(e) {
 glasspane.onmousedown = function(e) {
    e.preventDefault();
    e.stopPropagation();
-}
+};
 
 context.canvas.onmousedown = function(e) {
     e.preventDefault();
